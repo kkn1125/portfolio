@@ -1,0 +1,4 @@
+<div class="container">
+    <h3 class="text-center my-3">test</h3>
+    <textarea id="content" cols="100"></textarea>
+</div>
