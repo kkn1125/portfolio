@@ -5,8 +5,6 @@ console.log(path);
 // console.log(window.location.hostname);
 console.log(now);
 
-
-
 $.ajax({ // header
     url:`${pathnames}data/header`,
     // data:{},
@@ -24,12 +22,6 @@ $.ajax({ // header
 $(document).ready(function(e){
     let currentPath = now.split("/")[now.split("/").length-1].split(".")[0];
     document.title = `Kims ${currentPath}`; // 타이틀 페이지별 자동 변경
-    $("a[data-path]").each(function(num,tag){
-        console.log($(tag));
-        let hr = `${pathnames}${$(tag).attr("data-path")}`;
-        $(tag).attr("href",hr);
-        console.log($(tag).attr("href")!=null);
-    });
 });
 
 $.ajax({
