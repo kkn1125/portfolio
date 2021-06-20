@@ -40,11 +40,10 @@ document.addEventListener("DOMContentLoaded", function(){
     script3.setAttribute("defer", "");
     script3.setAttribute("src", "assets/fontawesome/js/solid.js");
     document.head.appendChild(script3);
-    var script4 = document.createElement("script");
-    script4.setAttribute("defer", "");
-    script4.setAttribute("src", "assets/dist/js/dbsource.js");
-    document.head.appendChild(script4);
-    
+    // var script4 = document.createElement("script");
+    // script4.setAttribute("defer", "");
+    // script4.setAttribute("src", "assets/dist/js/dbsource.js");
+    // document.head.appendChild(script4);
 });
 
 /* 헤더와 푸터를 자동 삽입 */
@@ -70,3 +69,23 @@ $(document).ready(function(e){
     let currentPath = now.split("/")[now.split("/").length-1].split(".")[0];
     document.title = `Kims ${currentPath}`; // 타이틀 페이지별 자동 변경
 });
+
+// IntersectionObserver 를 등록한다.
+const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      // 관찰 대상이 viewport 안에 들어온 경우 'tada' 클래스를 추가
+      if (entry.intersectionRatio > 0) {
+        entry.target.dataset.lazy='true';
+      }
+      // 그 외의 경우 'tada' 클래스 제거 로드된 이후에는 새로 설정하지 않겠다.
+    //   else {
+    //     /*delete*/ entry.target.dataset.lazy="false";
+    //   }
+    })
+  })
+  
+  // 관찰할 대상을 선언하고, 해당 속성을 관찰시킨다.
+  const boxElList = document.querySelectorAll('[data-lazy]');
+  boxElList.forEach((el) => {
+    io.observe(el);
+  })

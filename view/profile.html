@@ -13,7 +13,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
 	<!-- languages (Basic Language: English/en) -->
 	<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+    <!-- main.css -->
     <base href="http://127.0.0.1:5500/portfolio/gitrepo/">
+    <link rel="stylesheet" href="assets/dist/css/main.css">
     <title>title</title>
 </head>
 <body>
@@ -22,9 +24,39 @@
     <!-- header -->
     
     <!-- body -->
-    <div class="container my-5">
+    <!-- section 1 -->
+    <div class="container my-5" data-lazy="false">
         <h3>Profile</h3>
     </div>
+    <!-- section 1 -->
+
+    <!-- section 2 -->
+    <div class="container mb-5" data-lazy="false">
+        <div class="d-flex">
+            <span class="d-inline-block rounded-circle border" style="height:200px"><img src="assets/img/kim.jpg" class="rounded-circle" alt="kim" style="object-fit: contain; object-position: center;" width="200" height="200"></span>
+            <div class="d-flex flex-column w-100 ps-5 justify-content-center">
+                <div class="d-inline-block p-1">
+                    <span class="text-uppercase fw-bold">name</span>
+                    <span class="float-end">김경남</span>
+                </div>
+                <hr>
+                <div class="d-inline-block p-1">
+                    <span class="text-uppercase fw-bold">age</span>
+                    <span class="float-end">29</span>
+                </div>
+                <hr>
+                <div class="d-inline-block p-1">
+                    <span class="text-uppercase fw-bold">Univ.</span>
+                    <span class="float-end">한국국제대학교</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5" data-lazy="false">
+        <div>wqerqwer</div>
+    </div>
+    <!-- section 2 -->
     <!-- body -->
 
     <!-- footer -->
@@ -43,6 +75,6 @@
     -->
     <script src="assets/dist/js/main.js"></script>
     <script src="assets/dist/js/sunedit.js"></script>
-    
+    <script src="assets/dist/js/dbsource.js"></script>
 </body>
 </html>

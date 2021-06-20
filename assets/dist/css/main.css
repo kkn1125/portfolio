@@ -3,6 +3,10 @@ a{
     color: inherit;
 }
 
+/* footer a{
+    color: white;
+} */
+
 .fs-7{
     font-size: 0.9rem !important;
 }
@@ -11,4 +15,62 @@ a{
 }
 .fs-9{
     font-size: 0.7rem !important;
+}
+
+.zi-20{
+    z-index: 20;
+}
+[data-link] *{
+    transition: .1s;
+}
+[data-link="nav"] a{
+    position:relative;
+    display: block;
+}
+[data-link="nav"] a:hover{
+    color: rgb(255, 166, 0);
+}
+[data-link="nav"] a:hover svg{
+    transform: scale(1.1);
+}
+
+[data-bg="backface"]::before{
+    content:"";
+    display: block;
+    width: 100vw;
+    height: 50vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+[data-lazy="true"]>:first-child{
+    position: relative;
+    opacity: 1;
+    left:0;
+    transition: 2s ease;
+}
+[data-lazy="false"]>:first-child{
+    position: relative;
+    opacity: 0;
+    left:-10%;
+}
+
+[data-hover="img"] img{
+    transition: .1s ease-in-out .1s;
+}
+[data-hover="img"]:hover img{
+    transform: scale(1.1);
+}
+[data-hover="img"]:hover{
+    box-shadow:lightseagreen 0 0 5px;
+    transition: .1s;
+}
+
+.lastTxt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
 }
