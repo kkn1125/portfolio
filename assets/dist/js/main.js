@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(){
     document.head.appendChild(script3);
     // var script4 = document.createElement("script");
     // script4.setAttribute("defer", "");
-    // script4.setAttribute("src", "assets/dist/js/dbsource.js");
+    // script4.setAttribute("src", "assets/dist/js/page.js");
     // document.head.appendChild(script4);
 });
 
@@ -71,21 +71,25 @@ $(document).ready(function(e){
 });
 
 // IntersectionObserver 를 등록한다.
-const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      // 관찰 대상이 viewport 안에 들어온 경우 'tada' 클래스를 추가
-      if (entry.intersectionRatio > 0) {
-        entry.target.dataset.lazy='true';
-      }
-      // 그 외의 경우 'tada' 클래스 제거 로드된 이후에는 새로 설정하지 않겠다.
-    //   else {
-    //     /*delete*/ entry.target.dataset.lazy="false";
-    //   }
+// ====================== 이 기능을 쓰려면 리로딩버전 포기해야함
+$(document).ready(function(){
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        // 관찰 대상이 viewport 안에 들어온 경우 'tada' 클래스를 추가
+        if (entry.intersectionRatio > 0) {
+            entry.target.dataset.lazy='true';
+        }
+        // 그 외의 경우 'tada' 클래스 제거 로드된 이후에는 새로 설정하지 않겠다.
+        //   else {
+            //     /*delete*/ entry.target.dataset.lazy="false";
+            //   }
+        })
     })
-  })
-  
-  // 관찰할 대상을 선언하고, 해당 속성을 관찰시킨다.
-  const boxElList = document.querySelectorAll('[data-lazy]');
-  boxElList.forEach((el) => {
-    io.observe(el);
-  })
+
+    // 관찰할 대상을 선언하고, 해당 속성을 관찰시킨다.
+    const boxElList = document.querySelectorAll('[data-lazy]');
+    
+    boxElList.forEach((el) => {
+        io.observe(el);
+    })
+})

@@ -20,6 +20,26 @@ a{
 .zi-20{
     z-index: 20;
 }
+
+.imgfix{
+    height: calc(20vw);
+    width: 20vw;
+    max-width:200px;
+    max-height:200px;
+    min-width:120px;
+    min-height:120px;
+}
+.imgfix img{
+    object-fit: contain;
+    object-position: center;
+    width:20vw;
+    height: calc(20vw);
+    max-width:200px;
+    max-height:200px;
+    min-width:120px;
+    min-height:120px;
+}
+
 [data-link] *{
     transition: .1s;
 }
