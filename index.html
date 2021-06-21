@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- sun editor -->
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <!-- languages (Basic Language: English/en) -->
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
     <base href="http://127.0.0.1:5500/portfolio/gitrepo/">
-    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <!-- main.css -->
     <link rel="stylesheet" href="assets/dist/css/main.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
     <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
@@ -58,7 +65,7 @@
         <div class="p-2">
           <div class="row g-3 row-cols-1 row-cols-md-2 g-1">
             <!-- first article -->
-            <div class="p-3">
+            <div class="p-3" data-control-tag="lazy">
               <h4 class="mb-3 text-uppercase">
                 <a href="view/portfolio.html" class="nav-link text-muted">
                   <i class="fas fa-user"></i> Portfolio
@@ -83,7 +90,7 @@
             <!-- first article -->
             
             <!-- second article -->
-            <div class="p-3">
+            <div class="p-3" data-control-tag="lazy">
               <h4 class="mb-3 text-uppercase">
                 <a href="view/blog.html" class="nav-link text-muted">
                   <i class="fas fa-th"></i> Blog
@@ -114,18 +121,162 @@
 
     <!-- section 2 -->
     <div class="p-5 bg-light container-fluid" data-lazy="false">
-      <div class="fw-bold fs-7">최신 글</div>
-      <div class="d-flex g-3 p-3">
+      <div>
+        <div class="fw-bold fs-7">최신 글</div>
 
-          <a href="#" class="d-flex flex-column align-items-center" style="width:15vw; max-width:180px;">
-            <img src="assets/img/portfolio.png" class="img-thumbnail" style="min-width: 8rem; width: 10vw;">
-            <span class="badge text-dark">test</span>
-          </a>
-          <a href="#" class="d-flex flex-column align-items-center" style="width:15vw; max-width:180px;">
-            <img src="assets/img/portfolio.png" class="img-thumbnail" style="min-width: 8rem; width: 10vw;">
-            <span class="badge text-dark">test</span>
-          </a>
-          
+        <div class="row justify-content-center mt-3">
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index.html"><img src="assets/images/demos/01.jpg" alt="home 01"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index.html">Folio Default</a>
+                    <small class="d-block">Agency, Corporate</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-2.html"><img src="assets/images/demos/02.jpg" alt="home 02"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-2.html">Agency Classic</a>
+                    <small class="d-block">Business, Creative</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-2.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-3.html"><img src="assets/images/demos/03.jpg" alt="home 03"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-3.html">Agency Trendy</a>
+                    <small class="d-block">Trending, Creative</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-3.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-4.html"><img src="assets/images/demos/04.jpg" alt="home 04"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-4.html">Agency Modern</a>
+                    <small class="d-block">Business, Special</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-4.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-5.html"><img src="assets/images/demos/05.jpg" alt="home 05"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-5.html">Studio showcase</a>
+                    <small class="d-block">Trending, Creative</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-5.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-6.html"><img src="assets/images/demos/06.jpg" alt="home 06"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-6.html">Creative agency</a>
+                    <small class="d-block">Studio, Digital</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-6.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-7.html"><img src="assets/images/demos/07.jpg" alt="home 07"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-7.html">Digital studio</a>
+                    <small class="d-block">Marketing, Studio</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-7.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-8.html"><img src="assets/images/demos/08.jpg" alt="home 08"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-8.html">Portfolio showcase</a>
+                    <small class="d-block">Work showcase, Agency</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-8.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-9.html"><img src="assets/images/demos/09.jpg" alt="home 09"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-9.html">Corporate</a>
+                    <small class="d-block">Business, Marketing</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-9.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Demo item -->
+          <div class="col-sm-6 col-lg-4 mb-30">
+            <div class="card up-hover shadow-lg overflow-hidden">
+              <a href="../index-10.html"><img src="assets/images/demos/10.jpg" alt="home 10"></a>
+              <div class="card-footer py-4 border-top">
+                <div class="d-flex align-items-center">
+                  <div>
+                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-10.html">Personal Portfolio</a>
+                    <small class="d-block">Resume, Personal</small>
+                  </div>
+                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-10.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            
       </div>
     </div>
     <!-- section 2 -->
