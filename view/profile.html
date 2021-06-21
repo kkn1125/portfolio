@@ -1,67 +1,166 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- sun editor -->
-	<link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
-	<!-- languages (Basic Language: English/en) -->
-	<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <!-- languages (Basic Language: English/en) -->
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
     <!-- main.css -->
     <base href="http://127.0.0.1:5500/portfolio/gitrepo/">
     <link rel="stylesheet" href="assets/dist/css/main.css">
     <title>title</title>
 </head>
+
 <body>
     <!-- header -->
     <div data-include-path="data/header.html"></div>
     <!-- header -->
-    
+
     <!-- body -->
-    <main>
-    <div class="contents">
-    <!-- section 1 -->
-    <div class="container my-5" data-lazy="false">
-        <h3>Profile</h3>
-    </div>
-    <!-- section 1 -->
+    <main data-lazy="false">
+        <div class="contents">
+            <!-- section 1 -->
+            <div class="container my-5" data-lazy="false">
+                <h3>Profile</h3>
+            </div>
+            <!-- section 1 -->
 
-    <!-- section 2 -->
-    <div class="container mb-5" data-lazy="false">
-        <div class="d-flex">
-            <div class="d-block rounded-circle border imgfix col-2">
-                <img src="assets/img/kim.jpg" class="rounded-circle" alt="kim">
+            <!-- section 2 -->
+            <div class="container mb-5" data-lazy="false">
+                <div class="d-flex">
+                    <div class="d-block rounded-circle border imgfix align-self-center col-2">
+                        <img src="assets/img/kim.jpg" class="rounded-circle" alt="kim">
+                    </div>
+                    <div class="d-flex flex-column ps-5 justify-content-center w-100 resfont">
+                        <div class="d-inline-block p-1">
+                            <span class="text-uppercase fw-bold">name</span>
+                            <span class="float-end">김경남</span>
+                        </div>
+                        <hr>
+                        <div class="d-inline-block p-1">
+                            <span class="text-uppercase fw-bold">birth</span>
+                            <span class="float-end">1993. 11. 25</span>
+                        </div>
+                        <hr>
+                        <div class="d-inline-block p-1">
+                            <span class="text-uppercase fw-bold">Univ.</span>
+                            <span class="float-end">한국국제대학교</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex flex-column ps-5 justify-content-center w-100">
-                <div class="d-inline-block p-1">
-                    <span class="text-uppercase fw-bold">name</span>
-                    <span class="float-end">김경남</span>
-                </div>
-                <hr>
-                <div class="d-inline-block p-1">
-                    <span class="text-uppercase fw-bold">age</span>
-                    <span class="float-end">29</span>
-                </div>
-                <hr>
-                <div class="d-inline-block p-1">
-                    <span class="text-uppercase fw-bold">Univ.</span>
-                    <span class="float-end">한국국제대학교</span>
+
+            <div class="container mb-5" data-lazy="false">
+                <div>
+
+                    <p><strong>경력사항</strong>&nbsp;&nbsp;<span
+                            style="color: rgb(102, 153, 255);"><del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</del></span>
+                    </p>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div><span style="color: rgb(140, 140, 140);">2012.02 ~ 2018.02</span><br></div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;"><strong>한국국제대학교</strong><br></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div><br></div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;"><span style="font-size: 11px;"><span
+                                                style="color: rgb(140, 140, 140);"><strong>실내건축학
+                                                    학사</strong></span></span><br></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><br></p>
+                    <p>​<strong>경력사항</strong><span
+                            style="color: rgb(51, 51, 51); font-family: Helvetica Neue; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">&nbsp;&nbsp;</span><span
+                            style="box-sizing: border-box; -webkit-user-drag: none; overflow: visible; font-family: Helvetica Neue; font-size: 13px; color: rgb(102, 153, 255); display: inline; vertical-align: baseline; margin: 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</del></span><br><br>
+                    </p>
+                    <table class="se-table-size-100 se-table-layout-auto table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div><span style="color: rgb(140, 140, 140);">2018.01</span><br></div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;"><strong>(주)대경건축사사무소</strong><br></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div><br></div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;"><span style="font-size: 11px;"><span
+                                                style="color: rgb(140, 140, 140);"><strong>사원
+                                                    입사</strong></span></span><br></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div><span style="color: rgb(140, 140, 140);">2018.02</span></div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;">LH설계공모 - 진주옥봉지구 (당선)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div><span style="font-size: 11px;"><span
+                                                style="color: rgb(140, 140, 140);"><strong>업무사항</strong></span></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;"><span style="font-size: 11px;"><span
+                                                style="color: rgb(140, 140, 140);"><strong>보고서
+                                                    작성</strong></span></span><br></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>​<span
+                                            style="color: rgb(140, 140, 140); font-family: Helvetica Neue; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">2018.02</span><br>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;">​<br></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>​<span style="font-size: 11px;"><span
+                                                style="color: rgb(140, 140, 140);"><strong>업무사항</strong></span></span>​<br>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="text-align: right;">​<br></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
+            <!-- section 2 -->
         </div>
-    </div>
-
-    <div class="container mb-5" data-lazy="false">
-        <div>wqerqwer</div>
-    </div>
-    <!-- section 2 -->
-    </div>
     </main>
     <!-- body -->
 
@@ -72,7 +171,9 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -85,4 +186,5 @@
     <!-- page js -->
     <script src="assets/dist/js/page.js"></script>
 </body>
+
 </html>

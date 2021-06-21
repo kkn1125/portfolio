@@ -19,7 +19,8 @@ const editor = SUNEDITOR.create((document.getElementById('content') || 'content'
         ['save', 'template']
     ],
     lang: SUNEDITOR_LANG['ko'],
-    placeholder: 'test'
+    placeholder: 'test',
+    height: 450
 });
 editor.onImageUpload = function (targetElement, index, state, info, remainingFilesCount, core) {
     console.log(`targetElement:${targetElement}, index:${index}, state('create', 'update', 'delete'):${state}`)
