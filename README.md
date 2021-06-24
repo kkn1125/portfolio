@@ -34,3 +34,5 @@
    - 자기소개
    - 학력사항
    - 이력사항
+
+자세한 내용은 Github Page를 참조하시기 바랍니다. [ https://kkn1125.github.io/portfolio ]
