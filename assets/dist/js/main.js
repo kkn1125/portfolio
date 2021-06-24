@@ -1,5 +1,5 @@
 var path = window.location.href;
-const pathnames = window.location.pathname.split('/')[1];
+const pathnames = window.location.pathname.split('/')[1]+'/';
 var now = window.location.pathname.substring(pathnames.length-1);
 
 /**
