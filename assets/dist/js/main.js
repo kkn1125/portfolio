@@ -1,6 +1,12 @@
 var path = window.location.href;
-const pathnames = "/portfolio/gitrepo/";
+const pathnames = window.location.pathname.split('/')[1];
 var now = window.location.pathname.substring(pathnames.length-1);
+
+/**
+ * base path setting
+ */
+$('base').attr('href',window.location.origin+'/'+pathnames+'/');
+console.log(window.location.origin+'/'+pathnames)
 
 /* 헤더와 푸터를 자동 삽입 */
 window.addEventListener('load', function(){
