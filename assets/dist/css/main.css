@@ -7,6 +7,11 @@ a{
     color: white;
 } */
 
+#career td:nth-child(2){
+    text-align: left;
+    padding-left: 2rem;
+}
+
 .resfont{
     font-size: calc(.8rem + 0.2vw) !important;
 }
@@ -19,6 +24,10 @@ a{
 }
 .fs-9{
     font-size: 0.7rem !important;
+}
+
+.zi-5{
+    z-index:-5;
 }
 
 .zi-20{
@@ -42,6 +51,17 @@ a{
     max-height:200px;
     min-width:120px;
     min-height:120px;
+}
+
+span[data-img="logo"]{
+    display: inline-block;
+    width: 5vw;
+    min-width: 35px;
+    max-width: 50px;
+}
+
+[data-unselect="true"]{
+    user-select: none;
 }
 
 [data-link] *{
@@ -116,7 +136,8 @@ a{
 }
 
 [data-page="post"] img{
-    width: calc(20rem + 10vw);
+    display: block;
+    width: calc(5rem + 50vw);
     margin: 0 auto;
 }
 /* [data-setup] span.name{

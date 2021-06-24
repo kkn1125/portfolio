@@ -14,18 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
     <!-- languages (Basic Language: English/en) -->
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <base href="http://127.0.0.1:5500/portfolio/gitrepo/">
     <!-- main.css -->
     <link rel="stylesheet" href="assets/dist/css/main.css">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
-    <script defer src="assets/fontawesome/js/all.js"></script>
-    <script defer src="assets/fontawesome/js/fontawesome.js"></script>
-    <script defer src="assets/fontawesome/js/brands.js"></script>
-    <script defer src="assets/fontawesome/js/solid.js"></script>
     <title>title</title>
 </head>
 
@@ -38,15 +31,15 @@
     <main data-lazy="false">
         <div class="contents">
             <!-- section 1 -->
-            <div class="container my-5" data-lazy="false">
-                <h3>Profile</h3>
+            <div class="container my-5 text-uppercase" data-lazy="false">
+                <h3 class="fw-bold">Profile</h3>
             </div>
             <!-- section 1 -->
 
             <!-- section 2 -->
-            <div class="container mb-5" data-lazy="false">
-                <div class="d-flex">
-                    <div class="d-block rounded-circle border imgfix align-self-center col-2">
+            <div class="container-fluid p-5 mb-5 bg-light" data-lazy="false">
+                <div class="d-flex p-5" data-unselect="true">
+                    <div class="d-block rounded-circle bg-white border imgfix align-self-center col-2">
                         <img src="assets/img/kim.jpg" class="rounded-circle" alt="kim">
                     </div>
                     <div class="d-flex flex-column ps-5 justify-content-center w-100 resfont">
@@ -70,98 +63,227 @@
 
             <div class="container mb-5" data-lazy="false">
                 <div>
-
-                    <p><strong>경력사항</strong>&nbsp;&nbsp;<span
-                            style="color: rgb(102, 153, 255);"><del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</del></span>
-                    </p>
-                    <table class="table">
-                        <tbody>
+                    <table class="table" data-unselect="true">
+                        <thead>
+                            <tr>
+                                <th colspan="3">
+                                        <b class="bg-white">경력사항</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="career" class="text-center">
                             <tr>
                                 <td>
-                                    <div><span style="color: rgb(140, 140, 140);">2012.02 ~ 2018.02</span><br></div>
+                                    <span class="badge text-muted">2018.01</span>
                                 </td>
                                 <td>
-                                    <div style="text-align: right;"><strong>한국국제대학교</strong><br></div>
+                                    <span class="fw-bold">(주)대경건축사사무소</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-dark">입사</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div><br></div>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
                                 </td>
                                 <td>
-                                    <div style="text-align: right;"><span style="font-size: 11px;"><span
-                                                style="color: rgb(140, 140, 140);"><strong>실내건축학
-                                                    학사</strong></span></span><br></div>
+                                    <span class="badge text-muted">진주옥봉 행복주택 설계공모</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">서귀포성산지구 공동주택 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">(공공임대리츠)창원가포 S-1BL 아파트 건설공사 2공구</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">남양주별내지구 A1-1BL 공동주택 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">파주운정 A-37블록 공동주택 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">제6회 주택설계 기술경진대회</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">파주운정3 A26블록 공동주택 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">부산명지 A5블록 공동주택 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">부산기장 A2BL 시공책임형 CM
+                                        R 아파트 건설공사 1공구</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">시흥장현 A-3BL 공동주택 현상
+                                        설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">창원명곡 A1-1BL 공동주택(신
+                                        혼희망타운) 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">도면 및 보고서 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">남양주진접A8, 철원 철원행복주택</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">화성동탄2 트라이엠파크</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">의왕월암 A-1BL 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">성남복정 A-3BL 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fas fa-level-up-alt fa-rotate-90 text-muted"></i>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">종로창신, 안양석수 현상설계</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-muted">PM 보조 및 도면 작성</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge text-muted">2020.09</span>
+                                </td>
+                                <td>
+                                    <span class="fw-bold">LH설계공모</span>
+                                </td>
+                                <td>
+                                    <span class="badge text-dark">퇴사</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <p><br></p>
-                    <p>​<strong>경력사항</strong><span
-                            style="color: rgb(51, 51, 51); font-family: Helvetica Neue; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">&nbsp;&nbsp;</span><span
-                            style="box-sizing: border-box; -webkit-user-drag: none; overflow: visible; font-family: Helvetica Neue; font-size: 13px; color: rgb(102, 153, 255); display: inline; vertical-align: baseline; margin: 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</del></span><br><br>
-                    </p>
-                    <table class="se-table-size-100 se-table-layout-auto table">
-                        <tbody>
+
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td>
-                                    <div><span style="color: rgb(140, 140, 140);">2018.01</span><br></div>
-                                </td>
-                                <td>
-                                    <div style="text-align: right;"><strong>(주)대경건축사사무소</strong><br></div>
-                                </td>
+                                <th colspan="3">
+
+                                </th>
                             </tr>
-                            <tr>
-                                <td>
-                                    <div><br></div>
-                                </td>
-                                <td>
-                                    <div style="text-align: right;"><span style="font-size: 11px;"><span
-                                                style="color: rgb(140, 140, 140);"><strong>사원
-                                                    입사</strong></span></span><br></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div><span style="color: rgb(140, 140, 140);">2018.02</span></div>
-                                </td>
-                                <td>
-                                    <div style="text-align: right;">LH설계공모 - 진주옥봉지구 (당선)</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div><span style="font-size: 11px;"><span
-                                                style="color: rgb(140, 140, 140);"><strong>업무사항</strong></span></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div style="text-align: right;"><span style="font-size: 11px;"><span
-                                                style="color: rgb(140, 140, 140);"><strong>보고서
-                                                    작성</strong></span></span><br></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>​<span
-                                            style="color: rgb(140, 140, 140); font-family: Helvetica Neue; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">2018.02</span><br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div style="text-align: right;">​<br></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>​<span style="font-size: 11px;"><span
-                                                style="color: rgb(140, 140, 140);"><strong>업무사항</strong></span></span>​<br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div style="text-align: right;">​<br></div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        </thead>
                     </table>
 
                 </div>
@@ -190,8 +312,6 @@
     <script src="assets/dist/js/main.js"></script>
     <script src="assets/dist/js/sunedit.js"></script>
     <script src="assets/dist/js/dbsource.js"></script>
-    <!-- page js -->
-    <script src="assets/dist/js/page.js"></script>
 </body>
 
 </html>

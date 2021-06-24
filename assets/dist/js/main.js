@@ -1,14 +1,6 @@
 var path = window.location.href;
 const pathnames = "/portfolio/gitrepo/";
 var now = window.location.pathname.substring(pathnames.length-1);
-console.log(path);
-// console.log(window.location.hostname);
-console.log(now);
-
-/* 도큐먼트 로드시 link, script태그 삽입 */
-var tags = document.addEventListener("DOMContentLoaded", function(){
-    // blabla
-});
 
 /* 헤더와 푸터를 자동 삽입 */
 window.addEventListener('load', function(){
@@ -27,6 +19,42 @@ window.addEventListener('load', function(){
         }
     });
 });
+
+/* 도큐먼트 로드시 link, script태그 삽입 */
+document.addEventListener("DOMContentLoaded", function(){
+    kims.func.POSTLOADER.create((document.getElementById('portLoad')||'portLoad'),{
+        setRoot: '/portfolio/gitrepo',
+        path: 'view/portfolio', // 포트폴리오 경로
+        titleSet: 'text-start text-dark',
+        postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
+            2021:["/2021/06/23"]
+        },
+        columnList: ['title', 'author', 'time']
+        // title, content, author, time 이 중 세가지
+        // , pageNum: 6(default)
+    });
+});
+
+/* 도큐먼트 로드시 link, script태그 삽입 */
+document.addEventListener("DOMContentLoaded", function(){
+    kims.func.POSTLOADER.create((document.getElementById('postLoad')||'postLoad'),{
+        setRoot: '/portfolio/gitrepo',
+        path: 'view/posts', // 포스트 경로
+        titleSet: 'text-start text-dark',
+        postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
+            2021:["/2021/06/20","/2021/06/21","/2021/06/23"]
+        },
+        columnList: ['title', 'author', 'time']
+        // title, content, author, time 이 중 세가지
+        // , pageNum: 6(default)
+    });
+});
+
+window.addEventListener('load', ()=>{
+    $('[data-post-show="true').append(`
+        <button class="btn btn-sm btn-outline-info" onclick="window.history.back()">목록보기</button>
+    `);
+})
 
 /* 페이지별 타이들을 자동 설정 */
 $(document).ready(function(e){
@@ -57,3 +85,24 @@ $(document).ready(function(){
         io.observe(el);
     })
 })
+
+/**
+ * 디스커스 댓글창
+ */
+function disqusLoad(){
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kimsportfolio.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    }

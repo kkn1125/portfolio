@@ -14,18 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
     <!-- languages (Basic Language: English/en) -->
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <base href="http://127.0.0.1:5500/portfolio/gitrepo/">
     <!-- main.css -->
     <link rel="stylesheet" href="assets/dist/css/main.css">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
-    <script defer src="assets/fontawesome/js/all.js"></script>
-    <script defer src="assets/fontawesome/js/fontawesome.js"></script>
-    <script defer src="assets/fontawesome/js/brands.js"></script>
-    <script defer src="assets/fontawesome/js/solid.js"></script>
     <title>title</title>
 </head>
 <body>
@@ -35,36 +28,20 @@
     
     <!-- body -->
     <main>
-    <div class="contents">
-    <div class="container my-5" data-lazy="false">
-        <div>
-            <h3>blog</h3>
-            <div class="p-5">
-                <table class="table">
-                    <thead>
-                        <tr>2021.06.21 게시글</tr>
-                    </thead>
-                    <tbody data-post-in="/2021/06/21" data-fake-url="true">
+        <div class="contents">
+            <div class="container my-5" data-lazy="false">
+                <div>
+                    <h3>Blog</h3>
+                    <div class="p-5">
+
+                        <table id="postLoad" class="table">
+                            
+                        </table>
                         
-                    </tbody>
-                </table>
-                <table class="table">
-                    <thead>
-                        <tr>2021.06.20 게시글</tr>
-                    </thead>
-                    <tbody data-post-in="/2021/06/20" data-fake-url="true">
-                        
-                    </tbody>
-                </table>
-                <hr>
-                
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <span class="d-none" data-post-path="/2021/06/21"></span>
-    <span class="d-none" data-post-path="/2021/06/20"></span>
-    <div id="aa" class="d-none"></div>
-    </div>
     </main>
     <!-- body -->
 
@@ -82,11 +59,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
-    <script src="assets/dist/js/main.js"></script>
+    <script src="assets/dist/js/postLoader.js" defer></script>
+    <script src="assets/dist/js/main.js" defer></script>
     <script src="assets/dist/js/sunedit.js"></script>
     <script src="assets/dist/js/dbsource.js"></script>
-    <!-- page js -->
-    <script src="assets/dist/js/page.js" defer async="async"></script>
-    <script src="assets/dist/js/postLoader.js" defer></script>
 </body>
 </html>
