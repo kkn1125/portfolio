@@ -1,5 +1,5 @@
 var path = window.location.href;
-const pathnames = window.location.pathname.split('/')[1]+'/';
+const pathnames = window.location.pathname.split('/')[1];
 var now = window.location.pathname.substring(pathnames.length-1);
 
 /**
@@ -29,7 +29,7 @@ window.addEventListener('load', function(){
 /* 도큐먼트 로드시 link, script태그 삽입 */
 document.addEventListener("DOMContentLoaded", function(){
     kims.func.POSTLOADER.create((document.getElementById('portLoad')||'portLoad'),{
-        setRoot: '/portfolio/gitrepo',
+        setRoot: '/portfolio',
         path: 'view/portfolio', // 포트폴리오 경로
         titleSet: 'text-start text-dark',
         postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
 /* 도큐먼트 로드시 link, script태그 삽입 */
 document.addEventListener("DOMContentLoaded", function(){
     kims.func.POSTLOADER.create((document.getElementById('postLoad')||'postLoad'),{
-        setRoot: '/portfolio/gitrepo',
+        setRoot: '/portfolio',
         path: 'view/posts', // 포스트 경로
         titleSet: 'text-start text-dark',
         postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
