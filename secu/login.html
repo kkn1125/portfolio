@@ -16,10 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <base href="">
-    <script>
-        $(document).find('base').attr("href",window.location.origin+'/portfolio/');
-    </script>
+    <base href="http://127.0.0.1:5500/portfolio/">
+    
     <!-- main.css -->
     <link rel="stylesheet" href="assets/dist/css/main.css">
     <title>title</title>
@@ -31,25 +29,16 @@
     
     <!-- body -->
     <main>
-        <div class="content container p-5 my-5 border rounded-3 shadow" data-post-show="true" data-lazy="false">
-            <div class="mb-5">
-                <div class="h3 fw-bold d-flex justify-content-between">
-                    <span data-post-title>블로그 5</span>
-                    <span class="fs-8 align-self-end">
-                        <span data-post-author>kkn1125</span>
-                        <span data-post-time>14:12</span>
-                    </span>
+        <div class="container-fluid bg-light p-5 mt-5">
+            <form onsubmit="return login(this)" class="d-flex flex-column align-items-center" method="get">
+                <div class="p-2 col-6">
+                    아이디 <input class="form-control" type="text" name="id" autocomplete="username">
                 </div>
-                <hr>
-                <div data-post-content>사용법<br>
-                1. data-post-title은 테이블 목록 제목 표시<br>
-                2. data-post-content은 테이블 목록 내용 표시<br>
-                3. data-post-author 테이블 목록 작성자 표시<br>
-                4. data-post-time 테이블 목록 시간 표시<br>
+                <div class="p-2 col-6">
+                    비밀번호 <input class="form-control" type="password" name="pw" autocomplete="current-password">
                 </div>
-                
-                <hr>
-            </div>
+                <input type="submit" class="btn btn-info col-6 mt-3">
+            </form>
         </div>
     </main>
     <!-- body -->
@@ -69,7 +58,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
     <script src="assets/dist/js/main.js" defer></script>
-    <script src="assets/dist/js/sunedit.js"></script>
-    <script src="assets/dist/js/dbsource.js"></script>
+    <script src="assets/dist/js/sunedit.js" defer></script>
+    <script src="assets/dist/js/dbsource.js" defer></script>
 </body>
 </html>

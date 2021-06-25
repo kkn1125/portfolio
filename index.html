@@ -16,7 +16,10 @@
     <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <base href="https://kkn1125.github.io/portfolio/">
+    <base href="">
+    <script>
+        $(document).find('base').attr("href",window.location.origin+'/portfolio/');
+    </script>
     <!-- main.css -->
     <link rel="stylesheet" href="assets/dist/css/main.css">
     <title>Kims Home</title>
@@ -121,11 +124,11 @@
           <!-- Demo item -->
           <div class="col-sm-6 col-lg-4 mb-3">
             <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="#"><img src="#" alt="home 01"></a>
+              <!-- <a href="#"><img src="#" alt="home 01"></a> -->
               <div class="card-footer py-4 border-top">
                 <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="#">Folio Default</a>
+                  <div class="overflow-auto" style="height: 8rem">
+                    <a class="text-dark h6 m-0 text-primary-hover" id="portLoad" href="#"></a>
                     <small class="d-block">Agency, Corporate</small>
                   </div>
                   <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="#" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
@@ -134,142 +137,23 @@
             </div>
           </div>
           <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
+          <div class="col-sm-6 col-lg-4 mb-3">
             <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-2.html"><img src="#" alt="home 02"></a>
+              <!-- <a href="#"><img src="#" alt="home 01"></a> -->
               <div class="card-footer py-4 border-top">
                 <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-2.html">Agency Classic</a>
-                    <small class="d-block">Business, Creative</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-2.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-3.html"><img src="#" alt="home 03"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-3.html">Agency Trendy</a>
-                    <small class="d-block">Trending, Creative</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-3.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-4.html"><img src="#" alt="home 04"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-4.html">Agency Modern</a>
-                    <small class="d-block">Business, Special</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-4.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-5.html"><img src="#" alt="home 05"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-5.html">Studio showcase</a>
-                    <small class="d-block">Trending, Creative</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-5.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-6.html"><img src="#" alt="home 06"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-6.html">Creative agency</a>
-                    <small class="d-block">Studio, Digital</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-6.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-7.html"><img src="#" alt="home 07"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-7.html">Digital studio</a>
-                    <small class="d-block">Marketing, Studio</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-7.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-8.html"><img src="#" alt="home 08"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-8.html">Portfolio showcase</a>
-                    <small class="d-block">Work showcase, Agency</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-8.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="../index-9.html"><img src="#" alt="home 09"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="../index-9.html">Corporate</a>
-                    <small class="d-block">Business, Marketing</small>
-                  </div>
-                  <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="../index-9.html" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Demo item -->
-          <div class="col-sm-6 col-lg-4 mb-30">
-            <div class="card up-hover shadow-lg overflow-hidden">
-              <a href="#"><img src="#" alt="home 10"></a>
-              <div class="card-footer py-4 border-top">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <a class="text-dark h6 m-0 text-primary-hover" href="#">Personal Portfolio</a>
-                    <small class="d-block">Resume, Personal</small>
+                  <div class="overflow-auto" style="height: 8rem">
+                    <a class="text-dark h6 m-0 text-primary-hover" id="postLoad" href="#"></a>
+                    <small class="d-block">Agency, Corporate</small>
                   </div>
                   <a class="d-inline-block text-muted text-right ms-auto p-2" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-animation="false" href="#" target="_blank" title="" data-bs-original-title="Open in new tab" aria-label="Open in new tab"><i class="fas fa-external-link-square-alt"></i></a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-            
+          <!-- Demo item -->
+          
+        </div> 
       </div>
     </div>
     <!-- section 2 -->
@@ -292,6 +176,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
     <script src="assets/dist/js/main.js" defer></script>
+    <script src="assets/dist/js/postLoader.js" defer></script>
     <script src="assets/dist/js/sunedit.js" defer></script>
     <script src="assets/dist/js/dbsource.js" defer></script>
 </body>

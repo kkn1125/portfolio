@@ -2,11 +2,23 @@ var path = window.location.href;
 const pathnames = window.location.pathname.split('/')[1]+'/';
 var now = window.location.pathname.substring(pathnames.length-1);
 
-/**
- * base path setting
- */
-$('base').attr('href',window.location.origin+'/'+pathnames);
-console.log(window.location.origin+'/'+pathnames)
+function login(frm){
+    var a,b=false;
+    if(frm.id.value)
+        if(frm.id.value=="admin")
+            a=true;
+    if(frm.pw.value)
+        if(frm.pw.value=="01234kk")
+            b=true;
+    if(a&&b){
+        sessionStorage.setItem("sessionId", frm.id.value);
+        console.log(sessionStorage.getItem("sessionId"))
+        return true;
+    } else {
+        console.error("아이디와 비밀번호를 확인해주세요.")
+        return false;
+    }
+}
 
 /* 헤더와 푸터를 자동 삽입 */
 window.addEventListener('load', function(){
@@ -23,36 +35,6 @@ window.addEventListener('load', function(){
             xhttp.open('GET', includePath, true);
             xhttp.send();
         }
-    });
-});
-
-/* 도큐먼트 로드시 link, script태그 삽입 */
-document.addEventListener("DOMContentLoaded", function(){
-    kims.func.POSTLOADER.create((document.getElementById('portLoad')||'portLoad'),{
-        setRoot: '/portfolio',
-        path: 'view/portfolio', // 포트폴리오 경로
-        titleSet: 'text-start text-dark',
-        postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
-            2021:["/2021/06/23"]
-        },
-        columnList: ['title', 'author', 'time']
-        // title, content, author, time 이 중 세가지
-        // , pageNum: 6(default)
-    });
-});
-
-/* 도큐먼트 로드시 link, script태그 삽입 */
-document.addEventListener("DOMContentLoaded", function(){
-    kims.func.POSTLOADER.create((document.getElementById('postLoad')||'postLoad'),{
-        setRoot: '/portfolio',
-        path: 'view/posts', // 포스트 경로
-        titleSet: 'text-start text-dark',
-        postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
-            2021:["/2021/06/20","/2021/06/21","/2021/06/23"]
-        },
-        columnList: ['title', 'author', 'time']
-        // title, content, author, time 이 중 세가지
-        // , pageNum: 6(default)
     });
 });
 

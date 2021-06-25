@@ -28,7 +28,7 @@ kims.func.POSTLOADER = {};
             this.put = $(target);
             this.rootPath = window.location.origin;
             this.setRoot = attr.setRoot?attr.setRoot:"/portfolio/pageLoader_dev";
-            this.path = attr.path?'/'+attr.path:"/data/posts";
+            this.path = attr.path?attr.path:"/data/posts";
             this.postPath = this.rootPath+this.setRoot+this.path;
             this.postDate = attr.postDate?attr.postDate:{
                 2021:['/2021/06/23', '/2021/06/24']
@@ -41,6 +41,7 @@ kims.func.POSTLOADER = {};
                 author:"[data-post-author]",
                 time:"[data-post-time]"
             };
+            this.custom = attr.custom?attr.custom:true;
             this.getPost = (date, i, category)=>{
                 var d = this.postPath + date + '/post-'+i+'.html';
                 var result = [];
@@ -63,16 +64,17 @@ kims.func.POSTLOADER = {};
                 return result;
             }
             this.makeForm = (()=>{
-                this.put.addClass("table text-center")
-                this.put.append(` <thead>
-                    <tr class="text-uppercase fw-bold">
-                        <td width="60">num</td>
-                        <td width="auto" class="${this.titleSet}">title</td>
-                        <td width="150">author</td>
-                        <td width="80">time</td>
-                    </tr>
+                this.put.append(` 
+                <table class="table">
+                    <thead>
+                        <tr class="text-uppercase fw-bold">
+                            <td width="60">num</td>
+                            <td width="auto" class="${this.titleSet}">title</td>
+                            <td width="150">author</td>
+                            <td width="80">time</td>
+                        </tr>
                     </thead><tbody data-target>`);
-                    this.put.append(`</tbody>`);
+                this.put.append(`</tbody></table>`);
             })();
             this.putPost = ((days)=>{
                 days = this.postDate[2021].length;
@@ -91,7 +93,7 @@ kims.func.POSTLOADER = {};
                             this.put.find('[data-target]').append(
                             `<tr class="text-muted">
                             <td>${i}</td>
-                            <td class="fw-bold ${this.titleSet}"><a href="${this.postPath+this.postDate[2021][q]+ '/post-'+i+'.html'}">${arr[0]}</a></td>
+                            <td class="fw-bold ${this.titleSet}"><a data-get-title href="${this.postPath+this.postDate[2021][q]+ '/post-'+i+'.html'}">${arr[0]}</a></td>
                             <td>${arr[1]}</td>
                             <td>${arr[2]}</td>
                             </tr>`
@@ -103,3 +105,34 @@ kims.func.POSTLOADER = {};
         }
     }
 })();
+
+
+/* POSTLOADER */
+document.addEventListener("DOMContentLoaded", function(){
+    kims.func.POSTLOADER.create((document.getElementById('portLoad')||'portLoad'),{
+        setRoot: '/portfolio',
+        path: '/view/portfolio', // 포트폴리오 경로
+        titleSet: 'text-start text-dark',
+        postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
+            2021:["/2021/06/23"]
+        },
+        columnList: ['title', 'author', 'time']
+        // title, content, author, time 이 중 세가지
+        // , pageNum: 6(default)
+    });
+});
+
+/* POSTLOADER */
+document.addEventListener("DOMContentLoaded", function(){
+    kims.func.POSTLOADER.create((document.getElementById('postLoad')||'postLoad'),{
+        setRoot: '/portfolio',
+        path: '/view/posts', // 포스트 경로
+        titleSet: 'text-start text-dark',
+        postDate:{ // 폴더경로를 /yyyy/mm/dd 양식으로 배열 입력하면 자동으로 내용을 pageNum개수대로 불러온다.
+            2021:["/2021/06/20","/2021/06/21","/2021/06/23"]
+        },
+        columnList: ['title', 'author', 'time']
+        // title, content, author, time 이 중 세가지
+        // , pageNum: 6(default)
+    });
+});
