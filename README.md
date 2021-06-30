@@ -42,4 +42,4 @@
   - 학력사항
   - 이력사항
 
-자세한 내용은 Github Page를 참조하시기 바랍니다. [ <https://devkims.herokuapp.com/> ]
+자세한 내용은 Github Page를 참조하시기 바랍니다. [ <https://devkimson.herokuapp.com/> ]
