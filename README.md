@@ -31,8 +31,6 @@
 - 시연영상
 - 아쉬운점
 
--
-
 #### DB 내용
 
 - table 및 관계
@@ -44,4 +42,4 @@
   - 학력사항
   - 이력사항
 
-자세한 내용은 Github Page를 참조하시기 바랍니다. [ <https://kkn1125.github.io/portfolio> ]
+자세한 내용은 Github Page를 참조하시기 바랍니다. [ <https://devkims.herokuapp.com/> ]
