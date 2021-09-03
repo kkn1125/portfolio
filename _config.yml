@@ -6,6 +6,8 @@ author:
   blog: https://kkn1125.github.io
   name: "kimson"
   email: "chaplet01@gmail.com"
+permalink: /:title/
+# permalink가 링크 주소 글로벌로 형식 바꾸는 것
 
 excerpts:
   # Displays or hides post excerpts from home layout post listing.
@@ -19,7 +21,8 @@ excerpts:
 bootstrap:
   # Theme date format
   # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-  date_format: "%b %-d, %Y"
+  # date_format: "%b %-d, %Y"
+  date_format: "%Y-%m-%d %H:%M"
 
   # If you want to link only specific pages in your header, uncomment
   # this and add the path to the page *files* in order as they should show up
