@@ -14,7 +14,18 @@
         <img style="width: 100%; height: auto;" src="{{site.baseurl}}{{page.image}}" alt="">
       </div>
       {% endif %}
+
+      {% if page.layout == 'post' %}
+      
+      <div class="container" {% if page.image %} style="position: relative; top: -14rem;" {% endif %}>
+
+      {% else %}
+
       <div class="container-fluid" {% if page.image %} style="position: relative; top: -14rem;" {% endif %}>
+          
+      {% endif %}
+
+        
         {{ content }}
       </div>
     </main>
