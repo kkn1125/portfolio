@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html -%}
+    {%- include head.html -%}
 
-  <body class="d-flex flex-column vw-100 vh-100">
+    <body class="d-flex flex-column vw-100 vh-100">
 
-    {%- include header.html -%}
+        {%- include header.html -%}
 
-    <main class="page-content py-5 flex-shrink-0" aria-label="Content">
-      {% if page.image %}
-      <div class="position-relative"
-        style="filter: brightness(0.5); top: -3rem; z-index:-1; max-height: 30rem; overflow: hidden;">
-        <img style="width: 100%; height: auto;" src="{{site.baseurl}}{{page.image}}" alt="">
-      </div>
-      {% endif %}
+        <main class="page-content py-5 flex-shrink-0" aria-label="Content">
+            {% if page.image %}
+            <div class="position-relative"
+                style="filter: brightness(0.5); top: -3rem; z-index:-1; max-height: 30rem; overflow: hidden;">
+                <img style="width: 100%; height: auto;" src="{{site.baseurl}}{{page.image}}" alt="">
+            </div>
+            {% endif %}
 
-      {% if page.layout == 'post' %}
-      
-      <div class="container" {% if page.image %} style="position: relative; top: -14rem;" {% endif %}>
+            {% if page.layout == 'post' or page.layout == 'page'  %}
 
-      {% else %}
+            <div class="container" {% if page.image %} style="position: relative; top: -14rem;" {% endif %}>
 
-      <div class="container-fluid" {% if page.image %} style="position: relative; top: -14rem;" {% endif %}>
-          
-      {% endif %}
+                {% else %}
 
-        
-        {{ content }}
-      </div>
-    </main>
+                <div class="container-fluid" {% if page.image %} style="position: relative; top: -14rem;" {% endif %}>
 
-    {%- include footer.html -%}
-    <script src="{{site.baseurl}}assets/js/bootstrap.bundle.min.js"></script>
-    <script src="{{site.baseurl}}assets/js/main.js"></script>
-  </body>
+                    {% endif %}
+
+                    {{ content }}
+
+                </div>
+        </main>
+
+        {%- include footer.html -%}
+        <script src="{{site.baseurl}}assets/js/bootstrap.bundle.min.js"></script>
+        <script src="{{site.baseurl}}assets/js/main.js"></script>
+        <script src="{{site.baseurl}}assets/js/sunedit.js"></script>
+    </body>
 
 </html>

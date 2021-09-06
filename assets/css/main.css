@@ -7,6 +7,15 @@ li:hover .hoverImg{
     left: 0%;
 }
 
+body.dark #suneditor_content{
+    color: black;
+}
+
+body.dark #suneditor_content p,
+body.dark #suneditor_content div{
+    color: black;
+}
+
 .linkpop{
     position: absolute;
     right: 99%;
@@ -139,6 +148,16 @@ body.dark blockquote p{
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+.text-capitalize{
+    text-transform: capitalize;
+}
+.text-lowercase{
+    text-transform: lowercase;
 }
 
 
@@ -306,4 +325,32 @@ body.dark button.navbar-toggler{
     -moz-border-radius: .5rem;
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem; */
+}
+
+body.dark table{
+    color: white;
+}
+
+[data-value]{
+    background-color: rgb(58, 58, 58);
+    width: 50vw;
+    height: 5px;
+    display: inline-block;
+    position: relative;
+    margin-left: 1rem;
+    text-align: right;
+    line-height: 0.1rem;
+}
+
+.value{
+    background-color: rgb(111, 160, 37);
+    display: block;
+    height: 100%;
+}
+
+.skill{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 1rem;
 }
