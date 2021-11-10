@@ -354,3 +354,14 @@ body.dark table{
     align-items: center;
     padding: 0 1rem;
 }
+
+pre.highlight::-webkit-scrollbar{
+    width: .3rem;
+    height: .3rem;
+    background-color:rgb(59, 59, 59);
+}
+pre.highlight::-webkit-scrollbar-thumb{
+    width: .3rem;
+    height: .3rem;
+    background-color:rgb(23, 23, 32);
+}

@@ -74,6 +74,7 @@ function valid(){
     }
 }
 
+if(document.getElementById('sendMail'))
 document.getElementById('sendMail').addEventListener('click', function () {
     let name = document.querySelector('[name="name"]');
     let email = document.querySelector('[name="email"]');

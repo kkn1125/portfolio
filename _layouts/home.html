@@ -22,19 +22,19 @@ layout: default
   <ul class="post-list list-unstyled g-3 row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-around">
     {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
     {%- for post in posts -%}
-    <li data-type="list" class="mb-5 col" style="max-width: 24rem; background-color: white;">
+    <li data-type="list" class="mb-5 col" style="max-width: 24rem;">
       <div class="hoverImg" style="background-image:url({{post.image}});">
         <div class="darkback">
           <a href="{{ post.url | relative_url }}"><span><i class="fas fa-share"></i> 상세보기</span></a>
         </div>
       </div>
       <div class="p-2">
-        <span class="post-meta badge bg-secondary">{{ post.date | date: date_format }}</span>
         <h3>
-          <a class="post-link text-decoration-none" href="{{ post.url | relative_url }}">
+          <a class="post-link text-decoration-none text-white" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </h3>
+        <span class="post-meta badge bg-secondary user-select-none">{{ post.date | date: date_format }}</span>
         {%- if site.excerpts.show -%}
         {%- if site.excerpts.auto_truncate -%}{{ post.excerpt | truncatewords: 32 }}{%- else -%}{{ post.excerpt }}{%- endif -%}
         {%- endif -%}
