@@ -1,0 +1,183 @@
+.front,
+.back {
+    transition: transform 500ms;
+    -webkit-transition: transform 500ms;
+    -moz-transition: transform 500ms;
+    -ms-transition: transform 500ms;
+    -o-transition: transform 500ms;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+}
+
+.alert .front{
+    animation: alertFlip 1s forwards;
+    -webkit-animation: alertFlip 1s forwards;
+}
+
+.alert .back{
+    opacity: 0;
+}
+
+@keyframes alertFlip {
+    0% {
+        opacity: 0;
+        transform: perspective(1200px) rotateY(0deg) translateX(50%);
+        -webkit-transform: perspective(1200px) rotateY(0deg) translateX(50%);
+        -moz-transform: perspective(1200px) rotateY(0deg) translateX(50%);
+        -ms-transform: perspective(1200px) rotateY(0deg) translateX(50%);
+        -o-transform: perspective(1200px) rotateY(0deg) translateX(50%);
+}
+
+    50%{
+        opacity: 0.5;
+        transform: perspective(1200px) rotateY(15deg) translateX(0%);
+        -webkit-transform: perspective(1200px) rotateY(15deg) translateX(0%);
+        -moz-transform: perspective(1200px) rotateY(15deg) translateX(0%);
+        -ms-transform: perspective(1200px) rotateY(15deg) translateX(0%);
+        -o-transform: perspective(1200px) rotateY(15deg) translateX(0%);
+}
+
+    100% {
+        opacity: 1;
+        transform: perspective(1200px) rotateY(0deg) translateX(0%);
+        -webkit-transform: perspective(1200px) rotateY(0deg) translateX(0%);
+        -moz-transform: perspective(1200px) rotateY(0deg) translateX(0%);
+        -ms-transform: perspective(1200px) rotateY(0deg) translateX(0%);
+        -o-transform: perspective(1200px) rotateY(0deg) translateX(0%);
+}
+}
+
+.front {
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.back {
+    transform: perspective(1200px) rotateY(-180deg);
+    -webkit-transform: perspective(1200px) rotateY(-180deg);
+    -moz-transform: perspective(1200px) rotateY(-180deg);
+    -ms-transform: perspective(1200px) rotateY(-180deg);
+    -o-transform: perspective(1200px) rotateY(-180deg);
+    background-color: white;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip .front {
+    transform: perspective(1200px) rotateY(180deg);
+    -webkit-transform: perspective(1200px) rotateY(180deg);
+    -moz-transform: perspective(1200px) rotateY(180deg);
+    -ms-transform: perspective(1200px) rotateY(180deg);
+    -o-transform: perspective(1200px) rotateY(180deg);
+}
+
+.flip .back {
+    transform: perspective(1200px) rotateY(0deg);
+    -webkit-transform: perspective(1200px) rotateY(0deg);
+    -moz-transform: perspective(1200px) rotateY(0deg);
+    -ms-transform: perspective(1200px) rotateY(0deg);
+    -o-transform: perspective(1200px) rotateY(0deg);
+}
+
+.card {
+    transition: transform 500ms;
+    -webkit-transition: transform 500ms;
+    -moz-transition: transform 500ms;
+    -ms-transition: transform 500ms;
+    -o-transition: transform 500ms;
+}
+
+.text-trunc {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 
+	dark mode start
+ */
+
+[data-switch="mode"] {
+    display: none;
+}
+
+label#mtWrap {
+    user-select: none;
+    cursor: pointer;
+    perspective: 200px;
+    position: absolute;
+    top: 15px;
+    right: 8%;
+    z-index: 1020;
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+    background-color: rgba(114, 157, 250, 0.5);
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+label#mtWrap.on>span {
+    left: 0%;
+}
+
+label#mtWrap.off>span {
+    left: 50%;
+}
+
+label#mtWrap>span {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, .5);
+    color: wheat;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: 0.3s left cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+label#mtWrap>span::before {
+    position: absolute;
+}
+
+body.dark {
+    background-color: #2a2b31;
+    color: white;
+}
+
+body.dark footer {
+    background-color: #1c1d20 !important;
+    color: inherit;
+}
+
+body.dark footer .brand a {
+    color: inherit;
+}
+
+body.dark section {
+    background-color: #1c1d20 !important;
+    color: inherit;
+}
+
+body.dark section button {
+    color: inherit !important;
+}
+
+body.dark aside {
+    background-color: #1c1d20 !important;
+    color: inherit;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.addEventListener('load', function () {
+                const originPath = location.protocol + '//' + location.host + '/';
+                const repoPath = location.host.match(/[0-9]/)?'':'portfolio/';
+                const realPath = originPath + repoPath;
+                const connectInit = document.querySelector('script');
+                const resources = [{
+                        insert: 'body',
+                        location: 'assets/js/darkMode.js',
+                        crossOrigin: '',
+                        integrity: '',
+                        other: false,
+                        delay: true,
+                    },
+                    {
+                        insert: 'head',
+                        location: 'https://use.fontawesome.com/releases/v5.15.4/css/all.css',
+                        crossOrigin: 'anonymous',
+                        integrity: '',
+                        other: true,
+                        delay: true,
+                    },
+                    {
+                        insert: 'head',
+                        location: 'https://cdn.jsdelivr.net/gh/kkn1125/penli@01d41dbf5391837f464cccc1638d25580090257e/docs/assets/css/penli.css',
+                        crossOrigin: 'anonymous',
+                        integrity: '',
+                        other: true,
+                        delay: true,
+                    },
+                    {
+                        insert: 'head',
+                        location: 'https://cdn.jsdelivr.net/gh/kkn1125/penli@01d41dbf5391837f464cccc1638d25580090257e/docs/assets/css/penli.theme.css',
+                        crossOrigin: 'anonymous',
+                        integrity: '',
+                        other: true,
+                        delay: true,
+                    },
+                    {
+                        insert: 'body',
+                        location: 'https://cdn.jsdelivr.net/gh/kkn1125/penli@01d41dbf5391837f464cccc1638d25580090257e/docs/assets/js/penli.js',
+                        crossOrigin: 'anonymous',
+                        integrity: '',
+                        other: true,
+                        delay: true,
+                    },
+                    {
+                        insert: 'head',
+                        location: 'assets/js/data.js',
+                        crossOrigin: '',
+                        integrity: '',
+                        other: false,
+                        delay: false,
+                    },
+                    {
+                        insert: 'head',
+                        location: 'assets/js/main.components.js',
+                        crossOrigin: '',
+                        integrity: '',
+                        other: false,
+                        delay: false,
+                    },
+                    {
+                        insert: 'body',
+                        location: 'assets/js/main.js',
+                        crossOrigin: '',
+                        integrity: '',
+                        other: false,
+                        delay: false,
+                    },
+                    {
+                        insert: 'head',
+                        location: 'assets/css/main.css',
+                        crossorigin: '',
+                        integrity: '',
+                        other: false,
+                        delay: true,
+                    },
+                ];
+
+                document.documentElement.lang = navigator.language.split('-').shift();
+
+                function createTag({
+                    insert,
+                    location,
+                    crossorigin,
+                    integrity,
+                    other,
+                    delay
+                }) {
+                    let type = location.split('.').pop() == 'js' ? 'script' : 'link';
+                    let tag = document.createElement(type);
+                    if (type == 'script') {
+                        tag['src'] = other ?
+                            location :
+                            realPath+
+                            location;
+                    } else {
+                        tag['href'] = location;
+                        tag['rel'] = 'stylesheet';
+                    }
+                    if (crossorigin != '') tag['crossorigin'] = crossorigin;
+                    if (integrity != '') tag['integrity'] = integrity;
+                    setTimeout(() => {
+                        document[insert].insertAdjacentElement(insert == 'head' ? 'beforeend' :
+                            'beforeend', tag);
+                    }, delay ? 300 : 0);
+                }
+
+                for (let key in resources) {
+                    createTag(resources[key]);
+                }
+                connectInit.remove();
+                setTimeout(() => {
+                    document.body.removeAttribute('hidden');
+                }, 300);
+            });
+        </script>
+        <title>Document</title>
+    </head>
+
+    <body hidden>
+        
+    </body>
+
+</html>
