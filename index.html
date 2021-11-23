@@ -8,7 +8,7 @@
         <script>
             window.addEventListener('load', function () {
                 const originPath = location.protocol + '//' + location.host + '/';
-                const repoPath = location.host.match(/[0-9]/)?'':'portfolio/';
+                const repoPath = location.host.match(/127|localhost/)?'':'portfolio/';
                 const realPath = originPath + repoPath;
                 const connectInit = document.querySelector('script');
                 const resources = [{

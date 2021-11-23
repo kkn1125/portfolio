@@ -3,7 +3,7 @@
 const app = {
     appVersion: 'v0.1.0',
     path: location.protocol+'//'+location.host+'/',
-    repoPath: location.host.match(/[0-9]/)?'':'portfolio/',
+    repoPath: location.host.match(/127|localhost/)?'':'portfolio/',
     authors: ['kimson'],
     kimson: {
         github: 'https://kkn1125.github.io/portfolio/',
