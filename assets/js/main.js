@@ -74,11 +74,11 @@ const Portfolio = (function () {
         }
 
         this.setContent = function (page) {
-            document.body.insertAdjacentHTML('afterbegin', components.generator.container.type(page.page).render(page.post));
+            document.body.insertAdjacentHTML('afterbegin', components.generator.container.render());
             main = document.querySelector('main');
             page.page=='home'
             ?this.setCards()
-            :this.setPageContent(page.post);
+            :this.setPageContent(page);
         }
 
         this.setFooter = function () {
@@ -95,11 +95,11 @@ const Portfolio = (function () {
             cardGroup.classList.add('alert');
             setTimeout(()=>{
                 cardGroup.classList.remove('alert');
-            }, 1000);
+            }, 1500);
         }
 
-        this.setPageContent = function(post){
-            main.insertAdjacentHTML('afterbegin', components.generator.post.render(post));
+        this.setPageContent = function(page){
+            main.insertAdjacentHTML('afterbegin', components.generator[page.page].render(page.post));
         }
     }
 

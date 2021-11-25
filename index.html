@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-
+    
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,9 @@
                 const repoPath = location.host.match(/127|localhost/)?'':'portfolio/';
                 const realPath = originPath + repoPath;
                 const connectInit = document.querySelector('script');
+
+                document.documentElement.lang = navigator.language.split('-').shift();
+                
                 const resources = [{
                         insert: 'body',
                         location: 'assets/js/darkMode.js',
@@ -76,6 +79,14 @@
                         delay: false,
                     },
                     {
+                        insert: 'body',
+                        location: 'assets/js/theme.js',
+                        crossOrigin: '',
+                        integrity: '',
+                        other: false,
+                        delay: false,
+                    },
+                    {
                         insert: 'head',
                         location: 'assets/css/main.css',
                         crossorigin: '',
@@ -84,8 +95,6 @@
                         delay: true,
                     },
                 ];
-
-                document.documentElement.lang = navigator.language.split('-').shift();
 
                 function createTag({
                     insert,
@@ -117,6 +126,7 @@
                 for (let key in resources) {
                     createTag(resources[key]);
                 }
+                
                 connectInit.remove();
                 setTimeout(() => {
                     document.body.removeAttribute('hidden');
