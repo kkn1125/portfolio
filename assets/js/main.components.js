@@ -365,6 +365,9 @@ const generator = {
                             <a class="nav-link" href="${app.path+app.repoPath}">home</a>
                         </span>
                         <span>
+                            <a class="nav-link" href="https://github.com/kkn1125/portfolio" target="_blank">github</a>
+                        </span>
+                        <span>
                             <a class="nav-link" href="${app.path+app.repoPath}?page=about">about</a>
                         </span>
                     </div>
