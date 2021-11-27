@@ -7,7 +7,7 @@
     label.id = 'mtWrap';
     label.append(btn);
     document.querySelector('.side-bar').append(label);
-    label.insertAdjacentHTML('afterend', `<input type="checkbox" data-switch="mode">`);
+    label.insertAdjacentHTML('beforeend', `<input type="checkbox" data-switch="mode">`);
     let target = null,findTarget = null;
     findTarget = requestAnimationFrame(watchTarget.bind(target, {label, mode, findTarget}));
 }();

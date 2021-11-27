@@ -60,13 +60,8 @@ const Portfolio = (function () {
 
         this.pageRendering = function (page) {
             this.setTitle();
-            // this.setDarkMode();
             this.setFooter();
             this.setContent(page);
-        }
-
-        this.setDarkMode = function(){
-            document.body.insertAdjacentHTML('afterbegin', components.generator.darkModeBtn.render());
         }
 
         this.setTitle = function () {
@@ -104,9 +99,9 @@ const Portfolio = (function () {
     }
 
     return {
-        create: function () {
+        create: async function () {
             const components = {
-                title: title,
+                title: await title,
                 projects: projects,
                 generator: generator,
             }
@@ -123,5 +118,5 @@ const Portfolio = (function () {
 })();
 
 setTimeout(()=>{
-    Portfolio.create();
+    Portfolio.create().catch(error=>console.error('Error:'+error.message));
 })
