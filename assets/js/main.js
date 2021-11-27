@@ -100,8 +100,9 @@ const Portfolio = (function () {
 
     return {
         create: async function () {
+
             const components = {
-                title: await title,
+                title: title,
                 projects: projects,
                 generator: generator,
             }
@@ -119,4 +120,4 @@ const Portfolio = (function () {
 
 setTimeout(()=>{
     Portfolio.create().catch(error=>console.error('Error:'+error.message));
-})
+},100);
