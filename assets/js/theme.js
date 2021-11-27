@@ -292,10 +292,41 @@ setTimeout(()=>{
 });
 
 setTimeout(()=>{
-    settingHandler();
+    setTimeout(()=>{
+        settingHandler();
+    });
     NewsAlert.init({
         alertlist: [
             '현재 포트폴리오 페이지는 kimson의 Penli CSS로 제작되었습니다. <a href="https://github.com/kkn1125/penli">Penli Github</a>',
         ]
     });
 },500);
+
+function requestLatestPenli(path){
+    let url = 'https://cdn.jsdelivr.net/gh/kkn1125/penli@vlatest/docs/assets/css/penli.css';
+    if(path)url = path;
+    return fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
+  .then(response => {
+    if (response.ok) return response.json()
+    throw new Error('Network response was not ok.')
+  });
+}
+
+function versionCheck(contents, path){
+    let getVersion = (content) => content.split('\n')[1].match(/v[0-9\.]+/gm)[0];
+    requestLatestPenli(path).then(data=>{
+        let myVersion = getVersion(data.contents);
+        if(getVersion(contents) == myVersion) console.debug('현재 Penli는 최신버전입니다.');
+        else console.warn(`Penli가 업데이트 되었습니다. 최신버전은 ${getVersion(contents)}이며, 현재 버전은 ${myVersion}입니다. 버전 업데이트를 원하시면 아래 경로를 참고해주세요. https://kkn1125.github.io/penli`);
+    })
+}
+
+let resources = window.performance.getEntriesByType("resource");
+for(let resource in resources) {
+    if(resources[resource].name.indexOf('penli')>-1){
+        requestLatestPenli()
+        .then(data=>versionCheck(data.contents, resources[resource].name))
+        .catch(error=>console.error(error.message));
+        break;
+    }
+};

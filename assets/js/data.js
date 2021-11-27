@@ -1,7 +1,7 @@
 'use strict';
 
 const app = {
-    appVersion: 'v0.1.0',
+    appVersion: 'v0.1.3',
     path: location.protocol+'//'+location.host+'/',
     repoPath: location.host.match(/127|localhost/)?'':'portfolio/',
     authors: ['kimson'],
