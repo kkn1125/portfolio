@@ -9,6 +9,10 @@ const router = {
         referrer: document.referrer,
         select: (page) => pages.type(page),
     },
+    'portfolio': {
+        referrer: document.referrer,
+        select: (page) => pages.type(page),
+    },
     'about': {
         referrer: document.referrer,
         select: (page) => pages.type(page),
