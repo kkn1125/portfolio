@@ -1,144 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
-    
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script>
-            window.addEventListener('load', function () {
-                const originPath = location.protocol + '//' + location.host + '/';
-                const repoPath = location.host.match(/127|localhost/)?'':'portfolio/';
-                const realPath = originPath + repoPath;
-                const connectInit = document.querySelector('script');
 
-                document.documentElement.lang = navigator.language.split('-').shift();
-                
-                const resources = [
-                    {
-                        insert: 'body',
-                        location: 'assets/js/darkMode.js',
-                        crossOrigin: '',
-                        integrity: '',
-                        other: false,
-                        delay: true,
-                    },
-                    {
-                        insert: 'head',
-                        location: 'https://use.fontawesome.com/releases/v5.15.4/css/all.css',
-                        crossOrigin: 'anonymous',
-                        integrity: '',
-                        other: true,
-                        delay: true,
-                    },
-                    {
-                        insert: 'head',
-                        location: 'https://cdn.jsdelivr.net/gh/kkn1125/penli@vlatest/docs/assets/css/penli.css',
-                        crossOrigin: 'anonymous',
-                        integrity: '',
-                        other: true,
-                        delay: true,
-                    },
-                    {
-                        insert: 'head',
-                        location: 'https://cdn.jsdelivr.net/gh/kkn1125/penli@vlatest/docs/assets/css/penli.theme.css',
-                        crossOrigin: 'anonymous',
-                        integrity: '',
-                        other: true,
-                        delay: true,
-                    },
-                    {
-                        insert: 'body',
-                        location: 'https://cdn.jsdelivr.net/gh/kkn1125/penli@vlatest/docs/assets/js/penli.js',
-                        crossOrigin: 'anonymous',
-                        integrity: '',
-                        other: true,
-                        delay: true,
-                    },
-                    {
-                        insert: 'head',
-                        location: 'assets/js/data.js',
-                        crossOrigin: '',
-                        integrity: '',
-                        other: false,
-                        delay: false,
-                    },
-                    {
-                        insert: 'head',
-                        location: 'assets/js/main.components.js',
-                        crossOrigin: '',
-                        integrity: '',
-                        other: false,
-                        delay: false,
-                    },
-                    {
-                        insert: 'body',
-                        location: 'assets/js/main.js',
-                        crossOrigin: '',
-                        integrity: '',
-                        other: false,
-                        delay: false,
-                    },
-                    {
-                        insert: 'body',
-                        location: 'assets/js/theme.js',
-                        crossOrigin: '',
-                        integrity: '',
-                        other: false,
-                        delay: true,
-                    },
-                    {
-                        insert: 'head',
-                        location: 'assets/css/main.css',
-                        crossorigin: '',
-                        integrity: '',
-                        other: false,
-                        delay: true,
-                    },
-                ];
+        <!-- preload -->
+        <link rel="preload" href="assets/style/reset.css" as="style">
+        <link rel="preload" href="assets/style/main.css" as="style">
+        <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" as="style">
+        <!-- <link rel="preload" href="assets/script/weather.js" as="script"> -->
+        <link rel="preload" href="assets/script/pages.js" as="script">
+        <link rel="prefetch" href="assets/script/router.js" as="script">
+        <link rel="prefetch" href="assets/script/main.js" as="script">
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Gugi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" as="style">
+        <!-- preload -->
 
-                function createTag({
-                    insert,
-                    location,
-                    crossorigin,
-                    integrity,
-                    other,
-                    delay
-                }) {
-                    let type = location.split('.').pop() == 'js' ? 'script' : 'link';
-                    let tag = document.createElement(type);
-                    if (type == 'script') {
-                        tag['src'] = other ?
-                            location :
-                            realPath+
-                            location;
-                    } else {
-                        tag['href'] = location;
-                        tag['rel'] = 'stylesheet';
-                    }
-                    if (crossorigin != '') tag['crossorigin'] = crossorigin;
-                    if (integrity != '') tag['integrity'] = integrity;
-                    setTimeout(() => {
-                        document[insert].insertAdjacentElement(insert == 'head' ? 'beforeend' :
-                            'beforeend', tag);
-                    }, delay ? 300 : 0);
-                }
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Gugi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <!-- google font -->
 
-                for (let key in resources) {
-                    createTag(resources[key]);
-                }
-                
-                connectInit.remove();
-                setTimeout(() => {
-                    document.body.removeAttribute('hidden');
-                }, 300);
-            });
-        </script>
+        <link rel="stylesheet" href="assets/style/reset.css">
+        <link rel="stylesheet" href="assets/style/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
         <title>Document</title>
     </head>
 
-    <body hidden>
-        
+    <body>
+        <main id="app"></main>
+        <!-- <script src="assets/script/weather.js" async></script> -->
+        <script src="assets/script/pages.js" async></script>
+        <script src="assets/script/router.js" async></script>
+        <script src="assets/script/main.js" async defer></script>
     </body>
 
 </html>
