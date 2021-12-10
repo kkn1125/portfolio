@@ -12,15 +12,14 @@
 
 #app>div>section::-webkit-scrollbar {
     background-color: transparent;
-    width: 11px;
-    height: 11px;
+    width: 5px;
+    height: 5px;
 }
 
 #app>div>section::-webkit-scrollbar-thumb {
     background-color: rgba(var(--ks-primary-rgb), .5);
-    width: 11px;
-    height: 11px;
-    border: 3px solid white;
+    width: 5px;
+    height: 5px;
 }
 
 html,
@@ -101,6 +100,18 @@ i {
     display: flex;
     flex-direction: column;
     flex: 0 0 200px;
+}
+
+@media (max-width: 575px) {
+    section{
+        padding: .5em !important;
+    }
+    .time-line{
+        font-size: 80%;
+    }
+    .time-line-info {
+        flex: 0 0 100px;
+    }
 }
 
 .time-line-title {
