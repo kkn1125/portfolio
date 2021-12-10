@@ -2,8 +2,8 @@
 
 const app = {
     appVersion: 'v0.1.3',
-    path: location.protocol+'//'+location.host+'/',
-    repoPath: location.host.match(/127|localhost/)?'':'portfolio/',
+    path: location.protocol + '//' + location.host + '/',
+    repoPath: location.host.match(/127|localhost/) ? '' : 'portfolio/',
     authors: ['kimson'],
     kimson: {
         github: 'https://kkn1125.github.io/portfolio/',
@@ -16,14 +16,14 @@ const app = {
 };
 
 const pages = {
-    type: (type)=>templates[type],
-    item: (type)=>parts[type],
+    type: (type) => templates[type],
+    item: (type) => parts[type],
 };
 
 const templates = {
     'home': {
-        render: function(data, response){
-            let cover = ['https://cdn.pixabay.com/photo/2012/12/17/19/14/keyboard-70506_960_720.jpg','https://cdn.pixabay.com/photo/2020/03/28/16/03/dog-4977599_960_720.jpg','https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_960_720.jpg'];
+        render: function (data, response) {
+            let cover = ['https://cdn.pixabay.com/photo/2012/12/17/19/14/keyboard-70506_960_720.jpg', 'https://cdn.pixabay.com/photo/2020/03/28/16/03/dog-4977599_960_720.jpg', 'https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_960_720.jpg'];
 
             return `
                 <section page="${response}" style="background-image: url(${cover[parseInt(Math.random()*cover.length)]}); background-size: cover;">
@@ -45,12 +45,114 @@ const templates = {
         }
     },
     'resume': {
-        render: function(data, response){
+        render: function (data, response) {
+            const timeLineList = [{
+                    info: {
+                        title: '현재',
+                        sub: '준비 중',
+                        since: '2021. 03. ~',
+                    },
+                    line: {
+                        title: '발전 중인 과제',
+                        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, quaerat. Maxime voluptas harum atque ipsa, neque blanditiis! Eum rem aliquam aut laudantium! Necessitatibus quasi optio possimus, culpa assumenda voluptatem? Blanditiis.',
+                    }
+                },
+                {
+                    info: {
+                        title: 'JAVA 1개월반 과정 수료',
+                        sub: '수료',
+                        since: '2021. 03',
+                    },
+                    line: {
+                        title: 'JAVA JSP 수료',
+                        desc: '실내건축학을 전공하고 건축가 자격을 얻기 위해 설계사무소로 조기 취업하여 예비건축사 및 실무를 준비함',
+                    }
+                },
+                {
+                    info: {
+                        title: '한국국제대학교',
+                        sub: '졸업',
+                        since: '2018. 02',
+                    },
+                    line: {
+                        title: '실내건축학 학사 취득',
+                        desc: '실내건축학을 전공하고 건축가 자격을 얻기 위해 설계사무소로 조기 취업하여 예비건축사 및 실무를 준비함',
+                    }
+                },
+                {
+                    info: {
+                        title: '(주)대경건축사사무소',
+                        sub: '입사 - 퇴사',
+                        since: '2018. 01 ~ 2020. 09',
+                    },
+                    line: {
+                        title: '설계사무소 경력',
+                        desc: 'LH APT 공모를 주로 진행하며 건축 설계 도면 작성, 도면 보고서 PM 담당',
+                        subline: [
+                            '종로창신, 안양석수 현상설계 | PM 및 도면 작성',
+                            '성남복정 A-3BL 현상설계 | PM 및 도면 작성',
+                            '의왕월암 A-1BL 현상설계 | PM 보조 및 도면 작성',
+                            '화성동탄2 트라이엠파크 | PM 보조 및 도면 작성',
+                            '남양주진접A8 / 철원 철원행복주택 | PM 보조 및 도면 작성',
+                            '창원명곡 A1-1BL 공동주택(신혼희망타운) 현상설계 | 도면작성 및 보고서 작성',
+                            '시흥장현 A-3BL 공동주택 현상설계 | 도면작성 및 보고서 작성',
+                            '부산기장 A2BL 시공책임형 CMR 아파트 건설공사 1공구 | 도면작성 및 보고서 작성',
+                            '부산명지 A5블록 공동주택 현상설계 | 도면작성 및 보고서 작성',
+                            '파주운정3 A26블록 공동주택 현상설계 | 도면작성 및 보고서 작성',
+                            '제6회 주택설계 기술경진대회 | 도면작성 및 보고서 작성',
+                            '파주운정 A-37블록 공동주택 현상설계 | 도면작성 및 보고서 작성',
+                            '남양주별내지구 A1-1BL 공동주택 현상설계 | 도면작성 및 보고서 작성',
+                            '(공공임대리츠)창원가포 S-1BL 아파트 건설공사 2공구 | 도면작성 및 보고서 작성',
+                            '서귀포성산지구 공동주택 현상설계 | 보고서 작성',
+                            '진주옥봉 행복주택 설계공모 | 보고서 작성',
+                        ],
+                    }
+                },
+                {
+                    info: {
+                        title: '군복무',
+                        sub: '군 만기 제대',
+                        since: '2013. 10 ~ 2018. 07',
+                    },
+                    line: {
+                        title: '군복무 수행',
+                        desc: '군복무',
+                    }
+                },
+                {
+                    info: {
+                        title: '한국국제대학교',
+                        sub: '입학',
+                        since: '2013. 02.',
+                    },
+                    line: {
+                        title: '실내건축학 전공',
+                        desc: '실내건축에 관심이 많고 설계를 배워 이름을 걸고 설계를 하고 싶어 진학',
+                    }
+                },
+            ];
+
+            let timeline = timeLineList.map(({
+                info,
+                line
+            }) => `<li class="time-line">
+                <span class="time-line-info">
+                    <span class="time-line-title pe-3">${info.title}</span>
+                    <span class="time-line-sub">${info.sub}</span>
+                    <span class="time-line-since">${info.since}</span>
+                </span>
+                <span class="line">
+                    <span class="time-line-title">${line.title}</span>
+                    <span class="time-line-desc">${line.desc}</span>
+                    ${line.subline?'<span class="subline"><span scroll>📖more</span>'+line.subline.map(li=>`<span class="li">${li.split('|').shift()} ${li.split('|').pop().split('및').map(z=>`<span class="fs-8 tag tag-${z.match(/pm/gim)?'danger':'brand'}">${z}</span>`).join(' ')} </span>`).join('')+'</span>':''}
+                </span>
+            </li>`).join('');
+
             return `<section page="${response}">
                 <div class="h5">resume</div>
-                <div class="row-div resume">
-                    <img class="resume-avatar" src="https://www.saramin.co.kr/zf_user/persons/picture?idx=8461393|f171125f2cc0c37cc4d9b5c12f78d29fce14120b1b62bf8b744dec097d7880d2" alt="profile">
-                    <span class="info-table">
+                <div class="mt-5 w-lg-block w-flex flex-column resume">
+                    <img class="resume-avatar" src="https://avatars.githubusercontent.com/u/71887242?v=4" alt="profile">
+                    <span class="info-table mt-5 mt-lg-0 ms-md-5">
                         <ul>
                             <li><span>name</span><span>김경남</span></li>
                             <li><span>age</span><span>29</span></li>
@@ -58,16 +160,19 @@ const templates = {
                         </ul>
                     </span>
                 </div>
-                <div class="row-div work-exp">
+                <div class="mt-5 work-exp">
                     <div class="h6">work experience</div>
+                    <ul class="mt-5">
+                        ${timeline}
+                    </ul>
                 </div>
             </section>`;
         }
     },
     'portfolio': {
-        render: function(data, response, subpage){
-            if(!subpage)
-            return `<section page="${response}">
+        render: function (data, response, subpage) {
+            if (!subpage)
+                return `<section page="${response}">
             <div class="sr"></div>
                 <div class="fence-full">
                     <div class="card-group card-light card-dv-1 card-dv-sm-2 card-dv-md-3 card-dv-lg-4 card-pd-0 justify-content-around" style="--gutter-x: 3rem; --gutter-y: 3rem;"></div>
@@ -76,7 +181,17 @@ const templates = {
             else return `<section page="${response}"></section>`;
         },
         'card': {
-            render: ({title, purpose, work, authors, link, cover, writedAt, mainLang, tag}, prjname) => {
+            render: ({
+                title,
+                purpose,
+                work,
+                authors,
+                link,
+                cover,
+                writedAt,
+                mainLang,
+                tag
+            }, prjname) => {
                 return `
                     <div class="card bg-opacity-0" style="position: relative; --card-padding: 0; width: 20rem;">
                         
@@ -125,8 +240,8 @@ const templates = {
             }
         },
         post: {
-            render: (post)=>{
-                let notice = (isHeroku) => isHeroku?`<p>
+            render: (post) => {
+                let notice = (isHeroku) => isHeroku ? `<p>
                     <blockquote class="blockquote blockquote-info pe-4">
                         <span class="h6">Notice</span>
                         <br>
@@ -134,8 +249,8 @@ const templates = {
                             헤로쿠 서버로 동작하기 때문에 월 말 즈음이면 서버가 닫히는 경우가 있습니다. 서버가 동작하지 않는 경우 <button class="btn btn-sm btn-subpoint" onclick="window.open('https://kkn1125.github.io/contact')">버튼</button>을 클릭하여 메일보내기로 이동하여 메일을 남기시면 파일을 전송드리겠습니다.
                         </span>
                     </blockquote>
-                </p>`:'';
-                let database = (useDB) => useDB.useDB?`
+                </p>` : '';
+                let database = (useDB) => useDB.useDB ? `
                     <div class="mt-3">
                         <div>
                             <span class="fs-4 fw-bold">Database 구현</span>
@@ -143,34 +258,34 @@ const templates = {
                         <span class="tag">Databases : </span>
                         ${useDB.db.map(db=>`<span class="tag tag-subpoint">${db}</span>`).join(" ")}
                     </div>
-                `:'';
-                let mainContent = (content)=> content!==''?`<div>
+                ` : '';
+                let mainContent = (content) => content !== '' ? `<div>
                         ${content}
-                    </div>`:`<p><span class="notice notice-danger">작성 중인 게시물입니다.</span></p>`;
+                    </div>` : `<p><span class="notice notice-danger">작성 중인 게시물입니다.</span></p>`;
                 let parts = projects[post];
                 let dateGap = new Date(new Date(parts.work.end) - new Date(parts.work.start)).getDate();
-                let link = (link)=> link.link!=''?`
+                let link = (link) => link.link != '' ? `
                     <div class="text-capitalize">
                         <a href="${link.link}" target="_blank">
                             📗<strong>${post} Project</strong> sample pages
                         </a>
                     </div>
-                `:'';
-                let github = (github)=> github.github!=''?`
+                ` : '';
+                let github = (github) => github.github != '' ? `
                     <div class="text-capitalize">
                         <a href="${github.github}" target="_blank">
                             📗<strong>${post} Project</strong> github pages
                         </a>
                     </div>
-                `:'';
-                let subImages = (subImages)=> subImages.length>0?`<div class="my-3">
+                ` : '';
+                let subImages = (subImages) => subImages.length > 0 ? `<div class="my-3">
                 ${subImages.map(([name, path])=>name!=''&&path!=''?`${name!=''?`<div class="fw-bold fs-5 text-capitalize mt-3">${name}</div>`:''}
                 <div class="w-100">
                     <img class="w-100" src="${app.path+app.repoPath}assets/images/portfolio/${post}/${path}" alt="${path}"></div>`:'').join('\n')}
-                </div>`:'';
-                let movie = (movie) => movie!=''?`<div style="text-align: center;">
+                </div>` : '';
+                let movie = (movie) => movie != '' ? `<div style="text-align: center;">
                     ${movie}
-                </div>`:'';
+                </div>` : '';
                 return `
                 <div class="position-relative"
                 style="filter: brightness(0.5); z-index:-1; max-height: calc(24rem + 3vw); overflow: hidden;">
@@ -269,7 +384,7 @@ const templates = {
         },
     },
     'about': {
-        render: function(data, response){
+        render: function (data, response) {
             return `<section page="${response}">
                 <div class="h5">about</div>
                 <div class="row-div">
@@ -289,7 +404,7 @@ const templates = {
         }
     },
     '404': {
-        render: function(data, response){
+        render: function (data, response) {
             return `<section page="${response}">
                 <div class="text-center">
                     <div class="h1">404</div>
@@ -303,8 +418,8 @@ const templates = {
 
 const parts = {
     'paging': {
-        render: function(hash){
-            const pagelist = Object.keys(router).filter(page=>page!='404');
+        render: function (hash) {
+            const pagelist = Object.keys(router).filter(page => page != '404');
             const isStart = pagelist.indexOf(hash.slice(1));
             return `<div class="side-paging">
                 <div>
@@ -319,7 +434,7 @@ const parts = {
         }
     },
     'menu': {
-        render: function(){
+        render: function () {
             return `<div class="side-menu">
                 <button class="menu"><i class="fas fa-bars fa-2x"></i></button>
             </div>
@@ -335,7 +450,7 @@ const parts = {
 const projects = {
     coffeecong: {
         title: '[JSP] 커피 온라인 몰',
-        purpose: '커피 온라인 몰',
+        purpose: '원두와 티, 커피머신과 생활용품을 판매하는 온라인 몰',
         work: {
             start: '2021-3-24',
             end: '2021-4-14',
@@ -368,13 +483,13 @@ const projects = {
         github: '',
         cover: 'prj-1.png',
         subImages: [
-            ['사이트 도식화','coffee.png'],
+            ['사이트 도식화', 'coffee.png'],
         ],
         movie: '<iframe width="696" height="392" src="https://www.youtube.com/embed/-8Zeu9oCVPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         useDB: true,
         db: ['product', 'cart', 'user', 'board'],
         mainLang: 'java',
-        subLangs: ['html','css','javascript','mysql'],
+        subLangs: ['html', 'css', 'javascript', 'mysql'],
         tag: ['coffee', 'jsp', 'onlinemall'],
         category: ['jsp', '학원'],
         writedAt: '2021-09-02 03:58',
@@ -413,10 +528,10 @@ const projects = {
         github: '',
         cover: 'blog01.png',
         subImages: [
-            ['프로필','blog02.png'],
-            ['블로그','blog03.png'],
-            ['댓글','blog04.png'],
-            ['미리보기','mockup01.png'],
+            ['프로필', 'blog02.png'],
+            ['블로그', 'blog03.png'],
+            ['댓글', 'blog04.png'],
+            ['미리보기', 'mockup01.png'],
         ],
         movie: '',
         useDB: true,
@@ -499,14 +614,14 @@ const projects = {
         github: '',
         cover: 'mentees_main.png',
         subImages: [
-            ['메인','mentees_main03.png'],
-            ['로그인','mentees_signin.png'],
-            ['댓글','mentees_program_detail_reply.png'],
-            ['','mentees_program_detail_reply_done.png'],
-            ['상세글','mentees_program_detail.png'],
-            ['회원정보','mentees_mentees_full.png'],
-            ['회원정보 설정','mentees_mentees_program_feedback.png'],
-            ['회원정보 탈퇴','mentees_mentees_setting_out.png'],
+            ['메인', 'mentees_main03.png'],
+            ['로그인', 'mentees_signin.png'],
+            ['댓글', 'mentees_program_detail_reply.png'],
+            ['', 'mentees_program_detail_reply_done.png'],
+            ['상세글', 'mentees_program_detail.png'],
+            ['회원정보', 'mentees_mentees_full.png'],
+            ['회원정보 설정', 'mentees_mentees_program_feedback.png'],
+            ['회원정보 탈퇴', 'mentees_mentees_setting_out.png'],
         ],
         movie: '',
         useDB: true,
@@ -541,7 +656,7 @@ const projects = {
         github: 'https://github.com/kkn1125/typer',
         cover: 'typer01.png',
         subImages: [
-            ['업데이트 내역 markdown → html','typer02.png'],
+            ['업데이트 내역 markdown → html', 'typer02.png'],
         ],
         movie: '',
         useDB: false,
@@ -578,7 +693,7 @@ const projects = {
         github: 'https://github.com/kkn1125/mkDocumentifyJS',
         cover: 'docu01.png',
         subImages: [
-            ['Main','docu01.png'],
+            ['Main', 'docu01.png'],
         ],
         movie: '',
         useDB: false,
@@ -613,7 +728,7 @@ const projects = {
         github: 'https://github.com/kkn1125/tutorial',
         cover: 'tuto01.png',
         subImages: [
-            ['Main','tuto01.png'],
+            ['Main', 'tuto01.png'],
         ],
         movie: '',
         useDB: false,
@@ -658,7 +773,7 @@ const projects = {
         github: 'https://github.com/kkn1125/penli/',
         cover: 'penli02.png',
         subImages: [
-            ['Sizing','penli02.png'],
+            ['Sizing', 'penli02.png'],
         ],
         movie: '',
         useDB: false,
