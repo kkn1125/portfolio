@@ -1,7 +1,7 @@
 'use strict';
 
 const app = {
-    appVersion: 'v0.1.3',
+    appVersion: 'v0.1.0',
     path: location.protocol + '//' + location.host + '/',
     repoPath: location.host.match(/127|localhost/) ? '' : 'portfolio/',
     authors: ['kimson'],
@@ -11,7 +11,7 @@ const app = {
         avatar: 'https://avatars.githubusercontent.com/u/71887242?v=4',
         profile: 'https://kkn1125.github.io/profile',
         contact: 'https://kkn1125.github.io/contact',
-        comment: '어제보다 1mm 더 발전하고자 하는 예비개발자의 포트폴리오입니다. 기능구현에 관심이 많고 문제해결에 적극적입니다.',
+        comment: '안녕하세요! 백앤드 개발자가 되기 위해 여러가지에 관심이 많은 예비 개발자입니다. 어제보다 1mm 더 발전하자는 각오를 가지고 있으며, 기능구현에 관심이 많고 문제해결에 적극적입니다. ',
     }
 };
 
@@ -35,9 +35,9 @@ const templates = {
                         <div class="profile">
                             <img class="profile-avatar" src="https://avatars.githubusercontent.com/u/71887242?v=4" alt="profile">
                         </div>
-                        <div class="h5 capitalize">kimson</div>
+                        <div class="h3 capitalize">${app.authors[0]}</div>
                         <div class="intro-content">
-                            안녕하세요! 백앤드 개발자가 되기 위해 여러가지에 관심이 많은 예비 개발자입니다.
+                            ${app.kimson.comment}
                         </div>
                     </div>
                 </section>
@@ -46,17 +46,7 @@ const templates = {
     },
     'resume': {
         render: function (data, response) {
-            const timeLineList = [{
-                    info: {
-                        title: '현재',
-                        sub: '준비 중',
-                        since: '2021. 03. ~',
-                    },
-                    line: {
-                        title: '발전 중인 과제',
-                        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, quaerat. Maxime voluptas harum atque ipsa, neque blanditiis! Eum rem aliquam aut laudantium! Necessitatibus quasi optio possimus, culpa assumenda voluptatem? Blanditiis.',
-                    }
-                },
+            const eduList = [
                 {
                     info: {
                         title: 'JAVA 1개월반 과정 수료',
@@ -78,6 +68,30 @@ const templates = {
                         title: '실내건축학 학사 취득',
                         desc: '실내건축학을 전공하고 건축가 자격을 얻기 위해 설계사무소로 조기 취업하여 예비건축사 및 실무를 준비함',
                     }
+                },
+                {
+                    info: {
+                        title: '한국국제대학교',
+                        sub: '입학',
+                        since: '2013. 02.',
+                    },
+                    line: {
+                        title: '실내건축학 전공',
+                        desc: '실내건축에 관심이 많고 설계를 배워 이름을 걸고 설계를 하고 싶어 진학',
+                    }
+                },
+            ];
+
+            const timeLineList = [{
+                    info: {
+                        title: '현재',
+                        sub: '준비 중',
+                        since: '2021. 03. ~',
+                    },
+                    line: {
+                        title: '발전 중인 과제',
+                        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, quaerat. Maxime voluptas harum atque ipsa, neque blanditiis! Eum rem aliquam aut laudantium! Necessitatibus quasi optio possimus, culpa assumenda voluptatem? Blanditiis.',
+                    },
                 },
                 {
                     info: {
@@ -108,40 +122,18 @@ const templates = {
                         ],
                     }
                 },
-                {
-                    info: {
-                        title: '군복무',
-                        sub: '군 만기 제대',
-                        since: '2013. 10 ~ 2018. 07',
-                    },
-                    line: {
-                        title: '군복무 수행',
-                        desc: '군복무',
-                    }
-                },
-                {
-                    info: {
-                        title: '한국국제대학교',
-                        sub: '입학',
-                        since: '2013. 02.',
-                    },
-                    line: {
-                        title: '실내건축학 전공',
-                        desc: '실내건축에 관심이 많고 설계를 배워 이름을 걸고 설계를 하고 싶어 진학',
-                    }
-                },
             ];
 
-            let timeline = timeLineList.map(({
+            let parseToHTML = (parseTarget) => parseTarget.map(({
                 info,
                 line
             }) => `<li class="time-line">
-                <span class="time-line-info">
+                <span class="time-line-info text-gray">
                     <span class="time-line-title pe-3">${info.title}</span>
                     <span class="time-line-sub">${info.sub}</span>
                     <span class="time-line-since">${info.since}</span>
                 </span>
-                <span class="line">
+                <span class="line text-gray">
                     <span class="time-line-title">${line.title}</span>
                     <span class="time-line-desc">${line.desc}</span>
                     ${line.subline?'<span class="subline"><span scroll>📖more</span>'+line.subline.map(li=>`<span class="li">${li.split('|').shift()} ${li.split('|').pop().split('및').map(z=>`<span class="fs-8 tag tag-${z.match(/pm/gim)?'danger':'brand'}">${z}</span>`).join(' ')} </span>`).join('')+'</span>':''}
@@ -149,23 +141,147 @@ const templates = {
             </li>`).join('');
 
             return `<section page="${response}">
-                <div class="h5">resume</div>
-                <div class="mt-5 w-lg-block w-flex flex-column resume">
+                <div class="h3">resume</div>
+                <div class="mt-5 resume w-flex flex-column flex-row-md">
                     <img class="resume-avatar" src="https://avatars.githubusercontent.com/u/71887242?v=4" alt="profile">
-                    <span class="info-table mt-5 mt-lg-0 ms-md-5">
+                    <span class="info-table">
                         <ul>
                             <li><span>name</span><span>김경남</span></li>
-                            <li><span>age</span><span>29</span></li>
+                            <li><span>age</span><span>${new Date().getFullYear()-1992}</span></li>
                             <li><span>email</span><span>chaplet01@gmail.com</span></li>
+                            <li><span>github</span><span>kkn1125</span></li>
+                            <li><span>blog</span><span>kkn1125.github.io</span></li>
                         </ul>
                     </span>
                 </div>
+                
                 <div class="mt-5 work-exp">
-                    <div class="h6">work experience</div>
+                    <div class="end-words">
+                        <span class="h6">자기계발</span>
+                    </div>
+                    <div class="fs-7" style="line-height: 1.8;">
+                        <div class="time-line-title fs-6">자바스크립트 문서화</div>
+                        <div class="text-gray">사용자 공간, 시각 디자인등을 생각하는 건축에 매력을 느껴 실내건축을 전공했습니다.졸업 후 설계사무소에 입사하여 디자인, 프로젝트관리, 도면 작도 업무를 했고
+                        디자인 원리와 일정관리, 건축법규, 사용자입장의 사고를 배웠습니다. 많은 분야에 실무자와 대면하며 각자 업무에 대한 여러 정보를 얻었고,
+                        새로운 분야에 대한 도전을 생각하게 되었습니다. AutoCAD로 도면을 그리면서 작도 능력향상을 위해 LISP언어를 알게 됐고,
+                        점점 프로그래밍에 관심을 가지면서 이직을 결심했습니다.</div>
+                        <div class="text-gray">학원을 이수하고 현재 Spring과 RestFul API를 공부 중입니다.</div>
+                    </div>
+                </div>
+
+                <div class="mt-5 work-exp">
+                    <div class="end-words">
+                        <span class="h6">사용 스킬</span>
+                    </div>
+                    <div class="fs-5">Back-End</div>
+                    <div class="card-group card-dv-7">
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                width="40" height="43"
+                                viewBox="0 0 50 50"
+                                style=" fill:#000000;"><path d="M 28.1875 0 C 30.9375 6.363281 18.328125 10.292969 17.15625 15.59375 C 16.082031 20.464844 24.648438 26.125 24.65625 26.125 C 23.355469 24.109375 22.398438 22.449219 21.09375 19.3125 C 18.886719 14.007813 34.535156 9.207031 28.1875 0 Z M 36.5625 8.8125 C 36.5625 8.8125 25.5 9.523438 24.9375 16.59375 C 24.6875 19.742188 27.847656 21.398438 27.9375 23.6875 C 28.011719 25.558594 26.0625 27.125 26.0625 27.125 C 26.0625 27.125 29.609375 26.449219 30.71875 23.59375 C 31.949219 20.425781 28.320313 18.285156 28.6875 15.75 C 29.039063 13.324219 36.5625 8.8125 36.5625 8.8125 Z M 19.1875 25.15625 C 19.1875 25.15625 9.0625 25.011719 9.0625 27.875 C 9.0625 30.867188 22.316406 31.089844 31.78125 29.25 C 31.78125 29.25 34.296875 27.519531 34.96875 26.875 C 28.765625 28.140625 14.625 28.28125 14.625 27.1875 C 14.625 26.179688 19.1875 25.15625 19.1875 25.15625 Z M 38.65625 25.15625 C 37.664063 25.234375 36.59375 25.617188 35.625 26.3125 C 37.90625 25.820313 39.84375 27.234375 39.84375 28.84375 C 39.84375 32.46875 34.59375 35.875 34.59375 35.875 C 34.59375 35.875 42.71875 34.953125 42.71875 29 C 42.71875 26.296875 40.839844 24.984375 38.65625 25.15625 Z M 16.75 30.71875 C 15.195313 30.71875 12.875 31.9375 12.875 33.09375 C 12.875 35.417969 24.5625 37.207031 33.21875 33.8125 L 30.21875 31.96875 C 24.351563 33.847656 13.546875 33.234375 16.75 30.71875 Z M 18.1875 35.9375 C 16.058594 35.9375 14.65625 37.222656 14.65625 38.1875 C 14.65625 41.171875 27.371094 41.472656 32.40625 38.4375 L 29.21875 36.40625 C 25.457031 37.996094 16.015625 38.238281 18.1875 35.9375 Z M 11.09375 38.625 C 7.625 38.554688 5.375 40.113281 5.375 41.40625 C 5.375 48.28125 40.875 47.964844 40.875 40.9375 C 40.875 39.769531 39.527344 39.203125 39.03125 38.9375 C 41.933594 45.65625 9.96875 45.121094 9.96875 41.15625 C 9.96875 40.253906 12.320313 39.390625 14.5 39.8125 L 12.65625 38.75 C 12.113281 38.667969 11.589844 38.636719 11.09375 38.625 Z M 44.625 43.25 C 39.226563 48.367188 25.546875 50.222656 11.78125 47.0625 C 25.542969 52.695313 44.558594 49.535156 44.625 43.25 Z"></path></svg>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                width="48" height="48"
+                                viewBox="0 0 48 48"
+                                style=" fill:#000000;"><path fill="#000000" d="M43.982,23.635c0.069-4.261-0.891-9.328-2.891-15.273l-1.568-4.662l-2.13,4.433 c-0.114,0.237-0.244,0.469-0.38,0.698C33.514,5.827,28.974,4,24,4C12.954,4,4,12.954,4,24c0,11.046,8.954,20,20,20s20-8.954,20-20 C44,23.877,43.984,23.758,43.982,23.635z"></path><path fill="#fff" d="M39.385 32.558c-3.123 4.302-8.651 4.533-13.854 4.442H18.75h-1.938c4.428-1.593 7.063-1.972 9.754-3.4 5.068-2.665 10.078-8.496 11.121-14.562-1.93 5.836-7.779 10.85-13.109 12.889-3.652 1.393-10.248 2.745-10.248 2.745l-.267-.145C9.573 32.268 9.437 22.214 17.6 18.968c3.574-1.423 6.993-.641 10.854-1.593 4.122-1.012 8.89-4.208 10.83-8.375C41.456 15.667 44.07 26.106 39.385 32.558L39.385 32.558zM15.668 38.445C15.386 38.795 14.955 39 14.505 39c-.823 0-1.495-.677-1.495-1.5s.677-1.5 1.495-1.5c.341 0 .677.118.941.336C16.086 36.855 16.186 37.805 15.668 38.445L15.668 38.445z"></path></svg>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <i class="fas fa-pepper-hot fs-1"></i>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fs-5">Front-End</div>
+                    <div class="card-group card-dv-7">
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <i class="fab fa-html5 fs-1"></i>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <i class="fab fa-css3-alt fs-1"></i>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <i class="fab fa-js-square fs-1"></i>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <i class="fab fa-react fs-1"></i>
+                                <span>Used</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <i class="fab fa-vuejs fs-1"></i>
+                                <span>Used</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fs-5">Database</div>
+                    <div class="card-group card-dv-7">
+                        <div class="card">
+                            <div class="card-content text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="35" height="35"
+                            viewBox="0 0 24 24"
+                            style=" fill:#000000;"><path d="M 3.125 1 C 2.219 1 1.5030625 1.4805 1.1640625 2.3125 C 1.0570625 2.5695 1.0029531 2.8420469 1.0019531 3.1230469 C 1.0009531 4.0540469 1.6009375 4.8097188 1.9609375 5.2617188 C 2.0239375 5.3407187 2.080625 5.4110938 2.140625 5.4960938 L 2.3027344 5.7109375 C 2.4637344 5.9219375 2.6470781 6.16125 2.7050781 6.28125 C 2.7240781 6.33625 2.7492031 6.4326875 2.7832031 6.5546875 C 2.9402031 7.1196875 3.2332187 8.16975 3.6992188 8.96875 C 3.8872187 9.29075 4.1517969 9.6954687 4.3417969 9.9804688 C 4.2147969 10.616469 4 11.788 4 12.5 C 4 13.75 4.2592188 14.753875 4.8242188 15.671875 C 5.0332187 15.999875 5.671 17 6.75 17 C 7.133 17 7.7694062 16.850391 7.9414062 15.900391 C 8.7064063 16.887391 10 18.125 12 19 C 12 19 8.2507969 14.625438 7.5917969 11.898438 C 7.5917969 11.898437 6.874625 12.625375 6.265625 14.109375 C 6.083625 13.651375 6 13.135 6 12.5 C 6 11.873 6.2758125 10.471375 6.3828125 9.984375 L 6.4765625 9.5605469 L 6.2304688 9.203125 C 6.2264687 9.196125 5.7227344 8.4688906 5.4277344 7.9628906 C 5.0917344 7.3868906 4.8439375 6.4955781 4.7109375 6.0175781 C 4.6459375 5.7845781 4.594875 5.6159531 4.546875 5.5019531 C 4.371875 5.1229531 4.115625 4.7900937 3.890625 4.4960938 L 3.765625 4.3300781 C 3.702625 4.2390781 3.6193906 4.133625 3.5253906 4.015625 C 3.3423906 3.785625 3.0017188 3.3570312 3.0117188 3.0820312 L 3.1230469 3.0039062 L 3.125 3 C 3.92 3 4.9440781 3.5643437 5.3300781 3.7773438 C 5.4560781 3.8463438 5.5486563 3.8940156 5.5976562 3.9160156 L 5.7714844 3.9921875 L 6.1132812 4.0039062 C 6.5602813 4.0139062 7.9189063 4.0456875 8.8789062 4.4296875 C 10.629906 5.1296875 11.598031 5.830375 12.582031 7.109375 C 14.906031 10.131375 15.763484 14.044984 15.771484 14.083984 L 15.896484 14.648438 L 16.443359 14.826172 C 16.462359 14.833172 17.992922 15.344641 19.419922 16.681641 C 17.624922 17.125641 17 18 17 18 C 17 18 17.476 18.928 19.75 20.375 C 21.125 21.25 21.875 21.875 23 23 C 23 23 21.875688 20.499813 20.304688 18.507812 C 21.500687 18.124813 22.970703 17.925781 22.970703 17.925781 L 22.060547 16.664062 C 20.562547 14.587063 18.553656 13.538859 17.597656 13.130859 C 17.265656 11.864859 16.262969 8.614625 14.167969 5.890625 C 12.968969 4.331625 11.693094 3.3993125 9.6210938 2.5703125 C 8.3940937 2.0803125 6.9187188 2.0218594 6.2617188 2.0058594 C 5.6867187 1.6898594 4.409 1 3.125 1 z M 7.1875 5 C 7.1875 5 6.75 5 6.25 5.125 L 7.625 6.9980469 C 8 6.5000469 8 5.9179688 8 5.9179688 C 8 5.9179688 7.7505 5.25 7.1875 5 z"></path></svg>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <img style="width: 45px; height: 45px;" src="http://wiki.hash.kr/images/2/29/%EB%A7%88%EC%9D%B4%EB%B0%94%ED%8B%B0%EC%8A%A4_%EB%A1%9C%EA%B3%A0.png" alt="hashnet img">
+                                <span>Used</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fs-5">DevOps</div>
+                    <div class="card-group card-dv-7">
+                        <div class="card">
+                            <div class="card-content text-center">
+                                <i class="fab fa-github fs-1"></i>
+                                <span>Familiar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 work-exp">
+                    <div class="end-words">
+                        <span class="h6">학력</span>
+                    </div>
+                    ${parseToHTML(eduList)}
+                </div>
+
+                <div class="mt-5 work-exp">
+                    <div class="end-words">
+                        <span class="h6">경력</span>
+                    </div>
                     <ul class="mt-5">
-                        ${timeline}
+                        ${parseToHTML(timeLineList)}
                     </ul>
                 </div>
+
             </section>`;
         }
     },
@@ -247,6 +363,8 @@ const templates = {
                         <br>
                         <span>
                             헤로쿠 서버로 동작하기 때문에 월 말 즈음이면 서버가 닫히는 경우가 있습니다. 서버가 동작하지 않는 경우 <button class="btn btn-sm btn-subpoint" onclick="window.open('https://kkn1125.github.io/contact')">버튼</button>을 클릭하여 메일보내기로 이동하여 메일을 남기시면 파일을 전송드리겠습니다.
+                            <br>
+                            현재 헤로쿠 페이지 상태 : <span class="server-state">확인중...</span>
                         </span>
                     </blockquote>
                 </p>` : '';
@@ -263,6 +381,14 @@ const templates = {
                         ${content}
                     </div>` : `<p><span class="notice notice-danger">작성 중인 게시물입니다.</span></p>`;
                 let parts = projects[post];
+
+                if(parts.isHeroku)
+                fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(parts.link)}`).then(response=>{
+                    setTimeout(()=>{
+                        document.querySelector('.server-state').innerHTML = response.ok?`열림`:`닫힘`;
+                    }, 1000);
+                });
+
                 let dateGap = new Date(new Date(parts.work.end) - new Date(parts.work.start)).getDate();
                 let link = (link) => link.link != '' ? `
                     <div class="text-capitalize">
@@ -386,7 +512,7 @@ const templates = {
     'about': {
         render: function (data, response) {
             return `<section page="${response}">
-                <div class="h5">about</div>
+                <div class="h3">about</div>
                 <div class="row-div">
                     <div class="h6">이 사이트는</div>
                     <p>취미로 무언가를 만들어 내는 것을 좋아합니다. 자바스크립트로 SPA를 제작하는 것에 관심이 많습니다. 다양한 방법으로 시도하고 경험하며 자기계발을 합니다.</p>
@@ -479,7 +605,7 @@ const projects = {
                 </ol>
             </div>`,
         authors: ['kimson'],
-        link: 'https://devkims-on.herokuapp.com',
+        link: 'https://devkims-on.herokuapp.com/main.me',
         github: '',
         cover: 'prj-1.png',
         subImages: [
