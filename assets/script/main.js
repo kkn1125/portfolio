@@ -127,7 +127,7 @@ try {
             this.handleSideMenu = function (target, sibling) {
                 sibling.classList.toggle('show');
 
-                document.querySelector('.menu').innerHTML = sibling.className !== 'show' ? `<i class="fas fa-bars fa-2x"></i>` : '<i class="fas fa-times fa-2x"></i>';
+                document.querySelector('.menu').innerHTML = sibling.className !== 'show' ? `<i class="fas fa-bars"></i>` : '<i class="fas fa-times"></i>';
             }
 
             this.handlePaging = function (target) {

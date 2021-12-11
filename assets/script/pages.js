@@ -46,6 +46,23 @@ const templates = {
     },
     'resume': {
         render: function (data, response) {
+            const prjList = [
+                {
+                    info: {
+                        title: 'Penli',
+                        sub: '0.1.3v',
+                        since: '2021. 11. 14 ~ 2021. 11.19',
+                    },
+                    line: {
+                        title: 'Bootstrap을 모티브로 CSS 구현',
+                        desc: 'CSS를 익히기위해 Bootstrap의 style 조작 방식은 변수를 적극사용하여 공통되는 부분을 다수 일괄처리할 수 있도록 구현',
+                        subline: [
+                            'r,g,b 수를 쪼개어 calc를 이용한 채도, 밝기 조정',
+                            '자주 사용하는 카드형식을 등분, 일괄 패딩, 마진 조정',
+                        ]
+                    }
+                }
+            ];
             const eduList = [
                 {
                     info: {
@@ -82,17 +99,7 @@ const templates = {
                 },
             ];
 
-            const timeLineList = [{
-                    info: {
-                        title: '현재',
-                        sub: '준비 중',
-                        since: '2021. 03. ~',
-                    },
-                    line: {
-                        title: '발전 중인 과제',
-                        desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, quaerat. Maxime voluptas harum atque ipsa, neque blanditiis! Eum rem aliquam aut laudantium! Necessitatibus quasi optio possimus, culpa assumenda voluptatem? Blanditiis.',
-                    },
-                },
+            const timeLineList = [
                 {
                     info: {
                         title: '(주)대경건축사사무소',
@@ -136,9 +143,12 @@ const templates = {
                 <span class="line text-gray">
                     <span class="time-line-title">${line.title}</span>
                     <span class="time-line-desc">${line.desc}</span>
-                    ${line.subline?'<span class="subline"><span scroll>📖more</span>'+line.subline.map(li=>`<span class="li">${li.split('|').shift()} ${li.split('|').pop().split('및').map(z=>`<span class="fs-8 tag tag-${z.match(/pm/gim)?'danger':'brand'}">${z}</span>`).join(' ')} </span>`).join('')+'</span>':''}
+                    ${line.subline?'<span class="subline"><span scroll>📖more</span>'+line.subline.map(li=>`<span class="li">${li.split('|').shift()} ${li.split('|').pop().split('및').map(z=>li.split('|').shift().startsWith(z)?'':`<span class="fs-8 tag tag-${z.match(/pm/gim)?'danger':'brand'}">${z}</span>`).join(' ')} </span>`).join('')+'</span>':''}
                 </span>
             </li>`).join('');
+
+            const cardGroupClasses = `card-group card-dv-1 card-dv-sm-2 card-dv-md-4`;
+            const cardClasses = `card-content text-center skill`;
 
             return `<section page="${response}">
                 <div class="h3">resume</div>
@@ -174,9 +184,9 @@ const templates = {
                         <span class="h6">사용 스킬</span>
                     </div>
                     <div class="fs-5">Back-End</div>
-                    <div class="card-group card-dv-7">
+                    <div class="${cardGroupClasses}">
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="40" height="43"
                                 viewBox="0 0 50 50"
@@ -186,7 +196,7 @@ const templates = {
                         </div>
                         
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="48" height="48"
                                 viewBox="0 0 48 48"
@@ -195,7 +205,7 @@ const templates = {
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <i class="fas fa-pepper-hot fs-1"></i>
                                 <span>Familiar</span>
                             </div>
@@ -203,33 +213,33 @@ const templates = {
                     </div>
 
                     <div class="fs-5">Front-End</div>
-                    <div class="card-group card-dv-7">
+                    <div class="${cardGroupClasses}">
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <i class="fab fa-html5 fs-1"></i>
                                 <span>Familiar</span>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <i class="fab fa-css3-alt fs-1"></i>
                                 <span>Familiar</span>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <i class="fab fa-js-square fs-1"></i>
                                 <span>Familiar</span>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <i class="fab fa-react fs-1"></i>
                                 <span>Used</span>
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <i class="fab fa-vuejs fs-1"></i>
                                 <span>Used</span>
                             </div>
@@ -237,9 +247,9 @@ const templates = {
                     </div>
                     
                     <div class="fs-5">Database</div>
-                    <div class="card-group card-dv-7">
+                    <div class="${cardGroupClasses}">
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="35" height="35"
                             viewBox="0 0 24 24"
@@ -248,7 +258,7 @@ const templates = {
                             </div>
                         </div>
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <img style="width: 45px; height: 45px;" src="http://wiki.hash.kr/images/2/29/%EB%A7%88%EC%9D%B4%EB%B0%94%ED%8B%B0%EC%8A%A4_%EB%A1%9C%EA%B3%A0.png" alt="hashnet img">
                                 <span>Used</span>
                             </div>
@@ -256,14 +266,21 @@ const templates = {
                     </div>
 
                     <div class="fs-5">DevOps</div>
-                    <div class="card-group card-dv-7">
+                    <div class="${cardGroupClasses}">
                         <div class="card">
-                            <div class="card-content text-center">
+                            <div class="${cardClasses}">
                                 <i class="fab fa-github fs-1"></i>
                                 <span>Familiar</span>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="mt-5 work-exp">
+                    <div class="end-words">
+                        <span class="h6">프로젝트</span>
+                    </div>
+                    ${parseToHTML(prjList)}
                 </div>
 
                 <div class="mt-5 work-exp">
@@ -309,7 +326,7 @@ const templates = {
                 tag
             }, prjname) => {
                 return `
-                    <div class="card bg-opacity-0" style="position: relative; --card-padding: 0; width: 20rem;">
+                    <div class="card bg-opacity-0" style="position: relative; --card-padding: 0; width: 18rem;">
                         
                         <div class="back h-100 w-100 p-5" style="border-radius: inherit;">
                             <div class="card-title text-trunc">
@@ -412,10 +429,11 @@ const templates = {
                 let movie = (movie) => movie != '' ? `<div style="text-align: center;">
                     ${movie}
                 </div>` : '';
+
                 return `
                 <div class="position-relative"
-                style="filter: brightness(0.5); z-index:-1; max-height: calc(24rem + 3vw); overflow: hidden;">
-                <img style="width: 100%; height: auto;" src="${app.path+app.repoPath}assets/images/portfolio/${post}/${parts.cover}" alt="">
+                style="filter: brightness(0.5); z-index:-1; min-height: 250px; max-height: calc(24rem + 3vw); overflow: hidden;">
+                    <div class="cover-img" style="background-image: url('${app.path+app.repoPath}assets/images/portfolio/${post}/${parts.cover}')"></div>
                     </div>
                     <div class="fence-full fence-lg" style="position: relative; top: calc(-13rem - 7vw);">
                         <article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
@@ -549,11 +567,11 @@ const parts = {
             const isStart = pagelist.indexOf(hash.slice(1));
             return `<div class="side-paging">
                 <div>
-                    <button class="btn" data-dir="prev"${isStart==0?' hidden':''}>
-                        <i class="fas fa-chevron-left fa-2x"></i>
+                    <button class="btn btn-sm btn-danger fs-5 px-3 py-0" data-dir="prev"${isStart==0?' hidden':''}>
+                        <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button class="btn" data-dir="next"${isStart==pagelist.length-1?' hidden':''}>
-                        <i class="fas fa-chevron-right fa-2x"></i>
+                    <button class="btn btn-sm btn-danger fs-5 px-3 py-0" data-dir="next"${isStart==pagelist.length-1?' hidden':''}>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </div>`;
@@ -562,7 +580,7 @@ const parts = {
     'menu': {
         render: function () {
             return `<div class="side-menu">
-                <button class="menu"><i class="fas fa-bars fa-2x"></i></button>
+                <button class="menu fs-5 btn btn-danger py-0 px-3"><i class="fas fa-bars"></i></button>
             </div>
             <nav id="side-menu">
                 <ul class="font-gugi">

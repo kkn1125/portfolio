@@ -92,6 +92,25 @@ i {
     pointer-events: none;
 }
 
+.card-content.skill span {
+    opacity: 0;
+    max-width: 0em;
+    max-height: 0em;
+    overflow: hidden;
+    display: block;
+    transition: 150ms ease-in-out;
+    -webkit-transition: 150ms ease-in-out;
+    -moz-transition: 150ms ease-in-out;
+    -ms-transition: 150ms ease-in-out;
+    -o-transition: 150ms ease-in-out;
+}
+
+.card-content.skill:hover span {
+    opacity: 1;
+    max-width: 100em;
+    max-height: 2em;
+}
+
 .time-line {
     display: flex;
 }
@@ -113,12 +132,13 @@ i {
 
     .time-line-info {
         flex: 0 0 100px;
+        width: 0px;
     }
 }
 
 .time-line-title {
     font-weight: bold;
-    word-break: keep-all;
+    word-break: break-all;
 }
 
 .time-line-sub {
@@ -148,7 +168,7 @@ i {
     font-size: .8em;
 }
 
-.time-line-info .time-line-title{
+.time-line-info .time-line-title {
     font-size: 0.9em
 }
 
@@ -181,7 +201,7 @@ i {
     -o-border-radius: 100%;
 }
 
-.time-line-title{
+.time-line-title {
     color: black;
 }
 
@@ -298,6 +318,16 @@ i {
     padding: 3em;
 }
 
+#app>div>section[page="portfolio"] {
+    padding: 0 !important;
+}
+
+[page="portfolio"] iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+}
+
 [class*="out-"] {
     pointer-events: none;
 }
@@ -305,6 +335,15 @@ i {
 p {
     margin: 1em 0 2em;
     line-height: 1.5;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    word-break: break-all;
 }
 
 .fade,
@@ -707,43 +746,33 @@ button {
     cursor: pointer;
 }
 
-button.btn {
-    color: white;
-    background-color: rgba(var(--ks-primary-rgb), 1);
-    padding: .3rem .5rem;
-    border-radius: .5rem;
-    -webkit-border-radius: .5rem;
-    -moz-border-radius: .5rem;
-    -ms-border-radius: .5rem;
-    -o-border-radius: .5rem;
-    transition: box-shadow 150ms;
-    -webkit-transition: box-shadow 150ms;
-    -moz-transition: box-shadow 150ms;
-    -ms-transition: box-shadow 150ms;
-    -o-transition: box-shadow 150ms;
-}
-
-button.btn:hover {
-    box-shadow: 0 0 0 .3rem rgba(var(--ks-primary-rgb), .5), inset 0 0 0 9999px rgba(0, 0, 0, 0.1);
-}
-
-button.btn:focus-within {
-    box-shadow: 0 0 0 .3rem rgba(var(--ks-primary-rgb), .5);
-}
-
 .side-paging {
     user-select: none;
     position: absolute;
-    bottom: 2em;
-    right: 2em;
+    bottom: 24px;
+    right: 24px;
+}
+
+@media (max-width: 576px) {
+    .side-paging {
+        user-select: none;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .side-menu {
+        top: 10px;
+        right: 10px;
+    }
 }
 
 .side-menu {
     user-select: none;
     z-index: 300;
     position: absolute;
-    top: 2em;
-    right: 2em;
+    top: 24px;
+    right: 24px;
     transition: 150ms;
     -webkit-transition: 150ms;
     -moz-transition: 150ms;
@@ -910,6 +939,7 @@ button.btn:focus-within {
 .info-table {
     flex: 0 1 60%;
     font-size: .8em;
+    width: 100%;
 }
 
 .info-table ul {
@@ -930,6 +960,15 @@ button.btn:focus-within {
 
 .info-table ul li:last-child {
     border-bottom: none
+}
+
+.cover-img {
+    width: auto;
+    aspect-ratio: 16/9;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
 }
 
 [hidden] {
