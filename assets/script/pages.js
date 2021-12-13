@@ -49,9 +49,62 @@ const templates = {
             const prjList = [
                 {
                     info: {
-                        title: 'Penli',
+                        title: 'With Me',
+                        sub: '2인 프로젝트',
+                        since: '2021. 11. 12 ~ 진행 중',
+                    },
+                    line: {
+                        title: '전국 축제, 행사를 한 눈에',
+                        desc: '공공데이터 API를 활용한 편리한 전국 축제 찾기. 단순하게 축제만 찾는데 그치지 않고, 사용자의 관심 지역과 관심 분야를 토대로 전국 축제를 조회하여 매칭되는 추천 행사를 제안합니다.',
+                        subline: [
+                            'API 요청을 최소화하여 부하를 줄이고 한글화된 객체를 만들어 사용하도록 구현',
+                            '지역or월별>축제 키워드 순으로 검색되도록 구현',
+                            '지역과 월별 검색을 교차 혹은 별도로 검색하는 기능 구현',
+                            '축제마다 가지는 내용을 단어로 분류하는 알고리즘을 구현하여 단어만 색출하고 태그(#)로 표현',
+                            '검색할 때마다 "타지역-행사명" 으로 랜덤하게 3곳 키워드 추천',
+                            '검색된 지역의 색출된 단어를 중복을 제거하고 관련 키워드 클릭 시 해당되는 행사만 상세 검색되도록 구현',
+                        ]
+                    }
+                },
+                {
+                    info: {
+                        title: 'Coffeecong',
+                        sub: '1인 프로젝트',
+                        since: '2021. 03. 24 ~ 2021. 04. 14',
+                    },
+                    line: {
+                        title: '커피용품 온라인 몰',
+                        desc: '커피과 관련한 원두, 티, 머신, 생활용품 등을 판매하는 온라인 몰 구현',
+                        subline: [
+                            '관리자 페이지를 별도로 구현하고 배송 완료여부, 회원, 상품, 게시글 관리가 이루어지도록 함',
+                            '파일 업로드 시 이름 중복 예외처리',
+                            '사용자 주문 내역을 세션을 이용하여 카트에 부여, 관리',
+                            '상품 리뷰와 게시판 게시물 연동',
+                        ]
+                    }
+                },
+                {
+                    info: {
+                        title: 'Mentees',
+                        sub: '1인 프로젝트',
+                        since: '2021. 09. 15 ~ 2021. 09. 28',
+                    },
+                    line: {
+                        title: '멘티들이 모여 만드는 성장 커뮤니티',
+                        desc: '멘토와 멘티의 연결을 위한 사이트가 많지만 멘티들이 서로 정보를 자유롭게 공유하고 함께 헤쳐나가며 함께 성장해 나가는 커뮤니티를 생각해보았습니다.',
+                        subline: [
+                            '멘티 추천으로 추천된 사람이 점수를 취득하는 시스템',
+                            '멘티스 프로그램을 누구나 등재 가능하며, 모집인원, 시작, 종료, 마감일을 설정',
+                            '서로 크리틱을 주고 받는 피드백 페이지 구현',
+                            '계층형 댓글 구현',
+                        ]
+                    }
+                },
+                {
+                    info: {
+                        title: 'Penli CSS',
                         sub: '0.1.3v',
-                        since: '2021. 11. 14 ~ 2021. 11.19',
+                        since: '2021. 11. 14 ~ 2021. 11. 19',
                     },
                     line: {
                         title: 'Bootstrap을 모티브로 CSS 구현',
@@ -59,9 +112,60 @@ const templates = {
                         subline: [
                             'r,g,b 수를 쪼개어 calc를 이용한 채도, 밝기 조정',
                             '자주 사용하는 카드형식을 등분, 일괄 패딩, 마진 조정',
+                            'left, right - sidebar 설정 시 built-in 클래스명으로 고정/토글형 선택 가능하도록 구현',
                         ]
                     }
-                }
+                },
+                {
+                    info: {
+                        title: 'mkDocumentifyJS',
+                        sub: '2인 프로젝트 1.0.0v',
+                        since: '2021. 10. 01 ~ 2021. 11. 11',
+                    },
+                    line: {
+                        title: '자바스크립트 문서화',
+                        desc: '자주 사용되는 JSDoc을 사용할 때 nodejs에 기반한 것에 자바스크립트만으로 구현해보고자 작업을 실행했습니다.',
+                        subline: [
+                            '자바스크립트 주석 분석',
+                            '자바스크립트 주석의 태그별 분류 작업',
+                            'Zip 소스코드를 사용하여 문서화된 파일을 단일 또는 분할 페이지로 만드는 기능 구현',
+                            '간단한 채팅봇을 만들어 저장 후에도 동작',
+                            '유연한 커스터마이징을 위해 사용자 옵션을 초기화 메서드에서 받는 형식으로 구현',
+                        ]
+                    }
+                },
+                {
+                    info: {
+                        title: 'Tutorial',
+                        sub: '0.1.1v',
+                        since: '2021. 10. 25 ~ 2021. 11. 09',
+                    },
+                    line: {
+                        title: '웹 앱 튜토리얼 생성 도구',
+                        desc: '웹페이지에서 설명이 필요한 UI요소에 설명 박스를 달아 해당 위치에 포커싱되어 튜토리얼을 진행해주는 기능입니다.',
+                        subline: [
+                            '사용자의 초기화 옵션으로 튜토리얼이 자동 생성되도록 구현',
+                            '첫 문구와 마지막 문구에서 더 이상 벗어나지 않도록 함',
+                            'id>class>tagName 순으로 지정된 이름을 id 우선 탐색하고 없을 시 에러구문을 표시하는 예외처리 구현',
+                        ]
+                    }
+                },
+                {
+                    info: {
+                        title: 'Typer',
+                        sub: '1.0.0v',
+                        since: '2021. 10. 27 ~ 2021. 11. 05',
+                    },
+                    line: {
+                        title: '한글 음절 타이핑 효과 라이브러리',
+                        desc: '한글의 음절을 분해/재조립하는 기능을 가진 타이핑 효과를 쉽게 표현해주는 기능입니다.',
+                        subline: [
+                            '한글 음절 분해하여 타이핑 순서로 재조합하는 방법 구현',
+                            '타이핑에 딜레이를 부여하여 실제 타이핑과 유사한 효과를 내도록 구현',
+                            '태그 data-*속성과 초기화옵션으로 태그별, 전역 설정을 사용자 의도대로 구분가능하도록 함',
+                        ]
+                    }
+                },
             ];
             const eduList = [
                 {
@@ -151,7 +255,7 @@ const templates = {
             const cardClasses = `card-content text-center skill`;
 
             return `<section page="${response}">
-                <div class="h3">resume</div>
+                <div class="h3 text-uppercase">resume</div>
                 <div class="mt-5 resume w-flex flex-column flex-row-md">
                     <img class="resume-avatar" src="https://avatars.githubusercontent.com/u/71887242?v=4" alt="profile">
                     <span class="info-table">
@@ -259,7 +363,7 @@ const templates = {
                         </div>
                         <div class="card">
                             <div class="${cardClasses}">
-                                <img style="width: 45px; height: 45px;" src="http://wiki.hash.kr/images/2/29/%EB%A7%88%EC%9D%B4%EB%B0%94%ED%8B%B0%EC%8A%A4_%EB%A1%9C%EA%B3%A0.png" alt="hashnet img">
+                                <img style="width: 45px; height: 45px;" src="https://raw.githubusercontent.com/mybatis/logo/978369e60c3e4f2e4319d57388beb71e7d0955e0/logo-bird-ninja.svg" alt="mybatis logo">
                                 <span>Used</span>
                             </div>
                         </div>
@@ -530,9 +634,10 @@ const templates = {
     'about': {
         render: function (data, response) {
             return `<section page="${response}">
-                <div class="h3">about</div>
+                <div class="h3 text-uppercase">about</div>
                 <div class="row-div">
                     <div class="h6">이 사이트는</div>
+                    <p>활동 내용을 정리하고 주로 resume와 포트폴리오를 정리하는 페이지입니다.</p>
                     <p>취미로 무언가를 만들어 내는 것을 좋아합니다. 자바스크립트로 SPA를 제작하는 것에 관심이 많습니다. 다양한 방법으로 시도하고 경험하며 자기계발을 합니다.</p>
                     <p>자바를 주 언어로 공부하고 있으며, 알고리즘, CS, 디자인 패턴 등의 내용을 위키와 블로그에 함께 기록하고있습니다.</p>
                     <p>블로그와 위키를 함께 관리하고 있으니 많은 관심 가져주시기를 바랍니다.</p>
@@ -540,8 +645,8 @@ const templates = {
                 <div class="row-div">
                     <div class="h6">다른 내용</div>
                     <p>
-                        <a href="https://kkn1125.github.io">블로그</a>
-                        <a href="https://kkn1125.github.io/wikimson">위키</a>
+                        <a class="tag tag-info text-white" href="https://kkn1125.github.io">블로그</a>
+                        <a class="tag tag-info text-white" href="https://kkn1125.github.io/wikimson">위키</a>
                     </p>
                 </div>
             </section>`;
