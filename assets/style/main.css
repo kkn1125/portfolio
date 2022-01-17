@@ -40,6 +40,53 @@ main {
     background-color: beige;
 }
 
+section {
+    scroll-behavior: smooth;
+}
+
+.contextmenu {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+    min-width: 200px;
+    min-height: 100px;
+    max-width: 300px;
+    position: absolute;
+    background-color: white;
+    z-index: 100;
+    font-size: 70%;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    animation: showmenu 300ms both;
+    -webkit-animation: showmenu 300ms both;
+}
+
+.contextmenu.hide{
+    animation: hidemenu 300ms both;
+    -webkit-animation: hidemenu 300ms both;
+}
+
+@keyframes showmenu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hidemenu {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .alerts {
     position: absolute;
     color: white;
@@ -1105,3 +1152,8 @@ button {
 }
 
 /* flip */
+
+.detail {
+    position: absolute;
+    right: 0;
+}

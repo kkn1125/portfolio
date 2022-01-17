@@ -6,6 +6,7 @@ const app = {
     repoPath: location.host.match(/127|localhost/) ? '' : 'portfolio/',
     authors: ['kimson'],
     kimson: {
+        repo: 'https://github.com/kkn1125/portfolio/',
         github: 'https://kkn1125.github.io/portfolio/',
         blog: 'https://kkn1125.github.io',
         avatar: 'https://avatars.githubusercontent.com/u/71887242?v=4',
@@ -52,6 +53,7 @@ const templates = {
                         title: 'With Me',
                         sub: '2인 프로젝트',
                         since: '2021. 11. 12 ~ 진행 중',
+                        link: null,
                     },
                     line: {
                         title: '전국 축제, 행사를 한 눈에',
@@ -71,6 +73,7 @@ const templates = {
                         title: 'Coffeecong',
                         sub: '1인 프로젝트',
                         since: '2021. 03. 24 ~ 2021. 04. 14',
+                        link: 'coffeecong',
                     },
                     line: {
                         title: '커피용품 온라인 몰',
@@ -88,6 +91,7 @@ const templates = {
                         title: 'Mentees',
                         sub: '1인 프로젝트',
                         since: '2021. 09. 15 ~ 2021. 09. 28',
+                        link: 'mentees',
                     },
                     line: {
                         title: '멘티들이 모여 만드는 성장 커뮤니티',
@@ -105,6 +109,7 @@ const templates = {
                         title: 'Solitaire Card Game',
                         sub: '솔리테어 단순 구현',
                         since: '2022. 01. 05 ~ 2022. 01. 05',
+                        link: 'solitaire',
                     },
                     line: {
                         title: '솔리테어 게임 구현',
@@ -122,6 +127,7 @@ const templates = {
                         title: 'Penli CSS',
                         sub: '0.1.3v',
                         since: '2021. 11. 14 ~ 2021. 11. 19',
+                        link: 'penli',
                     },
                     line: {
                         title: 'Bootstrap을 모티브로 CSS 구현',
@@ -138,6 +144,7 @@ const templates = {
                         title: 'mkDocumentifyJS',
                         sub: '2인 프로젝트 1.0.0v',
                         since: '2021. 10. 01 ~ 2021. 11. 11',
+                        link: 'mkDocumentifyJS',
                     },
                     line: {
                         title: '자바스크립트 문서화',
@@ -156,6 +163,7 @@ const templates = {
                         title: 'Tutorial',
                         sub: '0.1.1v',
                         since: '2021. 10. 25 ~ 2021. 11. 09',
+                        link: 'tutorial',
                     },
                     line: {
                         title: '웹 앱 튜토리얼 생성 도구',
@@ -172,6 +180,7 @@ const templates = {
                         title: 'Typer',
                         sub: '1.0.0v',
                         since: '2021. 10. 27 ~ 2021. 11. 05',
+                        link: 'typer',
                     },
                     line: {
                         title: '한글 음절 타이핑 효과 라이브러리',
@@ -252,21 +261,46 @@ const templates = {
                 },
             ];
 
-            let parseToHTML = (parseTarget) => parseTarget.map(({
-                info,
-                line
-            }) => `<li class="time-line">
-                <span class="time-line-info text-gray">
-                    <span class="time-line-title pe-3">${info.title}</span>
-                    <span class="time-line-sub">${info.sub}</span>
-                    <span class="time-line-since">${info.since}</span>
-                </span>
-                <span class="line text-gray">
-                    <span class="time-line-title">${line.title}</span>
-                    <span class="time-line-desc">${line.desc}</span>
-                    ${line.subline?'<span class="subline"><span scroll>📖more</span>'+line.subline.map(li=>`<span class="li">${li.split('|').shift()} ${li.split('|').pop().split('및').map(z=>li.split('|').shift().startsWith(z)?'':`<span class="fs-8 tag tag-${z.match(/pm/gim)?'danger':'brand'}">${z}</span>`).join(' ')} </span>`).join('')+'</span>':''}
-                </span>
-            </li>`).join('');
+            let parseToHTML = (parseTarget) => {
+                return parseTarget.map(({
+                    info,
+                    line
+                }) => {
+                    let lists = '';
+                    let detail = info.link?`<span class="detail"><a class="text-danger" href="#portfolio-${info.link}">상세보기</a></span>`:'';
+                    if(line.subline){
+                        lists = `<span class="subline">${detail}<span scroll>📖more</span>`
+                        +line.subline.map(li=>
+                            `<span class="li">${li.split('|').shift()}
+                            ${li.split('|').pop().split('및').map(z=> {
+                                if(li.split('|').shift().startsWith(z)) {
+                                    return '';
+                                } else {
+                                    let matchs = '';
+                                    if(z.match(/pm/gim)) matchs = 'danger';
+                                    else matchs = 'brand';
+                                    return `<span class="fs-8 tag tag-${matchs}">${z}</span>`;
+                                }
+                            }).join(' ')} </span>`)
+                        .join('')+'</span>';
+                    } else {
+                        lists = '';
+                    }
+                    return `<li class="time-line">
+                        <span class="time-line-info text-gray">
+                            <span class="time-line-title pe-3">${info.title}</span>
+                            <span class="time-line-sub">${info.sub}</span>
+                            <span class="time-line-since">${info.since}</span>
+                        </span>
+                        <span class="line text-gray">
+                            <span class="time-line-title">${line.title}</span>
+                            <span class="time-line-desc">${line.desc}</span>
+                            ${lists}
+                        </span>
+                    </li>`
+                }).join('');
+                
+            }
 
             const cardGroupClasses = `card-group card-dv-1 card-dv-sm-2 card-dv-md-4`;
             const cardClasses = `card-content text-center skill`;

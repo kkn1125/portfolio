@@ -15,6 +15,32 @@ try {
                 window.addEventListener('click', this.handleSideMenu);
                 window.addEventListener('click', this.flipHandler);
                 window.addEventListener('click', this.handleRollingList);
+                window.addEventListener('wheel', this.aboveBtnScroll);
+                window.addEventListener('contextmenu', this.contextmenu);
+                window.addEventListener('click', this.contextmenu);
+            }
+
+            this.contextmenu = function (ev) {
+                ev.preventDefault();
+                if(ev.type == 'click'){
+                    let context = document.querySelector('.contextmenu');
+                    if(context) {
+                        context.classList.add('hide');
+                        setTimeout(()=>{
+                            context.remove();
+                        }, 300);
+                    }
+                } else {
+                    models.renderContext(ev);
+                }
+            }
+
+            this.aboveBtnScroll = function (ev) {
+                let section = document.querySelector('section');
+                const target = ev.target;
+                if(target.classList.contains('btn')){
+                    section.scrollTo({left: 0, top: section.scrollTop-(ev.wheelDeltaY*5), behavior: 'smooth'});
+                }
             }
 
             this.handleRollingList = function(ev){
@@ -110,6 +136,10 @@ try {
                 views = view;
 
                 this.filterHash();
+            }
+
+            this.renderContext = function ({x, y}) {
+                views.renderContext(x, y);
             }
 
             this.flipHandler = function (card) {
@@ -247,6 +277,15 @@ try {
                 this.changeTitle(location.hash.slice(1));
             }
 
+            this.renderContext = function (x, y) {
+                const menu = document.querySelector('.contextmenu');
+                if(menu) menu.remove();
+                document.body.insertAdjacentHTML('beforeend', moduler.contextmenu.render(moduler.contextmenu, x, y));
+                if(window.innerHeight*1.2 < y + document.querySelector('.contextmenu').clientHeight){
+                    document.querySelector('.contextmenu').style.transform = `translateY(-100%)`;
+                }
+            }
+
             this.renderingInitialItems = function () {
                 for (let type in parts) {
                     app.insertAdjacentHTML('beforeend', moduler.pages.item(type).render(location.hash));
@@ -312,10 +351,44 @@ try {
 
         return {
             init: function () {
+                const contextmenu = {
+                    menu: ['home', 'resume', 'portfolio', 'about'],
+                    repo: app.kimson.repo,
+                    blog: app.kimson.blog,
+                    contact: app.kimson.contact,
+                    authors: app.authors,
+                    render({menu, repo, blog, contact, authors}, x, y) {
+                        return `
+                            <div class="contextmenu" style="top:${y}px; left: ${x}px;">
+                                <ul class="list-group">
+                                    <li class="list-item py-1">${authors[0]} Portfolio</li>
+                                </ul>
+                                <div class="hr"></div>
+                                <ul class="list-group">
+                                    ${menu.map(li=>`<li class="list-item py-1"><a href="#${li}">${li}</a></li>`).join('')}
+                                </ul>
+                                <div class="hr"></div>
+                                <ul class="list-group">
+                                    <li class="list-item py-1">
+                                        <a href="${blog}">Blog</a>
+                                    </li>
+                                    <li class="list-item py-1">
+                                        <a href="${repo}">Repository</a>
+                                    </li>
+                                    <li class="list-item py-1">
+                                        <a href="${contact}">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        `;
+                    }
+                }
+
                 const moduler = {
                     router,
                     pages,
                     projects,
+                    contextmenu
                 }
 
                 const view = new View();
@@ -330,6 +403,7 @@ try {
     })().init();
 } catch (e) {
     setTimeout(() => {
+        console.log(1)
         location.reload();
     }, 500);
 }
