@@ -279,11 +279,21 @@ try {
 
             this.renderContext = function (x, y) {
                 const menu = document.querySelector('.contextmenu');
+                let styles = '';
                 if(menu) menu.remove();
-                document.body.insertAdjacentHTML('beforeend', moduler.contextmenu.render(moduler.contextmenu, x, y));
+                document.body.insertAdjacentHTML('beforeend', moduler.contextmenu.render(moduler.contextmenu));
                 if(window.innerHeight*1.2 < y + document.querySelector('.contextmenu').clientHeight){
-                    document.querySelector('.contextmenu').style.transform = `translateY(-100%)`;
+                    styles += `bottom: calc(100% - ${y}px);`;
+                } else {
+                    styles += `top: ${y}px;`;
                 }
+                if((window.innerWidth-17) < x + document.querySelector('.contextmenu').clientWidth){
+                    styles += `right: calc(100% - ${x}px);`;
+                } else {
+                    styles += `left: ${x}px;`;
+                }
+
+                document.querySelector('.contextmenu').style = styles;
             }
 
             this.renderingInitialItems = function () {
@@ -357,9 +367,9 @@ try {
                     blog: app.kimson.blog,
                     contact: app.kimson.contact,
                     authors: app.authors,
-                    render({menu, repo, blog, contact, authors}, x, y) {
+                    render({menu, repo, blog, contact, authors}) {
                         return `
-                            <div class="contextmenu" style="top:${y}px; left: ${x}px;">
+                            <div class="contextmenu">
                                 <ul class="list-group">
                                     <li class="list-item py-1">${authors[0]} Portfolio</li>
                                 </ul>
