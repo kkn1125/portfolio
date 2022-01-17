@@ -252,6 +252,14 @@ i {
     color: black;
 }
 
+.line .important::after{
+    content: '🌟';
+    font-size: 150%;
+    position: absolute;
+    top: -15px;
+    right: 0;
+}
+
 .subline {
     overflow: hidden;
     font-size: .7em;

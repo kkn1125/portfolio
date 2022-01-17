@@ -54,6 +54,7 @@ const templates = {
                         sub: '2인 프로젝트',
                         since: '2021. 11. 12 ~ 진행 중',
                         link: null,
+                        important: true,
                     },
                     line: {
                         title: '전국 축제, 행사를 한 눈에',
@@ -74,6 +75,7 @@ const templates = {
                         sub: '1인 프로젝트',
                         since: '2021. 03. 24 ~ 2021. 04. 14',
                         link: 'coffeecong',
+                        important: true,
                     },
                     line: {
                         title: '커피용품 온라인 몰',
@@ -92,6 +94,7 @@ const templates = {
                         sub: '1인 프로젝트',
                         since: '2021. 09. 15 ~ 2021. 09. 28',
                         link: 'mentees',
+                        important: true,
                     },
                     line: {
                         title: '멘티들이 모여 만드는 성장 커뮤니티',
@@ -275,7 +278,7 @@ const templates = {
             let parseToHTML = (parseTarget) => {
                 return parseTarget.map(({
                     info,
-                    line
+                    line,
                 }) => {
                     let lists = '';
                     let detail = info.link?`<span class="detail"><a class="text-danger" href="#portfolio-${info.link}">상세보기</a></span>`:'';
@@ -304,6 +307,7 @@ const templates = {
                             <span class="time-line-since">${info.since}</span>
                         </span>
                         <span class="line text-gray">
+                            ${info.important?`<span class="important"></span>`:''}
                             <span class="time-line-title">${line.title}</span>
                             <span class="time-line-desc">${line.desc}</span>
                             ${lists}
@@ -333,15 +337,16 @@ const templates = {
                 
                 <div class="mt-5 work-exp">
                     <div class="end-words">
-                        <span class="h6">자기계발</span>
+                        <span class="h6">자기개발</span>
                     </div>
                     <div class="fs-7" style="line-height: 1.8;">
-                        <div class="time-line-title fs-6">자바스크립트 문서화</div>
-                        <div class="text-gray">사용자 공간, 시각 디자인등을 생각하는 건축에 매력을 느껴 실내건축을 전공했습니다.졸업 후 설계사무소에 입사하여 디자인, 프로젝트관리, 도면 작도 업무를 했고
-                        디자인 원리와 일정관리, 건축법규, 사용자입장의 사고를 배웠습니다. 많은 분야에 실무자와 대면하며 각자 업무에 대한 여러 정보를 얻었고,
-                        새로운 분야에 대한 도전을 생각하게 되었습니다. AutoCAD로 도면을 그리면서 작도 능력향상을 위해 LISP언어를 알게 됐고,
-                        점점 프로그래밍에 관심을 가지면서 이직을 결심했습니다.</div>
-                        <div class="text-gray">학원을 이수하고 현재 Spring과 RestFul API를 공부 중입니다.</div>
+                        <div class="time-line-title fs-6">하루를 기어가더라도 뒤로가진 말자</div>
+                        <p class="text-gray">
+                            자기개발에 게을리 하지 않기 위해 깃허브 저장소나 기사, 대기업의 기술블로그, 회사에서 요구하는 사항 등을 보며 무엇이 부족한지 찾아 제 것으로 만들기 위해 노력하고 있습니다. 기술과 관련해 배운 것은 블로그에 정리, 기록하고 있으며 프로젝트는 이 페이지에서 등록, 관리하고 있습니다.
+                        </p>
+                        <p class="text-gray">
+                            JSDoc의 문서화 기능이나 Vue의 컴포넌트 등을 직접 구현해보는 탐구 정신이 있고, 여러 방면으로 문제를 생각하려 노력합니다. 1일 1커밋을 목표로 현재도 많은 것을 보고 배우며 하루하루 앞으로 나아가고 있습니다.
+                        </p>
                     </div>
                 </div>
 
@@ -700,7 +705,7 @@ const templates = {
                 <div class="row-div">
                     <div class="h6">이 사이트는</div>
                     <p>활동 내용을 정리하고 주로 resume와 포트폴리오를 정리하는 페이지입니다.</p>
-                    <p>취미로 무언가를 만들어 내는 것을 좋아합니다. 자바스크립트로 SPA를 제작하는 것에 관심이 많습니다. 다양한 방법으로 시도하고 경험하며 자기계발을 합니다.</p>
+                    <p>취미로 무언가를 만들어 내는 것을 좋아합니다. 자바스크립트로 SPA를 제작하는 것에 관심이 많습니다. 다양한 방법으로 시도하고 경험하며 자기개발을 합니다.</p>
                     <p>자바를 주 언어로 공부하고 있으며, 알고리즘, CS, 디자인 패턴 등의 내용을 위키와 블로그에 함께 기록하고있습니다.</p>
                     <p>블로그와 위키를 함께 관리하고 있으니 많은 관심 가져주시기를 바랍니다.</p>
                 </div>
