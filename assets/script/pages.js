@@ -328,9 +328,9 @@ const templates = {
                         <ul>
                             <li><span>name</span><span>김경남</span></li>
                             <li><span>age</span><span>${new Date().getFullYear()-1992}</span></li>
-                            <li><span>email</span><span>chaplet01@gmail.com</span></li>
+                            <li><span>email</span><span class="link-form" onclick="location.href='mailto:chaplet01@gmail.com'">chaplet01@gmail.com</span></li>
                             <li><span>github</span><span>kkn1125</span></li>
-                            <li><span>blog</span><span>kkn1125.github.io</span></li>
+                            <li><span>blog</span><span"><a href="${app.kimson.blog}">kkn1125.github.io</a></span></li>
                         </ul>
                     </span>
                 </div>

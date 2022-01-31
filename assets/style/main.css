@@ -45,12 +45,12 @@ section {
 }
 
 .contextmenu {
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
     min-width: 200px;
     min-height: 100px;
     max-width: 300px;
     position: absolute;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1);
     z-index: 100;
     font-size: 70%;
     border-radius: .5rem;
@@ -60,6 +60,10 @@ section {
     -o-border-radius: .5rem;
     animation: showmenu 300ms both;
     -webkit-animation: showmenu 300ms both;
+}
+
+.contextmenu:hover{
+    backdrop-filter: blur(8px);
 }
 
 .contextmenu.hide{
@@ -246,6 +250,67 @@ i {
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
+}
+
+.list-item.py-1{
+    position: relative;
+    overflow: hidden;
+    padding-left: .5rem;
+}
+
+.list-item.py-1::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    transition: 300ms ease-in-out;
+    -webkit-transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    -ms-transition: 300ms ease-in-out;
+    -o-transition: 300ms ease-in-out;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    pointer-events: none;
+    border-start-end-radius: 1rem;
+    border-end-end-radius: 1rem;
+}
+
+.list-item.py-1:hover::after{
+    transform: translateX(60%);
+    -webkit-transform: translateX(60%);
+    -moz-transform: translateX(60%);
+    -ms-transform: translateX(60%);
+    -o-transform: translateX(60%);
+}
+
+.list-item.py-1>a{
+    transition: 150ms ease-in-out;
+    -webkit-transition: 150ms ease-in-out;
+    -moz-transition: 150ms ease-in-out;
+    -ms-transition: 150ms ease-in-out;
+    -o-transition: 150ms ease-in-out;
+}
+
+.list-item.py-1:hover>a{
+    color: black;
+    letter-spacing: .3rem;
+}
+
+.link-form{
+    --text-opacity: 1;
+    color: rgba(var(--pl-gray-rgb-2), var(--text-opacity));
+    cursor: pointer;
+    transition: color 150ms;
+    -webkit-transition: color 150ms;
+}
+
+.link-form:hover{
+    color: rgba(var(--pl-brand-rgb-4), var(--text-opacity)) !important;
 }
 
 .time-line-title {

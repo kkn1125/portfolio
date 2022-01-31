@@ -371,14 +371,20 @@ try {
                         return `
                             <div class="contextmenu">
                                 <ul class="list-group">
-                                    <li class="list-item py-1">${authors[0]} Portfolio</li>
+                                    <li class="list-item py-0">${authors[0]} Portfolio</li>
                                 </ul>
                                 <div class="hr"></div>
-                                <ul class="list-group">
+                                <ul class="list-group py-0">
+                                    <li class="py-1">
+                                        Direct Pages
+                                    </li>
                                     ${menu.map(li=>`<li class="list-item py-1"><a href="#${li}">${li}</a></li>`).join('')}
                                 </ul>
                                 <div class="hr"></div>
-                                <ul class="list-group">
+                                <ul class="list-group pt-0">
+                                    <li class="py-1">
+                                        Other Pages
+                                    </li>
                                     <li class="list-item py-1">
                                         <a href="${blog}">Blog</a>
                                     </li>
