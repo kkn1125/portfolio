@@ -475,11 +475,21 @@ const templates = {
     },
     'portfolio': {
         render: function (data, response, subpage) {
+            let classList = '';
+            let view = data=='card'?'list':'card';
+            if(data=='card'){
+                classList = 'card-dv-1 card-dv-sm-2 card-dv-md-3 card-dv-lg-4';
+            } else if('list') {
+                classList = 'card-dv-1';
+            }
             if (!subpage)
                 return `<section page="${response}">
             <div class="sr"></div>
                 <div class="fence-full">
-                    <div class="card-group card-light card-dv-1 card-dv-sm-2 card-dv-md-3 card-dv-lg-4 card-pd-0 justify-content-around" style="--gutter-x: 3rem; --gutter-y: 3rem;"></div>
+                    <button
+                    id="changeView"
+                    class="btn btn-success px-3">View ⇒ ${view}</button>
+                    <div class="card-group card-light ${classList} card-pd-0 justify-content-around" style="--gutter-x: 3rem; --gutter-y: 3rem;"></div>
                 </div>
             </section>`;
             else return `<section page="${response}"></section>`;
@@ -511,10 +521,10 @@ const templates = {
                                             <i class="fas fa-search"></i>
                                             Detail
                                         </a>
-                                        <buttton class="btn btn-sm btn-subpoint" onclick="window.open('${link}')">
+                                        <button class="btn btn-sm btn-subpoint" onclick="window.open('${link}')">
                                             <i class="fas fa-search"></i>
                                             Page
-                                        </buttton>
+                                        </button>
                                     </div>
                                     <div class=" mb-1">
                                         <span class="tag">author</span>${authors.join(' | ')}
@@ -541,6 +551,60 @@ const templates = {
                         <div class="front h-100 w-100 position-absolute top-0 start-0 back-filp" style="background-image: url('${app.path+app.repoPath}assets/images/portfolio/${prjname}/${cover}'); background-size: cover; background-position: top; border-radius: inherit;"></div>
                     </div>
                 `;
+            },
+        },
+        'list': {
+            render: ({
+                title,
+                purpose,
+                work,
+                authors,
+                link,
+                cover,
+                writedAt,
+                mainLang,
+                tag
+            }, prjname) => {
+                return `
+                <div class="card">
+                    <div class="h-100 w-100 p-5" style="border-radius: inherit;">
+                        <div class="card-title text-trunc">
+                            <a href="#portfolio-${prjname}" title="${title==''?'No title':title}">${title==''?'No title':title}</a>
+                        </div>
+                        <div class="text-muted fs-7 mb-4">${purpose}</div>
+                        <div class="card-body">
+                            <div class="link mb-2">
+                                <a class="btn btn-sm text-white btn-point" href="#portfolio-${prjname}">
+                                    <i class="fas fa-search"></i>
+                                    Detail
+                                </a>
+                                <button class="btn btn-sm btn-subpoint" onclick="window.open('${link}')">
+                                    <i class="fas fa-search"></i>
+                                    Page
+                                </button>
+                            </div>
+                            <div class=" mb-1">
+                                <span class="tag">author</span>${authors.join(' | ')}
+                            </div>
+                            <div class="time mb-1">
+                                <span class="tag">start</span><span>${work.start}</span>
+                                <span class="tag">end</span><span>${work.end}</span>
+                            </div>
+                            <div class="time mb-1">
+                                <span class="tag">writed at </span>${writedAt}
+                            </div>
+                        </div>
+                        <div class=" mb-1">
+                            <span class="tag">tags</span>
+                            ${tag.map(t=>`<span class="tag tag-light">${t}</span>`).join(' ')}
+                        </div>
+                        <div>
+                            <span class="tag">main language</span>
+                            <span class="tag tag-danger text-capitalize">${mainLang}</span>
+                        </div>
+                    </div>
+                </div>
+                `
             }
         },
         post: {
@@ -573,6 +637,7 @@ const templates = {
                 if(parts.isHeroku)
                 fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(parts.link)}`).then(response=>{
                     setTimeout(()=>{
+                        if(document.querySelector('.server-state'))
                         document.querySelector('.server-state').innerHTML = response.ok?`열림`:`닫힘`;
                     }, 1000);
                 });
