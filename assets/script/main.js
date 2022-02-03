@@ -18,6 +18,13 @@ try {
                 window.addEventListener('wheel', this.aboveBtnScroll);
                 window.addEventListener('contextmenu', this.contextmenu);
                 window.addEventListener('click', this.contextmenu);
+                window.addEventListener('click', this.changeView);
+            }
+
+            this.changeView = function (ev){
+                const btn = ev.target;
+                if(btn.id!='changeView') return;
+                models.changeView(btn);
             }
 
             this.contextmenu = function (ev) {
@@ -119,6 +126,7 @@ try {
             let currentPage = null;
             let motion = null;
             let beforePage = null;
+            let viewMode = false;
 
             const state = {
                 animations: [
@@ -136,6 +144,13 @@ try {
                 views = view;
 
                 this.filterHash();
+            }
+
+            this.changeView = function (btn){
+                viewMode = !viewMode;
+                views.changeView(viewMode);
+
+                views.renderingCurrentPage(currentPage, 'fade');
             }
 
             this.renderContext = function ({x, y}) {
@@ -268,6 +283,7 @@ try {
         function View() {
             let moduler = null;
             let app = null;
+            let mode = 'card';
 
             this.init = function (components) {
                 moduler = components;
@@ -275,6 +291,14 @@ try {
                 app = document.querySelector('#app');
 
                 this.changeTitle(location.hash.slice(1));
+            }
+
+            this.changeView = function (viewMode){
+                if(viewMode){
+                    mode = 'list';
+                } else {
+                    mode = 'card';
+                }
             }
 
             this.renderContext = function (x, y) {
@@ -314,11 +338,11 @@ try {
 
                 try {
                     app.insertAdjacentHTML('afterbegin', `<div class="${motion}">
-                        ${moduler.router[page].select(page).render(moduler.router[page], page, subpage)}
+                        ${moduler.router[page].select(page).render(mode, page, subpage)}
                         </div>`);
                     if (page == 'portfolio' && !subpage) {
                         for (let prj in moduler.projects) {
-                            document.querySelector(`[page="${page}"] .card-group`).insertAdjacentHTML('beforeend', moduler.router[page].select(page)['card'].render(moduler.projects[prj], prj));
+                            document.querySelector(`[page="${page}"] .card-group`).insertAdjacentHTML('beforeend', moduler.router[page].select(page)[mode].render(moduler.projects[prj], prj));
                         }
                     } else if (page == 'portfolio' && subpage) {
                         document.querySelector(`[page="${page}"]`).insertAdjacentHTML('beforeend', moduler.router[page].select(page)['post'].render(subpage));
@@ -419,7 +443,6 @@ try {
     })().init();
 } catch (e) {
     setTimeout(() => {
-        console.log(1)
         location.reload();
     }, 500);
 }
