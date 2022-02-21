@@ -109,6 +109,24 @@ const templates = {
                 },
                 {
                     info: {
+                        title: 'Gantt Chart',
+                        sub: '테이블 생성 보조 웹 툴',
+                        since: '2022. 02. 16 ~ 2022. 02. 21',
+                        link: 'ganttChart',
+                    },
+                    line: {
+                        title: '테이블 생성 보조 웹 툴',
+                        desc: '순수 자바스크립트로 만들었으며, 기존에 테이블 조작에 불편함을 많이 느껴 UI로 쉽게 조정가능한 툴을 고안하여 제작했습니다.',
+                        subline: [
+                            '테이블 모든 속성 값 변경 자동화 (확장성 고려)',
+                            '드래그 선택 시 선택 박스 표시',
+                            '시트 사용으로 다양한 작업 저장',
+                            '로컬 스토리지를 사용한 데이터 저장',
+                        ]
+                    }
+                },
+                {
+                    info: {
                         title: 'Solitaire Card Game',
                         sub: '솔리테어 단순 구현',
                         since: '2022. 01. 05 ~ 2022. 01. 05',
@@ -1013,6 +1031,51 @@ const projects = {
         category: ['springboot', '개인'],
         writedAt: '2021-09-28 11:46',
         isHeroku: true,
+    },
+    ganttChart: {
+        title: '[JAVASCRIPT] Gantt Chart',
+        purpose: '테이블 생성 보조 웹 툴',
+        work: {
+            start: '2022-02-16',
+            end: '2022-02-21',
+        },
+        content: `<div>
+            <div class="mt-3">
+                <span class="fw-bold fs-4">주요 내용</span>
+            </div>
+            <div>
+                <ol>
+                    <li>테이블 모든 속성 값 변경 자동화</li>
+                    <li>시트 사용으로 다양한 작업 저장</li>
+                </ol>
+            </div>
+        </div>`,
+        authors: ['kimson'],
+        link: 'https://kkn1125.github.io/ganttChart/',
+        github: 'https://github.com/kkn1125/ganttChart',
+        cover: 'gantt01.png',
+        subImages: [
+            ['전체 구성', 'gantt01.png'],
+            ['시트 생성 화면', 'gantt02.png'],
+            ['컨트롤 바', 'gantt03.png'],
+            ['셀 추가', 'gantt04.png'],
+            ['셀 선택', 'gantt05.png'],
+            ['편집 모드', 'gantt06.png'],
+            ['시트 추가', 'gantt07.png'],
+            ['시트 변경', 'gantt08.png'],
+            ['시트 이름 변경 선택', 'gantt09.png'],
+            ['시트 이름 변경 중', 'gantt10.png'],
+            ['시트 이름 변경 후', 'gantt11.png'],
+        ],
+        movie: '',
+        useDB: false,
+        db: [],
+        mainLang: 'javascript',
+        subLangs: ['html', 'css', 'javascript'],
+        tag: ['gantt chart', 'table', 'web tool'],
+        category: ['javascript', '개인'],
+        writedAt: '2022-02-21 13:54',
+        isHeroku: false,
     },
     typer: {
         title: '[JAVASCRIPT] Typer 프로젝트',
