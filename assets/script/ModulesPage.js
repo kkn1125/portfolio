@@ -9,6 +9,6 @@ import {ganttChart} from './contents/project_page/GanttChart.js';
 import {typer} from './contents/project_page/Typer.js';
 import {mkDocumentifyJS} from './contents/project_page/MkDocumentifyJS.js';
 import {tutorial} from './contents/project_page/Tutorial.js';
-import {penli} from './contents/project_page/penli.js';
+import {penli} from './contents/project_page/Penli.js';
 
 export {coffeecong, scheduler, solitaire, blog, mentees, ganttChart, typer, mkDocumentifyJS, tutorial, penli};
