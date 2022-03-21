@@ -1,20 +1,3 @@
-Date.prototype.format = function (format){
-    return format.replace(/YYYY|YY|MM|dd|HH|mm|ss|SSS|AP/g, a=>{
-        switch(a){
-            case 'YYYY': return this.getFullYear();
-            case 'YY': return this.getFullYear().toString().slice(2).padStart(2, 0);
-            case 'MM': return this.getMonth().toString().padStart(2, 0);
-            case 'mm': return this.getMinutes().toString().padStart(2, 0);
-            case 'dd': return this.getDate().toString().padStart(2, 0);
-            case 'HH': return this.getHours().toString().padStart(2, 0);
-            case 'ss': return this.getSeconds().toString().padStart(2, 0);
-            case 'SSS': return this.getMilliseconds().toString().padStart(3, 0);
-            case 'AP': return this.getHours()>12?'PM':'AM';
-            default: return a;
-        }
-    });
-}
-
 export const scheduler = {
     title: '[Django] Scheduler',
     purpose: '팀을 만들어 함께 공유하는 스케쥴러',

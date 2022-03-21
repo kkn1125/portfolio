@@ -1,0 +1,1 @@
+export const mybatis = `<img style="width: 45px; height: 45px;" src="https://raw.githubusercontent.com/mybatis/logo/978369e60c3e4f2e4319d57388beb71e7d0955e0/logo-bird-ninja.svg" alt="mybatis logo">`

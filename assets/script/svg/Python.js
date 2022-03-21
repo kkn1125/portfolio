@@ -1,0 +1,1 @@
+export const python = `<i class="fa-brands fa-python fs-1"></i>`

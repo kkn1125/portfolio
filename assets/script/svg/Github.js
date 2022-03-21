@@ -1,0 +1,1 @@
+export const github = `<i class="fab fa-github fs-1"></i>`

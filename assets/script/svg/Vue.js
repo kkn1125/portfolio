@@ -1,0 +1,1 @@
+export const vue = `<i class="fab fa-vuejs fs-1"></i>`

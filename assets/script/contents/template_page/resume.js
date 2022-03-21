@@ -1,4 +1,4 @@
-import {app, parseToHTML} from '../../core/Module.js'
+import {app, parseToHTML, posts} from '../../core/Module.js'
 
 import * as modulePreview from '../../ModulesPreview.js';
 import * as moduleEducation from '../../ModulesEducation.js';
@@ -13,6 +13,70 @@ export const resume = {
 
         const cardGroupClasses = `card-group card-dv-1 card-dv-sm-2 card-dv-md-4`;
         const cardClasses = `card-content text-center skill`;
+
+        const backEnd = [
+            {
+                svg: svg.django,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.python,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.java,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.spring,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.lombok,
+                skill: 'familiar'
+            },
+        ];
+
+        const frontEnd = [
+            {
+                svg: svg.html,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.css,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.javascript,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.react,
+                skill: 'used'
+            },
+            {
+                svg: svg.vue,
+                skill: 'used'
+            },
+        ];
+
+        const db = [
+            {
+                svg: svg.mysql,
+                skill: 'familiar'
+            },
+            {
+                svg: svg.mybatis,
+                skill: 'used'
+            },
+        ];
+
+        const devops = [
+            {
+                svg: svg.github,
+                skill: 'familiar'
+            },
+        ];
 
         return `<section page="${response}">
             <div class="h3 text-uppercase">resume</div>
@@ -50,85 +114,22 @@ export const resume = {
                 </div>
                 <div class="fs-5">Back-End</div>
                 <div class="${cardGroupClasses}">
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            ${svg.java}
-                            <span>Familiar</span>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            ${svg.spring}
-                            <span>Familiar</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <i class="fas fa-pepper-hot fs-1"></i>
-                            <span>Familiar</span>
-                        </div>
-                    </div>
+                    ${posts.cardset(backEnd, cardClasses)}
                 </div>
 
                 <div class="fs-5">Front-End</div>
                 <div class="${cardGroupClasses}">
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <i class="fab fa-html5 fs-1"></i>
-                            <span>Familiar</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <i class="fab fa-css3-alt fs-1"></i>
-                            <span>Familiar</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <i class="fab fa-js-square fs-1"></i>
-                            <span>Familiar</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <i class="fab fa-react fs-1"></i>
-                            <span>Used</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <i class="fab fa-vuejs fs-1"></i>
-                            <span>Used</span>
-                        </div>
-                    </div>
+                    ${posts.cardset(frontEnd, cardClasses)}
                 </div>
                 
                 <div class="fs-5">Database</div>
                 <div class="${cardGroupClasses}">
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            ${svg.mysql}
-                            <span>Familiar</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <img style="width: 45px; height: 45px;" src="https://raw.githubusercontent.com/mybatis/logo/978369e60c3e4f2e4319d57388beb71e7d0955e0/logo-bird-ninja.svg" alt="mybatis logo">
-                            <span>Used</span>
-                        </div>
-                    </div>
+                    ${posts.cardset(db, cardClasses)}
                 </div>
 
                 <div class="fs-5">DevOps</div>
                 <div class="${cardGroupClasses}">
-                    <div class="card">
-                        <div class="${cardClasses}">
-                            <i class="fab fa-github fs-1"></i>
-                            <span>Familiar</span>
-                        </div>
-                    </div>
+                    ${posts.cardset(devops, cardClasses)}
                 </div>
             </div>
 

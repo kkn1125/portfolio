@@ -1,0 +1,1 @@
+export const javascript = `<i class="fab fa-js-square fs-1"></i>`

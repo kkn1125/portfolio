@@ -1,0 +1,1 @@
+export const html = `<i class="fab fa-html5 fs-1"></i>`

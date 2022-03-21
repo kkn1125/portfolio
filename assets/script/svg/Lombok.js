@@ -1,0 +1,1 @@
+export const lombok = `<i class="fas fa-pepper-hot fs-1"></i>`

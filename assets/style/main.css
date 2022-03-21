@@ -143,23 +143,37 @@ i {
     pointer-events: none;
 }
 
-.card-content.skill span {
-    opacity: 0;
-    max-width: 0em;
-    max-height: 0em;
-    overflow: hidden;
-    display: block;
-    transition: 150ms ease-in-out;
-    -webkit-transition: 150ms ease-in-out;
-    -moz-transition: 150ms ease-in-out;
-    -ms-transition: 150ms ease-in-out;
-    -o-transition: 150ms ease-in-out;
+.card{
+    position: relative;
 }
 
-.card-content.skill:hover span {
+.card-content.skill .card-skill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease-in-out;
+    -webkit-transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    -ms-transition: 300ms ease-in-out;
+    -o-transition: 300ms ease-in-out;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    color: white;
+}
+
+.card:hover .card-skill {
     opacity: 1;
-    max-width: 100em;
-    max-height: 2em;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .time-line {
