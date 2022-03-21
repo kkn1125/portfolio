@@ -1,6 +1,8 @@
 'use strict';
 
-const router = {
+import {pages} from './pages.js'
+
+export const router = {
     'home': {
         referrer: document.referrer,
         select: (page) => pages.type(page),
@@ -17,7 +19,7 @@ const router = {
         referrer: document.referrer,
         select: (page) => pages.type(page),
     },
-    '404': {
+    '_404': {
         referrer: document.referrer,
         select: (page) => pages.type(page),
     }

@@ -1,4 +1,9 @@
 'use strict';
+
+import {app} from './core/Module.js';
+import {pages, parts, projects} from './pages.js';
+import {router} from './router.js';
+
 try {
     (function () {
         function Controller() {
@@ -349,7 +354,7 @@ try {
                     }
                 } catch (e) {
                     app.insertAdjacentHTML('afterbegin', `<div class="${motion}">
-                        ${moduler.router['404'].select('404').render(e, '404')}
+                        ${moduler.router['_404'].select('_404').render(e, '_404')}
                         </div>`);
                 }
 
@@ -444,5 +449,5 @@ try {
 } catch (e) {
     setTimeout(() => {
         location.reload();
-    }, 500);
+    }, 3000);
 }

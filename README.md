@@ -6,11 +6,11 @@
 
 페이지는 `Javascript`와 `Penli CSS`로 구현되어 있습니다.
 
-`Penli`는 CSS를 연습할 겸 Bootstrap과 유사하게 만들었습니다. 자세한 내용을 [링크]('https://github.com/kkn1125/penli')를 참고해주세요.
+`Penli`는 CSS를 연습할 겸 Bootstrap과 유사하게 만들었습니다. 자세한 내용은 [링크]('https://github.com/kkn1125/penli')를 참고해주세요.
 
 ## 사용된 기능
 
-블로그, 포트폴리오 등의 내용에 들어가는 기능과 효과는 Zip을 제외하고 순수하게 제가 만든 기능으로 조합한 비율이 9할입니다.
+공부 중에 만든 여러 기능들을 모듈처럼 끌어 사용하고 있습니다.
 
 ## 업로드된 프로젝트 (단순 기능 구현 포함)
 
@@ -23,6 +23,8 @@
 - Web Tutorial
 - Solitaire
 - Penli CSS
+- With Me *
+- Scheduler *
 
 ## 블로그
 
