@@ -276,6 +276,16 @@ try {
                 this.filterHash();
                 this.getRandomMotion();
 
+                setTimeout(() => {
+                    const list = location.hash.slice(1).split('-').filter(x=>x!='');
+                    const currentPath = list.shift();
+                    [...document.querySelectorAll('.page')].forEach(x=>{
+                        x.innerText.toLowerCase() == currentPath?
+                        x.classList.add('text-danger'):
+                        x.classList.remove('text-danger');
+                    });
+                }, 10);
+
                 if (beforePage && beforePage.substring(1) == currentPage) return;
                 views.renderingCurrentPage(currentPage, motion);
             }
