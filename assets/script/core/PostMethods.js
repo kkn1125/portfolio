@@ -60,7 +60,7 @@ export const cover = (post, post_part) => getImgSrc(post, post_part.cover);
 export const cardset = (skillset, cardClasses) => skillset.map(skill=>card(skill, cardClasses)).join('');
 
 export const card = (skill, cardClasses) => `<div class="card">
-<div class="${cardClasses}">
+<div class="${cardClasses}${skill.color?` ${skill.color}`:''}">
     ${skill.svg}
     <span class="card-skill">${skill.skill.toCapitalize()}</span>
 </div>

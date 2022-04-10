@@ -17,64 +17,76 @@ export const resume = {
         const backEnd = [
             {
                 svg: svg.django,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-primary',
             },
             {
                 svg: svg.python,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-info',
             },
             {
                 svg: svg.java,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-danger',
             },
             {
                 svg: svg.spring,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-primary',
             },
             {
                 svg: svg.lombok,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-danger',
             },
         ];
 
         const frontEnd = [
             {
                 svg: svg.html,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-danger',
             },
             {
                 svg: svg.css,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-info',
             },
             {
                 svg: svg.javascript,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-warning',
             },
             {
                 svg: svg.react,
-                skill: 'used'
+                skill: 'used',
+                color: 'text-info',
             },
             {
                 svg: svg.vue,
-                skill: 'used'
+                skill: 'used',
+                color: 'text-primary',
             },
         ];
 
         const db = [
             {
                 svg: svg.mysql,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-info',
             },
             {
                 svg: svg.mybatis,
-                skill: 'used'
+                skill: 'used',
             },
         ];
 
         const devops = [
             {
                 svg: svg.github,
-                skill: 'familiar'
+                skill: 'familiar',
+                color: 'text-subpoint',
             },
         ];
 
