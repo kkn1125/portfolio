@@ -7,7 +7,10 @@ import * as svg from '../../Svg.js';
 
 export const resume = {
     render: function (data, response) {
-        const prjList = [...Object.values(modulePreview)];
+        
+        const prjList = [...Object.values(modulePreview).sort((p,c)=>{
+            return p.info.order-c.info.order;
+        })];
         const eduList = moduleEducation.eduList;
         const timeLineList = Object.values(moduleTimeLine);
 

@@ -1,5 +1,6 @@
 export const scheduler = {
     info: {
+        order: 4,
         title: 'Scheduler',
         sub: '2인 프로젝트',
         since: '2022. 03. 09 ~ 진행 중',

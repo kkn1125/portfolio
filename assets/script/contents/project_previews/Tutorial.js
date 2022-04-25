@@ -1,5 +1,6 @@
 export const tutorial = {
     info: {
+        order: 10,
         title: 'Tutorial',
         sub: '0.1.1v',
         since: '2021. 10. 25 ~ 2021. 11. 09',

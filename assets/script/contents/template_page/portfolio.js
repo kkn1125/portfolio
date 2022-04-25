@@ -14,9 +14,11 @@ export const portfolio = {
             return `<section page="${response}">
         <div class="sr"></div>
             <div class="fence-full">
+                View Mode
                 <button
                 id="changeView"
-                class="btn btn-success px-3">View ⇒ ${view}</button>
+                class="btn btn-success px-1 fs-7">${view}</button>
+                
                 <div class="card-group card-light ${classList} card-pd-0 justify-content-around" style="--gutter-x: 3rem; --gutter-y: 3rem;"></div>
             </div>
         </section>`;
@@ -46,12 +48,12 @@ export const portfolio = {
                             <div class="card-body">
                                 <div class="link mb-2">
                                     <a class="btn btn-sm text-white btn-point" href="#portfolio-${prjname}">
-                                        <i class="fas fa-search"></i>
+                                        🔍
                                         Detail
                                     </a>
-                                    <button class="btn btn-sm btn-subpoint" onclick="window.open('${link}')">
-                                        <i class="fas fa-search"></i>
-                                        Page
+                                    <button class="px-1 btn btn-sm btn-subpoint" onclick="window.open('${link}')">
+                                        ✨
+                                        Demo
                                     </button>
                                 </div>
                                 <div class=" mb-1">
@@ -75,7 +77,7 @@ export const portfolio = {
                             </div>
                         </div>
                     </div>
-                    <div class="front h-100 w-100 position-absolute top-0 start-0 back-filp" style="background-image: url(${posts.getImgSrc(prjname, cover)}); background-size: cover; background-position: top; border-radius: inherit;"></div>
+                    <div class="front h-100 w-100 position-absolute top-0 start-0 back-filp" style="background-image: url(${posts.getImgSrc(prjname, cover)}); background-size: cover; background-position: top left; border-radius: inherit;"></div>
                 </div>
             `;
         },
@@ -88,37 +90,36 @@ export const portfolio = {
             authors,
             link,
             cover,
+            content,
             writedAt,
             mainLang,
             tag
         }, prjname) => {
+            const limitWords = 100;
+            const rawContents = new DOMParser().parseFromString(content, 'text/html').body.textContent.trim().replace(/[\s\n]+/g, ' ');
+            const limitRawContents = rawContents.slice(0, limitWords+1);
+            const max = rawContents.length >= limitWords;
+            const formattedDate = new Date(writedAt).format('yyyy년 MM월 dd일 HH:mm', true);
             return `
-            <div class="card">
-                <div class="h-100 w-100 p-5" style="border-radius: inherit;">
-                    <div class="card-title text-trunc">
-                        <a href="#portfolio-${prjname}" title="${title==''?'No title':title}">${title==''?'No title':title}</a>
+            <div class="card bg-white my-0">
+                <div class="h-100 w-100 py-5 px-5" style="border-radius: none; border-bottom: 2px solid gray;">
+                    <div class="card-title text-trunc" style="margin-bottom: 0;">
+                        <a href="#portfolio-${prjname}" title="${title==''?'No title':title}" class="text-dark fw-bold">${title==''?'No title':title}</a>
+                        <button class="fs-7 px-1 btn btn-sm btn-subpoint" onclick="window.open('${link}')">
+                            ✨
+                            Demo
+                        </button>
                     </div>
-                    <div class="text-muted fs-7 mb-4">${purpose}</div>
+                    <div>
+                        <span class="fs-7 text-gray">✏️ ${formattedDate}</span>
+                    </div>
+                    <div class="text-muted fs-7 my-4">${limitRawContents}${max?' ...':''}</div>
                     <div class="card-body">
-                        <div class="link mb-2">
-                            <a class="btn btn-sm text-white btn-point" href="#portfolio-${prjname}">
-                                <i class="fas fa-search"></i>
-                                Detail
-                            </a>
-                            <button class="btn btn-sm btn-subpoint" onclick="window.open('${link}')">
-                                <i class="fas fa-search"></i>
-                                Page
-                            </button>
-                        </div>
-                        <div class=" mb-1">
-                            <span class="tag">author</span>${authors.join(' | ')}
-                        </div>
-                        <div class="time mb-1">
-                            <span class="tag">start</span><span>${work.start}</span>
-                            <span class="tag">end</span><span>${work.end}</span>
-                        </div>
-                        <div class="time mb-1">
-                            <span class="tag">writed at </span>${writedAt}
+                        <div class="mb-1">
+                            <span class="tag">author</span>
+                            <span class="fs-8">${authors.join(' | ')}</span>
+                            <span class="tag">work</span>
+                            <span class="fs-8">${work.start} ~ ${work.end}</span>
                         </div>
                     </div>
                     <div class=" mb-1">
@@ -140,12 +141,16 @@ export const portfolio = {
             let database = posts.database;
             let mainContent = posts.mainContent;
             let post_part = projects[post];
-
+            let is_ok = false;
             if(post_part.isHeroku)
             fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(post_part.link)}`).then(response=>{
+                is_ok = response.ok;
+                return response.json()
+            }).then(data=>{
                 setTimeout(()=>{
+                    console.log(data)
                     if(document.querySelector('.server-state'))
-                    document.querySelector('.server-state').innerHTML = response.ok?`열림`:`닫힘`;
+                    document.querySelector('.server-state').innerHTML = is_ok && data.status.http_code == 200?`열림`:`닫힘`;
                 }, 1000);
             });
 

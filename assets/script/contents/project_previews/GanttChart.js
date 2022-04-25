@@ -1,5 +1,6 @@
 export const ganttChart = {
     info: {
+        order: 5,
         title: 'Gantt Chart',
         sub: '테이블 생성 보조 웹 툴',
         since: '2022. 02. 16 ~ 2022. 02. 21',

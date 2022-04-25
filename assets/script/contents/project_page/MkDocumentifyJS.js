@@ -14,7 +14,7 @@ export const mkDocumentifyJS = {
                 <li>로컬 디렉토리의 자바스크립트 파일의 주석 분석</li>
                 <li>[단일/분할] 방식으로 저장 기능 구현</li>
                 <li>채팅봇 기능 구현</li>
-                <li>검색창 구현 - MDN페이지 검색기능 참조</li>
+                <li>검색창 구현 - MDN페이지 검색 UI 참조</li>
             </ol>
         </div>
     </div>`,

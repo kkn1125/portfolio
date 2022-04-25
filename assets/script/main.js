@@ -350,13 +350,18 @@ try {
                     subpage = sub;
                 }
                 sep(currentPage.split('-'));
-
+                
                 try {
                     app.insertAdjacentHTML('afterbegin', `<div class="${motion}">
                         ${moduler.router[page].select(page).render(mode, page, subpage)}
                         </div>`);
                     if (page == 'portfolio' && !subpage) {
-                        for (let prj in moduler.projects) {
+                        // 정렬
+                        const prjs = Object.entries(moduler.projects).sort((a,b)=>{
+                            return new Date(b[1].writedAt).getTime() - new Date(a[1].writedAt).getTime()
+                        });
+
+                        for (let [prj, sources] of prjs) {
                             document.querySelector(`[page="${page}"] .card-group`).insertAdjacentHTML('beforeend', moduler.router[page].select(page)[mode].render(moduler.projects[prj], prj));
                         }
                     } else if (page == 'portfolio' && subpage) {

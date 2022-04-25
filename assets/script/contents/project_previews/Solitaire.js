@@ -1,5 +1,6 @@
 export const solitaire = {
     info: {
+        order: 9,
         title: 'Solitaire Card Game',
         sub: '솔리테어 단순 구현',
         since: '2022. 01. 05 ~ 2022. 01. 05',

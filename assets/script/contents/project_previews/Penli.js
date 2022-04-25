@@ -1,5 +1,6 @@
 export const penli = {
     info: {
+        order: 8,
         title: 'Penli CSS',
         sub: '0.1.3v',
         since: '2021. 11. 14 ~ 2021. 11. 19',

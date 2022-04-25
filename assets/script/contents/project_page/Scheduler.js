@@ -1,21 +1,26 @@
+const year = new Date().getFullYear();
+const month = new Date().getMonth()+1;
+const date = new Date().getDate();
 export const scheduler = {
     title: '[Django] Scheduler',
-    purpose: '팀을 만들어 함께 공유하는 스케쥴러',
+    purpose: '팀을 형성하고 방을 만들어 팀원과 캘린더를 공유하며 일, 주, 월별 스케쥴링을 하는 웹 서비스',
     work: {
         start: '2022-03-09',
-        end: new Date().format('YYYY-MM-dd'),
+        end: '2022-03-26',
     },
     content: `<div class="mt-5">
         <div class=""mt-3>
-            <span class="fs-4 fw-bold">Solitaire Card Game</span>
+            <span class="fs-4 fw-bold">Scheduler</span>
         </div>
         <div>
+            <ol>
+                <li>FullCalendar Library 활용</li>
+                <li>스케줄 룸 생성 시 마스터 자동 설정</li>
+                <li class="text-danger">
+                    작성 중...
+                </li>
+            </ol>
             <p>
-                팀을 형성하고 방을 만들어 팀원과 캘린더를 공유하며 일, 주, 월별 스케쥴링을 하는 웹 서비스
-            </p>
-            <p>
-                <span class="tag">작성 중...</span>
-                
             </p>
         </div>
     </div>`,
@@ -32,7 +37,7 @@ export const scheduler = {
     mainLang: 'python',
     subLangs: ['html', 'css', 'javascript'],
     tag: ['django', 'python'],
-    category: ['django', '팀'],
-    writedAt: '2022-03-21 21:03:07',
+    category: ['django', '공동'],
+    writedAt: '2022-03-21 21:03',
     isHeroku: false,
 }

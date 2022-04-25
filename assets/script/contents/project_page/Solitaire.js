@@ -1,6 +1,6 @@
 export const solitaire = {
     title: '[JAVASCRIPT] Solitaire Card Game',
-    purpose: '솔리테어 단순 구현',
+    purpose: '솔리테어 구현',
     work: {
         start: '2022-01-05',
         end: '2022-01-05',
@@ -11,7 +11,7 @@ export const solitaire = {
         </div>
         <div>
             <p>
-                <kbd class="bg-info">Solitaire</kbd>의 단순하면서 복잡한 규칙을 구현하는데 초점을 두고 작업을 진행하였습니다.
+                <kbd class="bg-info">Solitaire</kbd>의 솔리테어의 규칙을 해결하는데 초점을 두고 작업을 진행하였습니다.
             </p>
             <p>
                 <span class="tag">규칙과 알고리즘 : </span>

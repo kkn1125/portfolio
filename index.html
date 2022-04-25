@@ -30,23 +30,26 @@
         <script src="https://kit.fontawesome.com/8ff9cf0b7b.js" crossorigin="anonymous"></script>
 
         <script>
-            Date.prototype.format = function (format){
-                return format.replace(/YYYY|YY|MM|dd|HH|mm|ss|SSS|AP/g, a=>{
-                    switch(a){
-                        case 'YYYY': return this.getFullYear();
-                        case 'YY': return this.getFullYear().toString().slice(2).padStart(2, 0);
-                        case 'MM': return this.getMonth().toString().padStart(2, 0);
-                        case 'mm': return this.getMinutes().toString().padStart(2, 0);
-                        case 'dd': return this.getDate().toString().padStart(2, 0);
-                        case 'HH': return this.getHours().toString().padStart(2, 0);
-                        case 'ss': return this.getSeconds().toString().padStart(2, 0);
-                        case 'SSS': return this.getMilliseconds().toString().padStart(3, 0);
-                        case 'AP': return this.getHours()>12?'PM':'AM';
-                        default: return a;
+            Number.prototype.fillZero = function(pad){
+                const count = (this+'').length;
+                return '0'.repeat(pad>0?pad-count:0) + this;
+            }
+            
+            Date.prototype.format = function (format, fillZero=false) {
+                const date = this;
+                return format.replace(/(yyyy|yy|MM|dd|HH|mm|ss)/g, ($1) => {
+                    switch($1) {
+                        case 'yyyy': return date.getFullYear();
+                        case 'yy': return date.getFullYear().slice(2);
+                        case 'MM': return date.getMonth().fillZero(fillZero?2:0);
+                        case 'dd': return date.getDate().fillZero(fillZero?2:0);
+                        case 'HH': return date.getHours().fillZero(fillZero?2:0);
+                        case 'mm': return date.getMinutes().fillZero(fillZero?2:0);
+                        case 'ss': return date.getSeconds().fillZero(fillZero?2:0);
                     }
                 });
             }
-
+            
             String.prototype.toCapitalize = function() {
                 return this.replace(/[^\-\_\s\,\/\.\|]+/g,s => s.charAt(0).toUpperCase() + s.slice(1));
             }

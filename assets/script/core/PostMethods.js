@@ -32,7 +32,7 @@ ${content}</div>` : `<p><span class="notice notice-danger">작성 중인 게시�
 export const link = (link, post) => link.link != '' ? `
 <div class="text-capitalize">
     <a href="${link.link}" target="_blank">
-        📗<strong>${post} Project</strong> sample pages
+        📗<strong>${post} Project</strong> demo pages
     </a>
 </div>
 ` : '';

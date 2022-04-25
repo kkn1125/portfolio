@@ -1,5 +1,6 @@
 export const mentees = {
     info: {
+        order: 1,
         title: 'Mentees',
         sub: '1인 프로젝트',
         since: '2021. 09. 15 ~ 2021. 09. 28',

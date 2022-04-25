@@ -1,5 +1,6 @@
 export const mkDocumentifyJS = {
     info: {
+        order: 6,
         title: 'mkDocumentifyJS',
         sub: '2인 프로젝트 1.0.0v',
         since: '2021. 10. 01 ~ 2021. 11. 11',

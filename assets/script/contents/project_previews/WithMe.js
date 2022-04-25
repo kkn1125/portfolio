@@ -1,5 +1,6 @@
 export const withme = {
     info: {
+        order: 7,
         title: 'With Me',
         sub: '2인 프로젝트',
         since: '2021. 11. 12 ~ 2021. 12. 06 잠시 중단',

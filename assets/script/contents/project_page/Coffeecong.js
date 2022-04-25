@@ -41,7 +41,7 @@ export const coffeecong = {
     mainLang: 'java',
     subLangs: ['html', 'css', 'javascript', 'mysql'],
     tag: ['coffee', 'jsp', 'onlinemall'],
-    category: ['jsp', '학원'],
+    category: ['jsp', '학원', '개인'],
     writedAt: '2021-09-02 03:58',
     isHeroku: true,
 }

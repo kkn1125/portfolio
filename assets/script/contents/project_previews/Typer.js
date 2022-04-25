@@ -1,5 +1,6 @@
 export const typer = {
     info: {
+        order: 11,
         title: 'Typer',
         sub: '1.0.0v',
         since: '2021. 10. 27 ~ 2021. 11. 05',

@@ -1,5 +1,6 @@
 export const coffeecong = {
     info: {
+        order: 2,
         title: 'Coffeecong',
         sub: '1인 프로젝트',
         since: '2021. 03. 24 ~ 2021. 04. 14',
