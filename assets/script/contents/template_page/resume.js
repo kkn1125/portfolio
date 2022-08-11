@@ -2,7 +2,7 @@ import { app, parseToHTML, posts } from "../../core/Module.js";
 
 import * as modulePreview from "../../ModulesPreview.js";
 import * as moduleEducation from "../../ModulesEducation.js";
-import * as moduleTimeLine from "../../ModulesTimeLine.js";
+import {timeline as moduleTimeLine} from "../../ModulesTimeLine.js";
 import * as svg from "../../Svg.js";
 
 export const resume = {
@@ -13,7 +13,7 @@ export const resume = {
       }),
     ];
     const eduList = moduleEducation.eduList;
-    const timeLineList = Object.values(moduleTimeLine);
+    const timeLineList = moduleTimeLine;
 
     const cardGroupClasses = `card-group card-dv-1 card-dv-sm-2 card-dv-md-10`;
     const cardClasses = `card-content text-center skill`;

@@ -28,7 +28,7 @@ export const parseToHTML = (parseTarget) => {
             lists = `<span class="subline">${detail}<span scroll>📖more</span>`
             +line.subline.map(li=>
                 `<span class="li">${li.split('|').shift()}
-                ${li.split('|').pop().split('및').map(z=> {
+                ${li.split('|').map(z=> {
                     if(li.split('|').shift().startsWith(z)) {
                         return '';
                     } else {
