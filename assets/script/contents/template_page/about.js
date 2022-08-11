@@ -4,13 +4,12 @@ export const about = {
             <div class="h3 text-uppercase">about</div>
             <div class="row-div">
                 <div class="h6">이 사이트는</div>
-                <p>활동 내용을 정리하고 주로 resume와 포트폴리오를 정리하는 페이지입니다.</p>
-                <p>취미로 무언가를 만들어 내는 것을 좋아합니다. 자바스크립트로 SPA를 제작하는 것에 관심이 많습니다. 다양한 방법으로 시도하고 경험하며 자기개발을 합니다.</p>
-                <p>자바를 주 언어로 공부하고 있으며, 알고리즘, CS, 디자인 패턴 등의 내용을 위키와 블로그에 함께 기록하고있습니다.</p>
-                <p>블로그와 위키를 함께 관리하고 있으니 많은 관심 가져주시기를 바랍니다.</p>
+                <p>주로 resume와 포트폴리오를 올리는 페이지입니다.</p>
+                <p>풀스택을 지향하며 다양한 기술에 관심이 많으며 러닝커브에 대한 막연함 두려움 보다는 직접 사용해보면서 익히는 것을 선호합니다.</p>
+                <p>즐기면서 개발하는 것을 지향하며 넓게 보는 시각을 가지기 위해 자기개발을 꾸준히 하고 있습니다 😁</p>
             </div>
             <div class="row-div">
-                <div class="h6">다른 내용</div>
+                <div class="h6">둘러보기</div>
                 <p>
                     <a class="tag tag-info text-white" href="https://kkn1125.github.io">블로그</a>
                     <a class="tag tag-info text-white" href="https://kkn1125.github.io/wikimson">위키</a>

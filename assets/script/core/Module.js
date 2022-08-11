@@ -13,7 +13,7 @@ export const app = {
         avatar: 'https://avatars.githubusercontent.com/u/71887242?v=4',
         profile: 'https://kkn1125.github.io/profile',
         contact: 'https://kkn1125.github.io/contact',
-        comment: '안녕하세요! 백앤드 개발자가 되기 위해 여러가지에 관심이 많은 예비 개발자입니다. 어제보다 1mm 더 발전하자는 각오를 가지고 있으며, 자동화에 관심이 많고 문제해결에 적극적입니다. ',
+        comment: '풀스택을 지향하는 웹 개발자입니다. 새로운 기술에 관심이 많고 다양한 오류를 발생시키면서 여러 상황을 고려하는 습관을 가지고 노력하고 있습니다 😁',
     }
 };
 
