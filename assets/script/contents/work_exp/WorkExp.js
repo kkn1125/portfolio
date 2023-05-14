@@ -1,0 +1,137 @@
+export const workExp = [
+  {
+    info: {
+      title: "BE/API 서버 구축",
+      sub: "팀 협업",
+      since: "2023. 03 ~ 진행 중",
+      link: "",
+      important: true,
+    },
+    line: {
+      title: "관리자 페이지를 위한 API 서버 구축",
+      role: "BE",
+      stacks: ["fastify"],
+      desc: "유아 교육 웹 메타버스 플랫폼으로 부모와 아이가 접속하여 캐릭터를 움직여 강의를 듣고 이벤트에 참여하는 서비스.",
+      subline: [
+        "express에서 fastify로 변경하여 API 서버 구축",
+        "<strong>typeORM</strong> 도입",
+        "관리자 페이지 및 메타버스에 사용되는 데이터베이스 설계",
+        "외부 사용자 API 사용 방안 고려한 데이터베이스 재설계",
+        "jwt 및 <strong>HMAC</strong>방식 토큰 외부 개발자와 협의",
+        "API서버 <strong>TLS</strong> 인증서 적용",
+        "API서버에 <strong>Cache</strong> 기능 개발 및 적용으로 25ms에서 4ms로 응답시간 6배 절감",
+        "<strong>scheduler</strong>를 활용해 주기적으로 캐시 정책 검증",
+        "<strong>shell script</strong>를 이용한 Docker 빌드, <strong>배포 자동화</strong>",
+        "서비스 및 백업 저장소 동시 관리 적용",
+        "docker-compose로 배포 작업 단순화 및 <strong>버전관리</strong>",
+        "linux 명령을 익히는 계기가 되어 swap메모리 설정, cpu, memory, 대역폭 <strong>모니터링</strong>을 습득",
+        "RDP 설정을 통해 원격 업무를 수행하거나 docker container ssh 설정하면서 네트워크 이해",
+      ],
+    },
+  },
+  {
+    info: {
+      title: "BE/미디어서버 구축 & 라이브룸 UI",
+      sub: "팀 협업",
+      since: "2023. 03 ~ 진행 중",
+      link: "",
+      important: true,
+    },
+    line: {
+      title: "라이브커머스 스트리밍 서비스 구현",
+      role: "BE",
+      stacks: ["fastify"],
+      desc: "라이브커머스 플랫폼",
+      subline: [
+        "WebRTC 및 streaming 방식으로 라이브커머스 환경 구축",
+        "hls 방식과 다르게 buffer데이터 만으로 라이브 송출 및 영상 딜레이 2초로 절감",
+        "라이브 종료 시 녹화 buffer 합하여 합본 영상 변환 및 저장",
+      ],
+    },
+  },
+  {
+    info: {
+      title: "BE/API서버 구축 & 서비스 UI",
+      sub: "팀 협업",
+      since: "2023. 01 ~ 2023. 03",
+      link: "",
+      important: true,
+    },
+    line: {
+      title: "N대M 회의형 화상채팅 서비스 구현",
+      role: "BE",
+      stacks: ["fastify"],
+      desc: "여러 명이 접속하여 화상 공유, 화면 공유, 채팅 기능을 사용할 수 있는 서비스",
+      subline: [
+        "WebRTC MFU 방식으로 10명 접속 환경 구축",
+        "사내 서비스 iframe 임베딩하여 서비스 공유",
+        "STT를 활용한 화자 별 자막 생성",
+        "텍스트화 된 자막 자연어처리로 긍부정어 도출",
+      ],
+    },
+  },
+  {
+    info: {
+      title: "FE/3D 모델 경량화",
+      sub: "리딩",
+      since: "2022. 12 ~ 2023. 01",
+      link: "",
+      important: true,
+    },
+    line: {
+      title: "three.js 3D 모델 압축",
+      role: "FE",
+      stacks: ["fastify"],
+      desc: "메타버스 내 캐릭터 및 사물 등의 모델 용량 절감을 위한 방안 리딩",
+      subline: [
+        "3D 모델 데이터 용량 압축 이슈 발생하여 20mb를 500kb로 최대 400%압축 성공",
+      ],
+    },
+  },
+  {
+    info: {
+      title: "BE/Socket 서버",
+      sub: "팀 협업",
+      since: "2022. 09 ~ 2022. 12",
+      link: "",
+      important: true,
+    },
+    line: {
+      title: "3D 메타버스 멀티 접속 가능한 소켓서버 구축",
+      role: "BE",
+      stacks: ["fastify"],
+      desc: "멀티플레이 가능한 웹기반 3D 메타버스 서비스",
+      subline: [
+        "서버 부하 분산 모델 제시 및 환경 구축",
+        "pm2 로드밸런싱을 사용해서 요청 분산",
+        "데이터베이스 replication 기술을 리딩하고 양방향 데이터 동기화 환경 구축",
+        "graphql로 캐릭터 데이터 처리 환경 구축",
+        "소켓서버 간 tcp 통신을 위해 node:net 모듈 사용한 통신 모델 구축",
+        "소켓 서버 병목현상 이슈 해결을 위해 SSE방식 테스트",
+        "Queue를 구현해서 병목현상 절감",
+        "특정 인원 초과 시 자동으로 서버를 개설하는 로직 개발",
+      ],
+    },
+  },
+  {
+    info: {
+      title: "BE/NFTMarket place 구축",
+      sub: "팀 협업",
+      since: "2022. 05 ~ 2022. 07",
+      link: "",
+      important: true,
+    },
+    line: {
+      title: "블록체인 NFTMarket 구축",
+      role: "BE",
+      stacks: ["fastify"],
+      desc: "블록체인 결합된 NFTMarket place 웹 페이지 구축",
+      subline: [
+        "Next.js 서버 환경 구축",
+        "NFTMarket 디자인 초안 바탕으로 전체 페이지 UI 제작",
+        "WebRTC 기술 스택 Janus Gateway 리딩 및 소스코드 분석",
+        "FFMPEG 미디어 인코딩 기술 리딩",
+      ],
+    },
+  },
+];

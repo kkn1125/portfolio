@@ -1012,7 +1012,7 @@ button {
 
 .resume {
   margin-top: 3em;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
@@ -1020,7 +1020,7 @@ button {
 .resume-avatar {
   width: 10em;
   height: 10em;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top;
   border-radius: 1em;
   -webkit-border-radius: 1em;
@@ -1030,7 +1030,7 @@ button {
 }
 
 .info-table {
-  flex: 0 1 60%;
+  flex: 1;
   font-size: 0.8em;
   width: 100%;
 }
@@ -1094,6 +1094,13 @@ button {
   -o-border-radius: 1em;
 }
 
+@media (min-width: 768px) and (max-width: 2800px) {
+  section[page=resume] {
+    width: 80% !important;
+    margin: auto;
+    min-width: 100%;
+  }
+}
 [page=resume] .h1,
 [page=resume] .h2,
 [page=resume] .h3,
@@ -1101,6 +1108,10 @@ button {
 [page=resume] .h5,
 [page=resume] .h6 {
   text-transform: uppercase;
+}
+
+[page=resume] .h6 {
+  font-size: 2rem !important;
 }
 
 .font-gugi {

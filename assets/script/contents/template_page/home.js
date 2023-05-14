@@ -21,7 +21,7 @@ export const home = {
             ${app.kimson.comment}
           </div>
           <div style="text-align: center; font-weight: 700; font-size: 12px; margin-top: 1rem;">
-            - Updated at. ${new Date("2022-09-05 15:03").toLocaleString("ko", {
+            - Updated at. ${new Date("2023-05-15 04:21").toLocaleString("ko", {
               year: "numeric",
               month: "long",
               date: "numeric",

@@ -15,7 +15,13 @@ export const timeline = [
     line: {
       title: "제작팀/BE",
       desc: "서버 환경 구축, 서버 분산 모델 설계, API 서버 환경 구축, 네트워크 인프라 구축, 서버 부하 테스트, 미디어 공유 플랫폼 구축",
-      subline: ["작성 중..."],
+      subline: [
+        "관리자 페이지 API 서버 구축 | 서버 & DB & 인프라 & DevOps",
+        "라이브커머스 스트리밍 서비스 | 서버 & DB & 인프라 & DevOps",
+        "N대M 회의형 화상태칭 서비스 | 서버 & DB & 인프라 & DevOps",
+        "three.js 3D 모델 용량 압축 | 서버 & DB & 인프라 & DevOps",
+        "3D 메타버스 멀티플레이 가능한 소켓서버 구축 | 서버 & DB & 인프라 & DevOps",
+      ],
     },
   },
   {

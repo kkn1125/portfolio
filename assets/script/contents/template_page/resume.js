@@ -2,7 +2,8 @@ import { app, parseToHTML, posts } from "../../core/Module.js";
 
 import * as modulePreview from "../../ModulesPreview.js";
 import * as moduleEducation from "../../ModulesEducation.js";
-import {timeline as moduleTimeLine} from "../../ModulesTimeLine.js";
+import { workExp as moduleWorkExp } from "../../ModulesWorkExp.js";
+import { timeline as moduleTimeLine } from "../../ModulesTimeLine.js";
 import * as svg from "../../Svg.js";
 
 export const resume = {
@@ -14,8 +15,9 @@ export const resume = {
     ];
     const eduList = moduleEducation.eduList;
     const timeLineList = moduleTimeLine;
+    const workExpList = moduleWorkExp;
 
-    const cardGroupClasses = `card-group card-dv-1 card-dv-sm-2 card-dv-md-10`;
+    const cardGroupClasses = `card-group card-dv-1 card-dv-sm-2 card-dv-md-auto`;
     const cardClasses = `card-content text-center skill`;
 
     const backEnd = [
@@ -252,35 +254,45 @@ export const resume = {
     ];
 
     return `<section page="${response}">
-            <div class="h3 text-uppercase">resume</div>
+            <div class="h3 text-uppercase text-center w-100" style="text-decoration: underline 1px double black; text-underline-offset: 0.5rem">resume</div>
             <div class="mt-5 resume w-flex flex-column flex-row-md">
-                <img class="resume-avatar" src="https://avatars.githubusercontent.com/u/71887242?v=4" alt="profile">
+                <img class="resume-avatar" src="/assets/images/profile/profile.jpg" alt="profile">
                 <span class="info-table">
                     <ul>
                         <li><span>name</span><span>김경남</span></li>
-                        <li><span>age</span><span>${
+                        <!--<li><span>age</span><span>${
                           new Date().getFullYear() - 1992
-                        }</span></li>
+                        }</span></li>-->
                         <li><span>email</span><span class="link-form" onclick="location.href='mailto:chaplet01@gmail.com'">chaplet01@gmail.com</span></li>
-                        <li><span>github</span><span>kkn1125</span></li>
+                        <li><span>github</span><span>
+                          <a href="${app.kimson.github}">
+                            kkn1125
+                          </a>
+                        </span></li>
                         <li><span>blog</span><span"><a href="${
                           app.kimson.blog
                         }">kkn1125.github.io</a></span></li>
+                        <li><span>wiki</span><span"><a href="${
+                          app.kimson.wiki
+                        }">personal wiki</a></span></li>
                     </ul>
                 </span>
             </div>
             
             <div class="mt-5 work-exp">
                 <div class="end-words">
-                    <span class="h6">자기계발</span>
+                    <span class="h6">자기개발</span>
                 </div>
                 <div class="fs-7" style="line-height: 1.8;">
                     <div class="time-line-title fs-6"></div>
-                    <p class="text-gray">
-                        자기계발과 문서화에 많은 관심을 가지고 있습니다. 입문은 웹 개발자가 되기 위해 3개월 과정 학원을 다니고, 현재까지 익힌 기술은 혼자 독학하여 얻은 기술과 직장에서 배운 스킬 입니다. 백엔드/블록체인 팀에서 요구하는 대부분의 기술이 처음 접하는 기술이었으며 단기간 익혀 프로젝트 UI부분을 생성하였으며 백엔드 영역 또한 병행해야 하는 팀구조 였기 때문에 풀스택을 접했던 경험이 있습니다.
+                    <p class="text-gray fw-bold">
+                      트러블 슈팅에 망설임이 없고 서비스 개선에 집중하는 개발자
                     </p>
-                    <p class="text-gray">
-                        현재는 Java, React, Typescript, Spring boot, python, Django를 사용하며 풀스택을 지향하고 있습니다.
+                    <p class="text-gray blockquote">
+                      풀 스택 개발자를 목표로 합니다.<br/>
+                      문서화에 대한 이슈를 매우 관심 있게 생각합니다.<br/>
+                      코드 리뷰와 정보 공유 문화를 지향합니다.<br/>
+                      주로 node 환경에서 확장성 및 정확성을 위해 typescript를 사용합니다.
                     </p>
                 </div>
             </div>
@@ -326,27 +338,38 @@ export const resume = {
             </div>
 
             <div class="mt-5 work-exp">
-                <div class="end-words">
-                    <span class="h6">프로젝트</span>
-                </div>
-                ${parseToHTML(prjList)}
+              <div class="end-words">
+                  <span class="h6">경력 기술</span>
+              </div>
+              <ul class="mt-5">
+                  ${parseToHTML(workExpList)}
+              </ul>
             </div>
 
             <div class="mt-5 work-exp">
-                <div class="end-words">
-                    <span class="h6">학력</span>
-                </div>
-                ${parseToHTML(eduList)}
+              <div class="end-words">
+                  <span class="h6">경력</span>
+              </div>
+              <ul class="mt-5">
+                  ${parseToHTML(timeLineList)}
+              </ul>
             </div>
 
             <div class="mt-5 work-exp">
-                <div class="end-words">
-                    <span class="h6">경력</span>
-                </div>
-                <ul class="mt-5">
-                    ${parseToHTML(timeLineList)}
-                </ul>
+              <div class="end-words">
+                  <span class="h6">프로젝트</span>
+              </div>
+              ${parseToHTML(prjList)}
             </div>
+
+            <div class="mt-5 work-exp">
+              <div class="end-words">
+                  <span class="h6">학력</span>
+              </div>
+              ${parseToHTML(eduList)}
+            </div>
+
+            
 
         </section>`;
   },
