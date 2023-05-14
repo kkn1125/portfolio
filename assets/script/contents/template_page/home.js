@@ -10,8 +10,8 @@ export const home = {
 
     return `
       <section page="${response}" style="background-image: url(${
-        cover[parseInt(Math.random() * cover.length)]
-      }); background-size: cover;">
+      cover[parseInt(Math.random() * cover.length)]
+    }); background-size: cover;">
         <div class="intro">
           <div class="profile">
             <img class="profile-avatar" src="https://avatars.githubusercontent.com/u/71887242?v=4" alt="profile">
@@ -21,7 +21,14 @@ export const home = {
             ${app.kimson.comment}
           </div>
           <div style="text-align: center; font-weight: 700; font-size: 12px; margin-top: 1rem;">
-            - Updated at. 2022-08-11 15:13
+            - Updated at. ${new Date("2022-09-05 15:03").toLocaleString("ko", {
+              year: "numeric",
+              month: "long",
+              date: "numeric",
+              hour: "numeric",
+              hour12: false,
+              minute: "numeric",
+            })}
           </div>
         </div>
       </section>

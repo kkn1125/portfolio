@@ -270,8 +270,8 @@ export const portfolio = {
                             </div>
                             <p class="tag tag-info">
                                 <span>${post_part.work.start} ~ ${
-                                post_part.work.end
-                            }</span>
+        post_part.work.end
+      }</span>
                             </p>
                             <p class="tag tag-danger">총 ${
                               diffDays - parseInt((diffDays / 7) * 2)

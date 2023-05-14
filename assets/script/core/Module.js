@@ -13,7 +13,7 @@ export const app = {
         avatar: 'https://avatars.githubusercontent.com/u/71887242?v=4',
         profile: 'https://kkn1125.github.io/profile',
         contact: 'https://kkn1125.github.io/contact',
-        comment: '풀스택을 지향하는 웹 개발자입니다. 새로운 기술에 관심이 많고 다양한 오류를 발생시키면서 여러 상황을 고려하는 습관을 가지고 노력하고 있습니다 😁',
+        comment: 'spring과 express를 주로 사용하는 백엔드 개발자입니다. 문서화와 데이터 처리에 관심이 많고, 클린코드를 지향합니다. 기술 블로그를 운영하며 문제 상황이나 새로 배운 내용을 기록합니다. 자세한 내용을 다음 페이지를 봐주세요! 😁',
     }
 };
 

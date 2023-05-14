@@ -83,12 +83,19 @@ ${subImage
 </div>`
     : "";
 
-export const movie = (movie) =>
-  movie != ""
-    ? `<div style="text-align: center;">
-${movie}
-</div>`
-    : "";
+export const movie = (movie) => {
+  if (movie != "") {
+    if(movie.match(/http|https/g)) {
+      return `<video src="${movie}" autoplay muted style="width: 100%;"></video>`;
+    }
+
+    return `<div style="text-align: center;">
+  ${movie}
+</div>`;
+  } else {
+    return "";
+  }
+};
 
 export const cover = (post, post_part) => getImgSrc(post, post_part.cover);
 

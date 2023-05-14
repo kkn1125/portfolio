@@ -1,12 +1,31 @@
 export const timeline = [
   {
     info: {
+      title: "(주)프로젝트그룹 앤더",
+      sub: "입사 - 재직 중",
+      since: `2022. 09 ~ ${
+        /* (() => {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        return `${year}. ${String(month).padStart(2, "0")}`;
+      })() */ "현재"
+      }`,
+    },
+    line: {
+      title: "제작팀/BE",
+      desc: "서버 환경 구축, 서버 분산 모델 설계, API 서버 환경 구축, 네트워크 인프라 구축, 서버 부하 테스트, 미디어 공유 플랫폼 구축",
+      subline: ["작성 중..."],
+    },
+  },
+  {
+    info: {
       title: "(주)리본소프트",
       sub: "입사 - 퇴사",
       since: "2022. 05 ~ 2022. 07",
     },
     line: {
-      title: "백엔트/블록체인",
+      title: "백엔드/블록체인",
       desc: "프로젝트 블록체인 환경 구축 보조 및 프론트 UI 생성 & 데이터베이스 연결",
       subline: [
         "NFTMarketplace blockchain 서버 연결 및 데이터베이스 연결 api 개발 | 서버 & 데이터베이스 연결",
