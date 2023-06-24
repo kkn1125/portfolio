@@ -1132,6 +1132,10 @@ button {
   align-items: center;
 }
 
+strong {
+  font-weight: 700;
+}
+
 .errorMsg {
   user-select: none;
   margin: 1em 0;
@@ -1147,9 +1151,11 @@ button {
 
 @media (min-width: 768px) and (max-width: 2800px) {
   section[page="resume"] {
-    width: 80% !important;
+    // width: 70% !important;
     margin: auto;
     min-width: 100%;
+    padding-left: 20rem !important;
+    padding-right: 20rem !important;
   }
 }
 

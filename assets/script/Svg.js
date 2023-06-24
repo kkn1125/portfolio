@@ -3,6 +3,7 @@
 import { spring } from "./svg/Spring.js";
 import { java } from "./svg/Java.js";
 import { mysql } from "./svg/MySQL.js";
+import { mariadb } from "./svg/Mariadb.js";
 import { python } from "./svg/Python.js";
 import { django } from "./svg/Django.js";
 import { lombok } from "./svg/Lombok.js";
@@ -24,6 +25,7 @@ import { mui } from "./svg/Mui.js";
 import { antd } from "./svg/Antd.js";
 import { nodejs } from "./svg/Node.js";
 import { expressjs } from "./svg/Express.js";
+import { fastify } from "./svg/Fastify.js";
 import { graphql } from "./svg/Graphql.js";
 import { mongodb } from "./svg/Mongodb.js";
 import { socketio } from "./svg/Socketio.js";
@@ -44,6 +46,7 @@ export {
   java,
   spring,
   mysql,
+  mariadb,
   python,
   django,
   lombok,
@@ -65,6 +68,7 @@ export {
   antd,
   nodejs,
   expressjs,
+  fastify,
   graphql,
   mongodb,
   socketio,

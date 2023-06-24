@@ -5,7 +5,7 @@ export const workExp = [
       sub: "팀 협업",
       since: "2023. 03 ~ 진행 중",
       link: "",
-      important: true,
+      important: false,
     },
     line: {
       title: "관리자 페이지를 위한 API 서버 구축",
@@ -35,7 +35,7 @@ export const workExp = [
       sub: "팀 협업",
       since: "2023. 03 ~ 진행 중",
       link: "",
-      important: true,
+      important: false,
     },
     line: {
       title: "라이브커머스 스트리밍 서비스 구현",
@@ -55,7 +55,7 @@ export const workExp = [
       sub: "팀 협업",
       since: "2023. 01 ~ 2023. 03",
       link: "",
-      important: true,
+      important: false,
     },
     line: {
       title: "N대M 회의형 화상채팅 서비스 구현",
@@ -76,7 +76,7 @@ export const workExp = [
       sub: "리딩",
       since: "2022. 12 ~ 2023. 01",
       link: "",
-      important: true,
+      important: false,
     },
     line: {
       title: "three.js 3D 모델 압축",
@@ -94,7 +94,7 @@ export const workExp = [
       sub: "팀 협업",
       since: "2022. 09 ~ 2022. 12",
       link: "",
-      important: true,
+      important: false,
     },
     line: {
       title: "3D 메타버스 멀티 접속 가능한 소켓서버 구축",
@@ -119,7 +119,7 @@ export const workExp = [
       sub: "팀 협업",
       since: "2022. 05 ~ 2022. 07",
       link: "",
-      important: true,
+      important: false,
     },
     line: {
       title: "블록체인 NFTMarket 구축",

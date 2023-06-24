@@ -21,7 +21,7 @@ export const app = {
 };
 
 export const parseToHTML = (parseTarget) => {
-    console.log(parseTarget)
+    // console.log(parseTarget)
   return parseTarget
     .map(({ info, line }) => {
       let lists = "";
@@ -30,7 +30,7 @@ export const parseToHTML = (parseTarget) => {
         : "";
       if (line.subline) {
         lists =
-          `<span class="subline">${detail}<span scroll>📖more</span>` +
+          `<span class="subline show">${detail}<span scroll>📘less</span>` +
           line.subline
             .map(
               (li) =>

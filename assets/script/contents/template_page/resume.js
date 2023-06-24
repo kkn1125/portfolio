@@ -22,6 +22,21 @@ export const resume = {
 
     const backEnd = [
       {
+        svg: svg.nodejs,
+        skill: "used",
+        color: "text-primary",
+      },
+      {
+        svg: svg.fastify,
+        skill: "used",
+        color: "text-primary",
+      },
+      {
+        svg: svg.expressjs,
+        skill: "used",
+        color: "text-primary",
+      },
+      {
         svg: svg.django,
         skill: "familiar",
         color: "text-primary",
@@ -51,33 +66,28 @@ export const resume = {
         skill: "familiar",
         color: "text-danger",
       },
-      {
-        svg: svg.nodejs,
-        skill: "used",
-        color: "text-primary",
-      },
-      {
-        svg: svg.expressjs,
-        skill: "used",
-        color: "text-primary",
-      },
     ];
 
     const frontEnd = [
-      {
-        svg: svg.html,
-        skill: "familiar",
-        color: "text-danger",
-      },
-      {
-        svg: svg.css,
-        skill: "familiar",
-        color: "text-info",
-      },
+      // {
+      //   svg: svg.html,
+      //   skill: "familiar",
+      //   color: "text-danger",
+      // },
+      // {
+      //   svg: svg.css,
+      //   skill: "familiar",
+      //   color: "text-info",
+      // },
       {
         svg: svg.javascript,
         skill: "familiar",
         color: "text-warning",
+      },
+      {
+        svg: svg.typescript,
+        skill: "familiar",
+        color: "text-primary",
       },
       {
         svg: svg.react,
@@ -85,13 +95,8 @@ export const resume = {
         color: "text-info",
       },
       {
-        svg: svg.vue,
-        skill: "used",
-        color: "text-primary",
-      },
-      {
-        svg: svg.redux,
-        skill: "used",
+        svg: svg.mui,
+        skill: "familiar",
         color: "text-primary",
       },
       {
@@ -100,25 +105,27 @@ export const resume = {
         color: "text-primary",
       },
       {
-        svg: svg.nuxtjs,
-        skill: "used",
-        color: "text-primary",
-      },
-      {
         svg: svg.gatsbyjs,
         skill: "used",
         color: "text-primary",
       },
+      // {
+      //   svg: svg.vue,
+      //   skill: "used",
+      //   color: "text-primary",
+      // },
       {
-        svg: svg.typescript,
-        skill: "familiar",
+        svg: svg.redux,
+        skill: "used",
         color: "text-primary",
       },
-      {
-        svg: svg.mui,
-        skill: "familiar",
-        color: "text-primary",
-      },
+
+      // {
+      //   svg: svg.nuxtjs,
+      //   skill: "used",
+      //   color: "text-primary",
+      // },
+
       {
         svg: svg.antd,
         skill: "used",
@@ -133,16 +140,21 @@ export const resume = {
         color: "text-info",
       },
       {
-        svg: svg.mybatis,
-        skill: "used",
+        svg: svg.mariadb,
+        skill: "familiar",
+        color: "text-info",
       },
       {
-        svg: svg.graphql,
+        svg: svg.mybatis,
         skill: "used",
       },
       {
         svg: svg.mongodb,
         skill: "familiar",
+      },
+      {
+        svg: svg.graphql,
+        skill: "used",
       },
     ];
 
@@ -176,6 +188,11 @@ export const resume = {
         color: "text-subpoint",
       },
       {
+        svg: svg.docker,
+        skill: "familiar",
+        color: "text-subpoint",
+      },
+      {
         svg: svg.npm,
         skill: "familiar",
         color: "text-subpoint",
@@ -193,11 +210,6 @@ export const resume = {
       {
         svg: svg.chocolatey,
         skill: "familiar",
-        color: "text-subpoint",
-      },
-      {
-        svg: svg.docker,
-        skill: "used",
         color: "text-subpoint",
       },
     ];
@@ -237,14 +249,14 @@ export const resume = {
 
     const secure = [
       {
-        svg: "https://next-auth.js.org/img/logo/logo-sm.png",
+        svg: svg.jwt,
         skill: "familiar",
-        color: "#5e464d",
+        color: "#000000",
       },
       {
-        svg: svg.jwt,
+        svg: "https://next-auth.js.org/img/logo/logo-sm.png",
         skill: "used",
-        color: "#000000",
+        color: "#5e464d",
       },
       {
         svg: svg.springsecurity,
@@ -256,7 +268,9 @@ export const resume = {
     return `<section page="${response}">
             <div class="h3 text-uppercase text-center w-100" style="text-decoration: underline 1px double black; text-underline-offset: 0.5rem">resume</div>
             <div class="mt-5 resume w-flex flex-column flex-row-md">
-                <img class="resume-avatar" src="/assets/images/profile/profile.jpg" alt="profile">
+                <img class="resume-avatar" src="${
+                  location.origin + location.pathname
+                }/assets/images/profile/profile.jpg" alt="profile">
                 <span class="info-table">
                     <ul>
                         <li><span>name</span><span>김경남</span></li>
@@ -286,13 +300,13 @@ export const resume = {
                 <div class="fs-7" style="line-height: 1.8;">
                     <div class="time-line-title fs-6"></div>
                     <p class="text-gray fw-bold">
-                      트러블 슈팅에 망설임이 없고 서비스 개선에 집중하는 개발자
+                      트러블 슈팅에 망설임이 없고 서비스 개선에 집중하는 개발자입니다.
                     </p>
                     <p class="text-gray blockquote">
-                      풀 스택 개발자를 목표로 합니다.<br/>
-                      문서화에 대한 이슈를 매우 관심 있게 생각합니다.<br/>
-                      코드 리뷰와 정보 공유 문화를 지향합니다.<br/>
-                      주로 node 환경에서 확장성 및 정확성을 위해 typescript를 사용합니다.
+                      <strong>풀 스택 개발자</strong>를 목표로 합니다.<br/>
+                      <strong>문서화</strong>에 대한 이슈를 매우 관심 있게 생각합니다.<br/>
+                      <strong>코드 리뷰</strong>와 정보 공유 문화를 지향합니다.<br/>
+                      <strong>네트워크</strong>, 대량의 트래픽 처리과 부하분산을 위한 <strong>서버 아키텍처</strong>에 관심이 있습니다.
                     </p>
                 </div>
             </div>
@@ -369,7 +383,7 @@ export const resume = {
               ${parseToHTML(eduList)}
             </div>
 
-            
+            <div style="margin-top:2rem;margin-bottom: 2rem;"></div>
 
         </section>`;
   },
