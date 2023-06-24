@@ -273,20 +273,20 @@ export const resume = {
                 }/assets/images/profile/profile.jpg" alt="profile">
                 <span class="info-table">
                     <ul>
-                        <li><span>name</span><span>김경남</span></li>
+                        <li><span class="capitalize">name</span><span>김경남</span></li>
                         <!--<li><span>age</span><span>${
                           new Date().getFullYear() - 1992
                         }</span></li>-->
-                        <li><span>email</span><span class="link-form" onclick="location.href='mailto:chaplet01@gmail.com'">chaplet01@gmail.com</span></li>
-                        <li><span>github</span><span>
+                        <li><span class="capitalize">email</span><span class="link-form" onclick="location.href='mailto:chaplet01@gmail.com'">chaplet01@gmail.com</span></li>
+                        <li><span class="capitalize">github</span><span>
                           <a href="${app.kimson.github}">
                             kkn1125
                           </a>
                         </span></li>
-                        <li><span>blog</span><span"><a href="${
+                        <li><span class="capitalize">blog</span><span"><a href="${
                           app.kimson.blog
                         }">kkn1125.github.io</a></span></li>
-                        <li><span>wiki</span><span"><a href="${
+                        <li><span class="capitalize">wiki</span><span"><a href="${
                           app.kimson.wiki
                         }">personal wiki</a></span></li>
                     </ul>
