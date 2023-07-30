@@ -13,20 +13,9 @@ export const eduList = [
   // },
   {
     info: {
-      title: "JAVA 웹개발자 양성 과정 수료",
-      sub: "수료",
-      since: "2021. 03",
-    },
-    line: {
-      title: "JAVA JSP 수료",
-      desc: "자바 1개월 반 과정을 거쳐 JSP로 기본적인 CRUD 구현을 익히고 웹 애플리케이션을 구축하는데 집중하여 과정을 이수",
-    },
-  },
-  {
-    info: {
       title: "한국국제대학교",
       sub: "졸업",
-      since: "2018. 02",
+      since: "2018. 02", 
     },
     line: {
       title: "실내건축학 학사 취득",

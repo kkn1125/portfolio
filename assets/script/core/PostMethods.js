@@ -43,10 +43,10 @@ ${content}</div>`
     : `<p><span class="notice notice-danger">작성 중인 게시물입니다.</span></p>`;
 
 export const link = (link, post) =>
-  link.link != ""
+  link.link != "" && link.link !== undefined
     ? `
 <div class="text-capitalize">
-    <a href="${link.link}" target="_blank">
+    <a href="${link.link ?? ""}" target="_blank">
         📗<strong>${post} Project</strong> demo pages
     </a>
 </div>
@@ -85,7 +85,7 @@ ${subImage
 
 export const movie = (movie) => {
   if (movie != "") {
-    if(movie.match(/http|https/g)) {
+    if (movie.match(/http|https/g)) {
       return `<video src="${movie}" autoplay muted style="width: 100%;"></video>`;
     }
 
@@ -99,8 +99,18 @@ export const movie = (movie) => {
 
 export const cover = (post, post_part) => getImgSrc(post, post_part.cover);
 
-export const cardset = (skillset, cardClasses) =>
-  skillset.map((skill) => card(skill, cardClasses)).join("");
+export const cardset = (skillset, cardClasses, maxWidth = 9) =>
+  [
+    ...skillset,
+    ...new Array(maxWidth - skillset.length).fill(0).map((el) => null),
+  ]
+
+    .map((skill) =>
+      skill === null
+        ? `<div class="card w-none w-sm-flex align-items-center justify-content-center card-gray" style="--gutter-x:inherit; --gutter-y: inherit; min-height: 48px;"></div>`
+        : card(skill, cardClasses)
+    )
+    .join("");
 
 export const card = (
   skill,

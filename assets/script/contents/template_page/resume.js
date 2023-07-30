@@ -114,11 +114,11 @@ export const resume = {
       //   skill: "used",
       //   color: "text-primary",
       // },
-      {
-        svg: svg.redux,
-        skill: "used",
-        color: "text-primary",
-      },
+      // {
+      //   svg: svg.redux,
+      //   skill: "used",
+      //   color: "text-primary",
+      // },
 
       // {
       //   svg: svg.nuxtjs,
@@ -126,11 +126,11 @@ export const resume = {
       //   color: "text-primary",
       // },
 
-      {
-        svg: svg.antd,
-        skill: "used",
-        color: "text-primary",
-      },
+      // {
+      //   svg: svg.antd,
+      //   skill: "used",
+      //   color: "text-primary",
+      // },
     ];
 
     const db = [
@@ -164,11 +164,11 @@ export const resume = {
         skill: "used",
         color: "text-primary",
       },
-      {
-        svg: svg.ffmpeg,
-        skill: "used",
-        color: "text-primary",
-      },
+      // {
+      //   svg: svg.ffmpeg,
+      //   skill: "used",
+      //   color: "text-primary",
+      // },
       {
         svg: svg.webRtc,
         skill: "familiar",
@@ -197,21 +197,21 @@ export const resume = {
         skill: "familiar",
         color: "text-subpoint",
       },
-      {
-        svg: svg.yarn,
-        skill: "familiar",
-        color: "text-subpoint",
-      },
-      {
-        svg: svg.apacheMaven,
-        skill: "used",
-        color: "text-subpoint",
-      },
-      {
-        svg: svg.chocolatey,
-        skill: "familiar",
-        color: "text-subpoint",
-      },
+      // {
+      //   svg: svg.yarn,
+      //   skill: "familiar",
+      //   color: "text-subpoint",
+      // },
+      // {
+      //   svg: svg.apacheMaven,
+      //   skill: "used",
+      //   color: "text-subpoint",
+      // },
+      // {
+      //   svg: svg.chocolatey,
+      //   skill: "familiar",
+      //   color: "text-subpoint",
+      // },
     ];
 
     const blockChain = [
@@ -253,16 +253,16 @@ export const resume = {
         skill: "familiar",
         color: "#000000",
       },
-      {
-        svg: "https://next-auth.js.org/img/logo/logo-sm.png",
-        skill: "used",
-        color: "#5e464d",
-      },
-      {
-        svg: svg.springsecurity,
-        skill: "used",
-        color: "#000000",
-      },
+      // {
+      //   svg: "https://next-auth.js.org/img/logo/logo-sm.png",
+      //   skill: "used",
+      //   color: "#5e464d",
+      // },
+      // {
+      //   svg: svg.springsecurity,
+      //   skill: "used",
+      //   color: "#000000",
+      // },
     ];
 
     return `<section page="${response}">
@@ -340,10 +340,12 @@ export const resume = {
                     ${posts.cardset(devops, cardClasses)}
                 </div>
 
+                <!--
                 <div class="fs-5">Block chain & Metamask</div>
                 <div class="${cardGroupClasses}">
                     ${posts.cardset(blockChain, cardClasses)}
                 </div>
+                -->
 
                 <div class="fs-5">Secure</div>
                 <div class="${cardGroupClasses}">

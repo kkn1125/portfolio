@@ -65,8 +65,8 @@ export const mentees = {
         </div>
     </div>`,
     authors: ['kimson'],
-    link: 'https://menteesprj.herokuapp.com',
-    github: '',
+    // link: 'https://menteesprj.herokuapp.com',
+    github: 'https://github.com/kkn1125/mentees',
     cover: 'mentees_main.png',
     subImages: [
         ['메인', 'mentees_main03.png'],

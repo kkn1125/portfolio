@@ -4,7 +4,7 @@
   "description": "포트폴리오를 정리 해둔 페이지 입니다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "serve -l 3000 -s ."
   },
   "keywords": [],
   "author": "",

@@ -87,7 +87,7 @@ export const projectNarang = {
               <li>face-api를 이용한 유저 안면 인식 로그인</li>
               <li>일기 내용 감정 분석</li>
               <ol>
-                <li>텍스트 한->영 번역 Naver Papago api</li>
+                <li>텍스트 한@:->영 번역 Naver Papago api</li>
                 <li>텍스트 감정 분석 sentiment.js</li>
               </ol>
               <li>주 단위 그래프</li>
@@ -153,18 +153,19 @@ export const projectNarang = {
           <img src="https://user-images.githubusercontent.com/71887242/187656021-998215e6-d0e6-4b78-86d2-b0dcd2637fa6.png" alt="main" />
         </div>
 
-        <div class="mt-3">
+        <!-- <div class="mt-3">
           <span class="fw-bold fs-4">Database 명세서</span>
         </div>
 
         <div class="mt-3">
             <span class="fw-bold fs-5">User</span>
         </div>
-        ${dbUser}
-        ... 작성 중
+        ${/* dbUser */""}
+        ... 작성 중 
+        -->
     </div>`,
   authors: ["kimson", "ohoraming"],
-  link: "https://narang.ml",
+  // link: "https://narang.ml",
   github: "https://github.com/kkn1125/narang",
   cover:
     "https://user-images.githubusercontent.com/71887242/188372976-f2f77d3a-2d17-4bea-8be7-e787b7edb30c.png",

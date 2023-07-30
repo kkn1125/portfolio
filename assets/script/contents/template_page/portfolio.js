@@ -46,7 +46,7 @@ export const portfolio = {
                                         🔍
                                         Detail
                                     </a>
-                                    <button class="px-1 btn btn-sm btn-subpoint" onclick="window.open('${link}')">
+                                    <button class="px-1 btn btn-sm btn-subpoint" onclick="window.open('${link??""}')">
                                         ✨
                                         Demo
                                     </button>
@@ -81,7 +81,7 @@ export const portfolio = {
                     <div class="front h-100 w-100 position-absolute top-0 start-0 back-filp" style="background-image: url(${posts.getImgSrc(
                       prjname,
                       cover
-                    )}); background-size: cover; background-position: top left; border-radius: inherit;"></div>
+                    )}); background-size: contain; background-position: top left; border-radius: inherit;"></div>
                 </div>
             `;
     },
@@ -164,7 +164,7 @@ export const portfolio = {
       if (post_part.isHeroku)
         fetch(
           `https://api.allorigins.win/get?url=${encodeURIComponent(
-            post_part.link
+            post_part.link??""
           )}`
         )
           .then((response) => {
@@ -278,8 +278,8 @@ export const portfolio = {
                             }일 소요 ( 주말 제외 )</p>
                             ${mainContent(
                               post_part.content
-                                .replace(/\-\>/gim, "→")
-                                .replace(/\<\-/gim, "←")
+                                .replace(/@:\-\>/gim, "→")
+                                .replace(/@:\<\-/gim, "←")
                             )}
                             ${subImages(post_part.subImages, post)}
                             ${movie(post_part.movie)}
