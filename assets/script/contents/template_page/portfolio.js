@@ -81,7 +81,7 @@ export const portfolio = {
                     <div class="front h-100 w-100 position-absolute top-0 start-0 back-filp" style="background-image: url(${posts.getImgSrc(
                       prjname,
                       cover
-                    )}); background-size: contain; background-position: top left; border-radius: inherit;"></div>
+                    )}); background-size: cover; background-position: top left; border-radius: inherit;"></div>
                 </div>
             `;
     },

@@ -1,12 +1,12 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "포트폴리오를 정리 해둔 페이지 입니다.",
+  "description": "포트폴리오 정리 페이지",
   "main": "index.js",
   "scripts": {
     "dev": "serve -l 3000 -s ."
   },
   "keywords": [],
-  "author": "",
+  "author": "kimson",
   "license": "ISC"
 }
