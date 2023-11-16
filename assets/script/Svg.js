@@ -41,6 +41,8 @@ import { ipfs } from "./svg/Ipfs.js";
 import { jwt } from "./svg/Jwt.js";
 import { springboot } from "./svg/Springboot.js";
 import { springsecurity } from "./svg/Springsecurity.js";
+import { nestjs } from "./svg/Nest.js";
+import { jenkins } from "./svg/Jenkins.js";
 
 export {
   java,
@@ -58,7 +60,7 @@ export {
   mybatis,
   github,
   redux,
-  ffmpeg,
+  ffmpeg,jenkins,
   webRtc,
   nextjs,
   nuxtjs,
@@ -66,6 +68,7 @@ export {
   typescript,
   mui,
   antd,
+  nestjs,
   nodejs,
   expressjs,
   fastify,

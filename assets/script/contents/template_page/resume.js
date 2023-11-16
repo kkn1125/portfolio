@@ -22,46 +22,61 @@ export const resume = {
 
     const backEnd = [
       {
+        name: "nodejs",
         svg: svg.nodejs,
         skill: "used",
         color: "text-primary",
       },
       {
+        name: "nestjs",
+        svg: svg.nestjs,
+        skill: "used",
+        color: "text-primary",
+      },
+      {
+        name: "fastify",
         svg: svg.fastify,
         skill: "used",
         color: "text-primary",
       },
       {
+        name: "expressjs",
         svg: svg.expressjs,
         skill: "used",
         color: "text-primary",
       },
       {
+        name: "django",
         svg: svg.django,
         skill: "familiar",
         color: "text-primary",
       },
       {
+        name: "python",
         svg: svg.python,
         skill: "familiar",
         color: "text-info",
       },
       {
+        name: "java",
         svg: svg.java,
         skill: "familiar",
         color: "text-danger",
       },
       {
+        name: "spring",
         svg: svg.spring,
         skill: "familiar",
         color: "text-primary",
       },
       {
+        name: "springboot",
         svg: svg.springboot,
         skill: "familiar",
         color: "text-primary",
       },
       {
+        name: "lombok",
         svg: svg.lombok,
         skill: "familiar",
         color: "text-danger",
@@ -80,31 +95,37 @@ export const resume = {
       //   color: "text-info",
       // },
       {
-        svg: svg.javascript,
-        skill: "familiar",
-        color: "text-warning",
-      },
-      {
+        name: "typescript",
         svg: svg.typescript,
         skill: "familiar",
         color: "text-primary",
       },
       {
+        name: "javascript",
+        svg: svg.javascript,
+        skill: "familiar",
+        color: "text-warning",
+      },
+      {
+        name: "react",
         svg: svg.react,
         skill: "familiar",
         color: "text-info",
       },
       {
+        name: "mui",
         svg: svg.mui,
         skill: "familiar",
         color: "text-primary",
       },
       {
+        name: "nextjs",
         svg: svg.nextjs,
         skill: "familiar",
         color: "text-primary",
       },
       {
+        name: "gatsbyjs",
         svg: svg.gatsbyjs,
         skill: "used",
         color: "text-primary",
@@ -135,24 +156,29 @@ export const resume = {
 
     const db = [
       {
-        svg: svg.mysql,
-        skill: "familiar",
-        color: "text-info",
-      },
-      {
+        name: "mariadb",
         svg: svg.mariadb,
         skill: "familiar",
         color: "text-info",
       },
       {
-        svg: svg.mybatis,
-        skill: "used",
+        name: "mysql",
+        svg: svg.mysql,
+        skill: "familiar",
+        color: "text-info",
       },
       {
-        svg: svg.mongodb,
+        name: "mybatis",
+        svg: svg.mybatis,
         skill: "familiar",
       },
       {
+        name: "mongodb",
+        svg: svg.mongodb,
+        skill: "used",
+      },
+      {
+        name: "graphql",
         svg: svg.graphql,
         skill: "used",
       },
@@ -160,43 +186,62 @@ export const resume = {
 
     const socketMedia = [
       {
+        name: "socketio",
         svg: svg.socketio,
         skill: "used",
         color: "text-primary",
       },
-      // {
-      //   svg: svg.ffmpeg,
-      //   skill: "used",
-      //   color: "text-primary",
-      // },
       {
+        name: "webRtc",
         svg: svg.webRtc,
         skill: "familiar",
         color: "text-primary",
       },
+      {
+        name: "uWebSockets.js",
+        svg: "uWebSockets.js",
+        skill: "familiar",
+        color: "text-primary",
+      },
+      // {
+      //   name:'ffmpeg',
+      //   svg: svg.ffmpeg,
+      //   skill: "used",
+      //   color: "text-primary",
+      // },
     ];
 
     const devops = [
       {
-        svg: svg.github,
+        name: "jenkins",
+        svg: svg.jenkins,
         skill: "familiar",
         color: "#181717",
       },
       {
-        svg: svg.gitlab,
-        skill: "used",
-        color: "text-subpoint",
-      },
-      {
+        name: "docker",
         svg: svg.docker,
         skill: "familiar",
         color: "text-subpoint",
       },
       {
-        svg: svg.npm,
+        name: "github",
+        svg: svg.github,
         skill: "familiar",
+        color: "#181717",
+      },
+      {
+        name: "gitlab",
+        svg: svg.gitlab,
+        skill: "used",
         color: "text-subpoint",
       },
+      // {
+      //   name: "npm",
+      //   svg: svg.npm,
+      //   skill: "familiar",
+      //   color: "text-subpoint",
+      // },
       // {
       //   svg: svg.yarn,
       //   skill: "familiar",
@@ -216,31 +261,37 @@ export const resume = {
 
     const blockChain = [
       {
+        name: "web3js",
         svg: svg.web3js,
         skill: "used",
         color: "text-subpoint",
       },
       {
+        name: "blockchain",
         svg: svg.blockchain,
         skill: "used",
         color: "text-subpoint",
       },
       {
+        name: "ipfs",
         svg: svg.ipfs,
         skill: "used",
         color: "text-subpoint",
       },
       {
+        name: "Metamask",
         svg: "Metamask",
         skill: "used",
         color: "#fb542b",
       },
       {
+        name: "Ganache.js",
         svg: "Ganache.js",
         skill: "used",
         color: "#e4a663",
       },
       {
+        name: "Truffle.js",
         svg: "Truffle.js",
         skill: "used",
         color: "#5e464d",
@@ -249,6 +300,7 @@ export const resume = {
 
     const secure = [
       {
+        name: "jwt",
         svg: svg.jwt,
         skill: "familiar",
         color: "#000000",
@@ -320,24 +372,29 @@ export const resume = {
                     ${posts.cardset(backEnd, cardClasses)}
                 </div>
 
-                <div class="fs-5">Front-End</div>
+                <div class="fs-5">DevOps</div>
                 <div class="${cardGroupClasses}">
-                    ${posts.cardset(frontEnd, cardClasses)}
+                    ${posts.cardset(devops, cardClasses)}
                 </div>
-                
+
                 <div class="fs-5">Database</div>
                 <div class="${cardGroupClasses}">
                     ${posts.cardset(db, cardClasses)}
                 </div>
-                
+
+                <div class="fs-5">Secure</div>
+                <div class="${cardGroupClasses}">
+                    ${posts.cardset(secure, cardClasses)}
+                </div>
+
                 <div class="fs-5">Socket & WebRTC & Media</div>
                 <div class="${cardGroupClasses}">
                     ${posts.cardset(socketMedia, cardClasses)}
                 </div>
 
-                <div class="fs-5">DevOps</div>
+                <div class="fs-5">Front-End</div>
                 <div class="${cardGroupClasses}">
-                    ${posts.cardset(devops, cardClasses)}
+                    ${posts.cardset(frontEnd, cardClasses)}
                 </div>
 
                 <!--
@@ -347,10 +404,7 @@ export const resume = {
                 </div>
                 -->
 
-                <div class="fs-5">Secure</div>
-                <div class="${cardGroupClasses}">
-                    ${posts.cardset(secure, cardClasses)}
-                </div>
+                
             </div>
 
             <div class="mt-5 work-exp">
@@ -373,7 +427,7 @@ export const resume = {
 
             <div class="mt-5 work-exp">
               <div class="end-words">
-                  <span class="h6">프로젝트</span>
+                  <span class="h6">사이드 프로젝트</span>
               </div>
               ${parseToHTML(prjList)}
             </div>

@@ -99,10 +99,12 @@ export const movie = (movie) => {
 
 export const cover = (post, post_part) => getImgSrc(post, post_part.cover);
 
-export const cardset = (skillset, cardClasses, maxWidth = 9) =>
+export const cardset = (skillset, cardClasses, maxWidth = 10) =>
   [
     ...skillset,
-    ...new Array(maxWidth - skillset.length).fill(0).map((el) => null),
+    ...new Array(maxWidth > skillset.length ? maxWidth - skillset.length : 0)
+      .fill(0)
+      .map((el) => null),
   ]
 
     .map((skill) =>
@@ -115,7 +117,9 @@ export const cardset = (skillset, cardClasses, maxWidth = 9) =>
 export const card = (
   skill,
   cardClasses
-) => `<div class="card w-flex align-items-center justify-content-center" style="--gutter-x:inherit; --gutter-y: inherit;">
+) => `<div class="card w-flex align-items-center justify-content-center" style="--gutter-x:inherit; --gutter-y: inherit;" title="${
+  skill.name
+}">
 <div class="${cardClasses}${
   !skill.color?.startsWith("#") ? ` ${skill.color}` : ""
 }" ${skill.color?.startsWith("#") && `style="color: ${skill.color};"`}>

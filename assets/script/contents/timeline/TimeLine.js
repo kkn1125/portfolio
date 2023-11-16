@@ -2,25 +2,20 @@ export const timeline = [
   {
     info: {
       title: "(주)프로젝트그룹 앤더",
-      sub: "입사 - 재직 중",
-      since: `2022. 09 ~ ${
-        /* (() => {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth() + 1;
-        return `${year}. ${String(month).padStart(2, "0")}`;
-      })() */ "현재"
-      }`,
+      sub: "입사 - 퇴사",
+      since: `2022. 09 ~ 2023-09`,
     },
     line: {
       title: "제작팀/BE",
-      desc: "DB 설계, API 서버 설계/제작, 소켓서버 분산 아키텍처 제작, DB 이중화, 네트워킹, AWS 클라우드 서버 환경 구축, 서버 부하 테스트",
+      desc: "서버 환경구축과 DB설계, API 서버 제작 담당",
       subline: [
-        "관리자 페이지 API 서버 구축",
-        "라이브커머스 스트리밍 서비스",
-        "N대M 회의형 화상태칭 서비스",
-        "three.js 3D 모델 용량 압축",
-        "3D 메타버스 멀티플레이 가능한 소켓서버 구축",
+        "AWS 클라우드 서버 관리 | 인프라",
+        "서버 부하 테스트 | 테스팅",
+        "웹 화상 채팅 및 라이브커머스 서비스 제작 | 백앤드",
+        "Socket 서버 구축 | 백앤드",
+        "데이터베이스 이중화 | 백앤드",
+        "백오피스 제작 | 프론트앤드",
+        "기존 express 프레임워크에서 fastify 사용 제안 | 기술 제안",
       ],
     },
   },
